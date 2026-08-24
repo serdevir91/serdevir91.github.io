@@ -1,54 +1,1225 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Serdevir Apps & Privacy Policies</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Erdevir Labs | Official Developer Portal & App Store</title>
+  <meta name="description" content="Erdevir Labs - Official developer portal, Google Play Android applications, desktop software, and privacy policies." />
+  <meta name="theme-color" content="#070b12" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
   <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background: #0b0f14;
-      color: #e6edf3;
+    :root {
+      --bg-dark: #070b14;
+      --bg-card: rgba(15, 23, 42, 0.75);
+      --bg-card-hover: rgba(26, 38, 66, 0.85);
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-glow: rgba(59, 130, 246, 0.4);
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --text-sub: #cbd5e1;
+      
+      --accent-cyan: #06b6d4;
+      --accent-blue: #3b82f6;
+      --accent-indigo: #6366f1;
+      --accent-purple: #8b5cf6;
+      --accent-emerald: #10b981;
+      --accent-amber: #f59e0b;
+      --accent-rose: #f43f5e;
+
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-full: 9999px;
+    }
+
+    * {
+      box-sizing: border-box;
       margin: 0;
-      padding: 40px 20px;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-main);
       line-height: 1.6;
+      min-height: 100vh;
+      overflow-x: hidden;
+      background-image: 
+        radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.15) 0px, transparent 45%),
+        radial-gradient(at 100% 0%, rgba(139, 92, 246, 0.15) 0px, transparent 45%),
+        radial-gradient(at 50% 50%, rgba(16, 185, 129, 0.06) 0px, transparent 60%),
+        radial-gradient(at 100% 100%, rgba(6, 182, 212, 0.1) 0px, transparent 50%);
+      background-attachment: fixed;
     }
+
     .container {
-      max-width: 800px;
+      max-width: 1240px;
       margin: 0 auto;
-      background: #111826;
-      border: 1px solid #233247;
-      border-radius: 16px;
-      padding: 32px;
+      padding: 0 24px;
     }
-    h1 { font-size: 28px; margin-top: 0; }
-    p { color: #9fb0c3; }
-    ul { list-style: none; padding: 0; }
-    li { margin-bottom: 12px; }
-    a { color: #1d9bf0; text-decoration: none; font-weight: 500; }
-    a:hover { text-decoration: underline; }
-    .footer { font-size: 13px; color: #6b7c93; margin-top: 30px; border-top: 1px solid #233247; padding-top: 16px; }
+
+    /* Ambient Glow Background */
+    .glow-orb {
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      filter: blur(120px);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(7, 11, 20, 0.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border-subtle);
+      transition: all 0.3s ease;
+    }
+
+    .nav-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text-main);
+    }
+
+    .logo-badge-icon {
+      width: 42px;
+      height: 42px;
+      background: linear-gradient(135deg, #2563eb, #7c3aed);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      color: #fff;
+      box-shadow: 0 4px 18px rgba(37, 99, 235, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-name {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      background: linear-gradient(135deg, #ffffff 40%, #93c5fd 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .brand-tag {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--accent-cyan);
+      font-weight: 700;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .nav-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 16px;
+      border-radius: var(--radius-md);
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      color: var(--text-sub);
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-subtle);
+      transition: all 0.2s ease;
+    }
+
+    .nav-btn:hover {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.18);
+      transform: translateY(-1px);
+    }
+
+    .nav-btn-primary {
+      background: linear-gradient(135deg, #2563eb, #4f46e5);
+      color: white !important;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+    }
+
+    .nav-btn-primary:hover {
+      box-shadow: 0 6px 20px rgba(37, 99, 235, 0.5);
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      padding: 70px 0 50px;
+      text-align: center;
+    }
+
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 18px;
+      border-radius: var(--radius-full);
+      background: rgba(37, 99, 235, 0.12);
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      color: #60a5fa;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 24px;
+      box-shadow: 0 0 20px rgba(37, 99, 235, 0.15);
+    }
+
+    .hero-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 52px;
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 20px;
+      letter-spacing: -1.5px;
+    }
+
+    .hero-title-gradient {
+      background: linear-gradient(135deg, #ffffff 20%, #93c5fd 50%, #c084fc 90%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-description {
+      font-size: 18px;
+      color: var(--text-muted);
+      max-width: 780px;
+      margin: 0 auto 36px;
+      line-height: 1.7;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 50px;
+    }
+
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 28px;
+      border-radius: 14px;
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.25s ease;
+    }
+
+    .cta-btn-primary {
+      background: linear-gradient(135deg, #2563eb, #7c3aed);
+      color: white;
+      box-shadow: 0 8px 25px rgba(37, 99, 235, 0.35);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .cta-btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(37, 99, 235, 0.5);
+    }
+
+    .cta-btn-secondary {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-main);
+      border: 1px solid var(--border-subtle);
+    }
+
+    .cta-btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+    }
+
+    /* Stats Bar */
+    .stats-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 24px 20px;
+      margin-bottom: 50px;
+    }
+
+    .stat-item {
+      text-align: center;
+      position: relative;
+    }
+
+    .stat-item:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 20%;
+      height: 60%;
+      width: 1px;
+      background: var(--border-subtle);
+    }
+
+    .stat-number {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 30px;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 4px;
+    }
+
+    .stat-label {
+      font-size: 13px;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    /* Section Headers */
+    .section-header {
+      margin-bottom: 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .section-title-wrap h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 32px;
+      font-weight: 800;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-title-wrap p {
+      color: var(--text-muted);
+      font-size: 15px;
+      margin-top: 6px;
+    }
+
+    /* Search & Filter Bar */
+    .filter-controls {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 32px;
+      background: var(--bg-card);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 18px 20px;
+    }
+
+    .search-wrapper {
+      position: relative;
+      width: 100%;
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      font-size: 16px;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 14px 16px 14px 46px;
+      background: rgba(7, 11, 20, 0.6);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      color: #fff;
+      font-size: 15px;
+      font-family: inherit;
+      outline: none;
+      transition: all 0.2s ease;
+    }
+
+    .search-input:focus {
+      border-color: var(--accent-blue);
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+    }
+
+    .category-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .cat-pill {
+      padding: 8px 16px;
+      border-radius: var(--radius-full);
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-muted);
+      font-size: 13.5px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      user-select: none;
+    }
+
+    .cat-pill:hover {
+      background: rgba(255, 255, 255, 0.08);
+      color: #fff;
+    }
+
+    .cat-pill.active {
+      background: linear-gradient(135deg, #2563eb, #4f46e5);
+      color: white;
+      border-color: rgba(255, 255, 255, 0.2);
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
+    }
+
+    /* Apps Grid */
+    .apps-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(370px, 1fr));
+      gap: 24px;
+      margin-bottom: 70px;
+    }
+
+    .app-card {
+      background: var(--bg-card);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 26px;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .app-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent, var(--border-glow), transparent);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .app-card:hover {
+      background: var(--bg-card-hover);
+      border-color: rgba(255, 255, 255, 0.15);
+      transform: translateY(-5px);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4);
+    }
+
+    .app-card:hover::before {
+      opacity: 1;
+    }
+
+    .app-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .app-icon-wrap {
+      width: 64px;
+      height: 64px;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      color: #fff;
+      flex-shrink: 0;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .app-meta {
+      flex: 1;
+    }
+
+    .app-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.3;
+      margin-bottom: 4px;
+    }
+
+    .app-category {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--accent-cyan);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .app-desc {
+      color: var(--text-sub);
+      font-size: 14.5px;
+      line-height: 1.6;
+      margin-bottom: 18px;
+      flex-grow: 1;
+    }
+
+    .app-highlights {
+      list-style: none;
+      margin-bottom: 18px;
+      padding: 10px 14px;
+      background: rgba(0, 0, 0, 0.25);
+      border-radius: var(--radius-sm);
+      border: 1px solid rgba(255, 255, 255, 0.04);
+    }
+
+    .app-highlights li {
+      font-size: 12.5px;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+
+    .app-highlights li:last-child { margin-bottom: 0; }
+
+    .app-highlights li i {
+      color: var(--accent-emerald);
+      font-size: 11px;
+    }
+
+    .app-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 20px;
+    }
+
+    .app-tag {
+      font-size: 11px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+      background: rgba(255, 255, 255, 0.05);
+      color: #94a3b8;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .app-actions {
+      display: flex;
+      gap: 10px;
+      margin-top: auto;
+      padding-top: 16px;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .action-btn {
+      flex: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 11px 14px;
+      border-radius: 12px;
+      font-size: 13.5px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .btn-playstore {
+      background: rgba(16, 185, 129, 0.12);
+      color: #34d399;
+      border: 1px solid rgba(16, 185, 129, 0.25);
+    }
+
+    .btn-playstore:hover {
+      background: rgba(16, 185, 129, 0.25);
+      color: #6ee7b7;
+      transform: translateY(-1px);
+    }
+
+    .btn-web-action {
+      background: rgba(59, 130, 246, 0.12);
+      color: #60a5fa;
+      border: 1px solid rgba(59, 130, 246, 0.25);
+    }
+
+    .btn-web-action:hover {
+      background: rgba(59, 130, 246, 0.25);
+      color: #93c5fd;
+      transform: translateY(-1px);
+    }
+
+    .btn-privacy-action {
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text-muted);
+      border: 1px solid var(--border-subtle);
+      flex: 0 0 auto;
+      padding: 11px 13px;
+    }
+
+    .btn-privacy-action:hover {
+      color: #fff;
+      background: rgba(255, 255, 255, 0.09);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    /* Privacy Center Section */
+    .privacy-section {
+      background: rgba(15, 23, 42, 0.5);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      margin-bottom: 70px;
+    }
+
+    .privacy-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+    }
+
+    .privacy-card {
+      background: rgba(7, 11, 20, 0.6);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 18px 20px;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: all 0.2s ease;
+    }
+
+    .privacy-card:hover {
+      border-color: var(--accent-cyan);
+      background: rgba(6, 182, 212, 0.08);
+      transform: translateY(-2px);
+    }
+
+    .privacy-card-title {
+      font-size: 14.5px;
+      font-weight: 700;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .privacy-card i.arrow {
+      color: var(--text-muted);
+      font-size: 12px;
+      transition: transform 0.2s;
+    }
+
+    .privacy-card:hover i.arrow {
+      color: var(--accent-cyan);
+      transform: translateX(3px);
+    }
+
+    /* Tech Stack Section */
+    .tech-stack-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      margin-top: 24px;
+    }
+
+    .tech-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 18px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-full);
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-sub);
+    }
+
+    .tech-item i {
+      font-size: 16px;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--border-subtle);
+      background: rgba(7, 11, 20, 0.95);
+      padding: 48px 0 32px;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin-bottom: 24px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-link {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+
+    .footer-link:hover {
+      color: var(--accent-cyan);
+    }
+
+    .footer-copy {
+      text-align: center;
+      padding-top: 24px;
+      border-top: 1px solid var(--border-subtle);
+      color: var(--text-muted);
+      font-size: 13px;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .hero-title { font-size: 38px; }
+      .stats-bar { grid-template-columns: repeat(2, 1fr); }
+      .stat-item:nth-child(2)::after { display: none; }
+      .apps-grid { grid-template-columns: 1fr; }
+      .nav-content { flex-direction: column; gap: 16px; }
+      .footer-content { flex-direction: column; text-align: center; }
+    }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Serdevir Apps - Developer Portal</h1>
-    <p>Welcome to Serdevir Mobile Apps portal and privacy policies documentation.</p>
-    
-    <h2>Our Applications & Privacy Policies</h2>
-    <ul>
-      <li>🛍️ <a href="/my-store/"><strong>Serdevir App Store (All Applications)</strong></a></li>
-      <li>🕋 <a href="/ezan-vakti-privacy/"><strong>Ezan Vakti: Prayer Times Qibla (Privacy Policy & App Info)</strong></a></li>
-      <li>📊 <a href="/Stokapp/">Stokapp: Stock & Inventory Tracker</a></li>
-      <li>💪 <a href="/workout-tracker-privacy/">Workout Tracker: Fitness & Gym Privacy Policy</a></li>
-      <li>🚗 <a href="/autoshare-privacy-policy/">AutoShare Privacy Policy</a></li>
-      <li>🎮 <a href="/flappy-rogue-privacy/">Flappy Rogue Privacy Policy</a></li>
-      <li>📄 <a href="/subzip-privacy-policy/">SubZip Privacy Policy</a></li>
-    </ul>
 
-    <div class="footer">
-      <p>App-Ads.txt verification enabled for AdMob. &copy; 2026 Serdevir</p>
+  <!-- Ambient Glow -->
+  <div class="glow-orb" style="top: 100px; left: -100px; background: rgba(59, 130, 246, 0.2);"></div>
+  <div class="glow-orb" style="top: 400px; right: -100px; background: rgba(139, 92, 246, 0.15);"></div>
+
+  <!-- Header -->
+  <header>
+    <div class="container nav-content">
+      <a href="/" class="brand-logo">
+        <div class="logo-badge-icon">
+          <i class="fa-solid fa-layer-group"></i>
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">Erdevir Labs</span>
+          <span class="brand-tag">Developer Studio</span>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#apps" class="nav-btn"><i class="fa-solid fa-mobile-screen-button"></i> Apps</a>
+        <a href="#privacy" class="nav-btn"><i class="fa-solid fa-shield-halved"></i> Privacy Center</a>
+        <a href="/my-store/" class="nav-btn"><i class="fa-solid fa-store"></i> App Store</a>
+        <a href="https://play.google.com/store/apps/dev?id=6728487283410636967" target="_blank" class="nav-btn nav-btn-primary">
+          <i class="fa-brands fa-google-play"></i> Play Store
+        </a>
+      </nav>
     </div>
-  </div>
+  </header>
+
+  <main class="container">
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-pill">
+        <i class="fa-solid fa-bolt"></i> Official Software Studio & Developer Hub
+      </div>
+      <h1 class="hero-title">
+        High-Performance Mobile Apps &<br />
+        <span class="hero-title-gradient">Intelligent Software Solutions</span>
+      </h1>
+      <p class="hero-description">
+        Crafting privacy-first, beautifully engineered mobile applications for Android, cross-platform desktop utilities, and AI-powered digital products.
+      </p>
+
+      <div class="hero-cta-group">
+        <a href="#apps" class="cta-btn cta-btn-primary">
+          <i class="fa-solid fa-cubes"></i> Explore All Applications
+        </a>
+        <a href="#privacy" class="cta-btn cta-btn-secondary">
+          <i class="fa-solid fa-lock"></i> Privacy Policies
+        </a>
+        <a href="/app-ads.txt" class="cta-btn cta-btn-secondary" title="IAB Authorized Digital Sellers for AdMob">
+          <i class="fa-solid fa-certificate"></i> app-ads.txt
+        </a>
+      </div>
+
+      <!-- Stats Bar -->
+      <div class="stats-bar">
+        <div class="stat-item">
+          <div class="stat-number">7+</div>
+          <div class="stat-label">Production Apps & Tools</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">100%</div>
+          <div class="stat-label">Privacy-First Architecture</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">Flutter</div>
+          <div class="stat-label">Cross-Platform Tech</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">Certified</div>
+          <div class="stat-label">Google Play & AdMob</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Applications Section -->
+    <section id="apps">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <h2><i class="fa-solid fa-grid-2"></i> Featured Applications</h2>
+          <p>Explore our lineup of mobile apps, desktop utilities, and web software.</p>
+        </div>
+      </div>
+
+      <!-- Filter Controls -->
+      <div class="filter-controls">
+        <div class="search-wrapper">
+          <i class="fa-solid fa-magnifying-glass search-icon"></i>
+          <input type="text" id="appSearchInput" class="search-input" placeholder="Search by app name, feature, or technology..." />
+        </div>
+        <div class="category-pills" id="categoryFilterContainer">
+          <div class="cat-pill active" data-filter="all">All Apps (7)</div>
+          <div class="cat-pill" data-filter="mobile">📱 Android Mobile</div>
+          <div class="cat-pill" data-filter="desktop">💻 Desktop & Web</div>
+          <div class="cat-pill" data-filter="utilities">🛠️ Utilities & Tools</div>
+          <div class="cat-pill" data-filter="games">🎮 Games</div>
+        </div>
+      </div>
+
+      <!-- Apps Grid -->
+      <div class="apps-grid" id="appsGrid">
+
+        <!-- 1. Ezan Vakti: Prayer Times Qibla -->
+        <article class="app-card" data-category="mobile utilities">
+          <div class="app-header">
+            <div class="app-icon-wrap" style="background: linear-gradient(135deg, #10b981, #047857);">
+              <i class="fa-solid fa-mosque"></i>
+            </div>
+            <div class="app-meta">
+              <h3 class="app-title">Ezan Vakti: Prayer Times Qibla</h3>
+              <div class="app-category"><i class="fa-solid fa-kaaba"></i> Islamic Worship Assistant</div>
+            </div>
+          </div>
+          <p class="app-desc">
+            Accurate GPS-based prayer times, live high-precision Qibla compass, Holy Quran with multilingual translations, digital tasbih with haptic feedback, and monthly spiritual goals.
+          </p>
+          <ul class="app-highlights">
+            <li><i class="fa-solid fa-check"></i> High-precision GPS prayer calculations & countdown</li>
+            <li><i class="fa-solid fa-check"></i> Live sensor-driven Qibla finder compass</li>
+            <li><i class="fa-solid fa-check"></i> 100% on-device offline processing & zero tracking</li>
+          </ul>
+          <div class="app-tags">
+            <span class="app-tag">Flutter</span>
+            <span class="app-tag">Android</span>
+            <span class="app-tag">Prayer Times</span>
+            <span class="app-tag">Quran</span>
+            <span class="app-tag">Qibla</span>
+          </div>
+          <div class="app-actions">
+            <a href="https://play.google.com/store/apps/details?id=com.erdevirlabs.athan_premium" target="_blank" class="action-btn btn-playstore">
+              <i class="fa-brands fa-google-play"></i> Play Store
+            </a>
+            <a href="/ezan-vakti-privacy/" class="action-btn btn-privacy-action" title="Privacy Policy & Details">
+              <i class="fa-solid fa-shield-halved"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- 2. Workout Tracker -->
+        <article class="app-card" data-category="mobile utilities">
+          <div class="app-header">
+            <div class="app-icon-wrap" style="background: linear-gradient(135deg, #ef4444, #b91c1c);">
+              <i class="fa-solid fa-dumbbell"></i>
+            </div>
+            <div class="app-meta">
+              <h3 class="app-title">Workout Tracker</h3>
+              <div class="app-category"><i class="fa-solid fa-heart-pulse"></i> Health & Fitness</div>
+            </div>
+          </div>
+          <p class="app-desc">
+            Comprehensive gym and fitness training log app with custom routines, live set recording, volume analytics, 1RM progression charts, and AMOLED dark mode.
+          </p>
+          <ul class="app-highlights">
+            <li><i class="fa-solid fa-check"></i> Custom routines, exercise sets & rest timer</li>
+            <li><i class="fa-solid fa-check"></i> Advanced volume & muscle group analytics</li>
+            <li><i class="fa-solid fa-check"></i> Pure local storage & offline backup support</li>
+          </ul>
+          <div class="app-tags">
+            <span class="app-tag">Flutter</span>
+            <span class="app-tag">Android</span>
+            <span class="app-tag">Fitness</span>
+            <span class="app-tag">Analytics</span>
+            <span class="app-tag">AMOLED Dark</span>
+          </div>
+          <div class="app-actions">
+            <a href="https://play.google.com/store/apps/details?id=com.workouttracker.workout_tracker" target="_blank" class="action-btn btn-playstore">
+              <i class="fa-brands fa-google-play"></i> Play Store
+            </a>
+            <a href="/workout-tracker-privacy/" class="action-btn btn-privacy-action" title="Privacy Policy">
+              <i class="fa-solid fa-shield-halved"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- 3. AutoShare -->
+        <article class="app-card" data-category="mobile desktop utilities">
+          <div class="app-header">
+            <div class="app-icon-wrap" style="background: linear-gradient(135deg, #3b82f6, #1d4ed8);">
+              <i class="fa-solid fa-share-nodes"></i>
+            </div>
+            <div class="app-meta">
+              <h3 class="app-title">AutoShare</h3>
+              <div class="app-category"><i class="fa-solid fa-wifi"></i> Cross-Platform Transfer</div>
+            </div>
+          </div>
+          <p class="app-desc">
+            Ultra-fast local Wi-Fi file sharing tool between Android and Windows devices featuring UDP auto-discovery, PIN pairing, and background queue management.
+          </p>
+          <ul class="app-highlights">
+            <li><i class="fa-solid fa-check"></i> Zero mobile internet quota consumption</li>
+            <li><i class="fa-solid fa-check"></i> High-speed local peer-to-peer Wi-Fi network</li>
+            <li><i class="fa-solid fa-check"></i> Windows Desktop client & Android companion</li>
+          </ul>
+          <div class="app-tags">
+            <span class="app-tag">Flutter</span>
+            <span class="app-tag">Android</span>
+            <span class="app-tag">Windows</span>
+            <span class="app-tag">Networking</span>
+          </div>
+          <div class="app-actions">
+            <a href="https://play.google.com/store/apps/details?id=com.autoshare.app" target="_blank" class="action-btn btn-playstore">
+              <i class="fa-brands fa-google-play"></i> Play Store
+            </a>
+            <a href="https://github.com/serdevir91/autoshare/releases/latest" target="_blank" class="action-btn btn-web-action">
+              <i class="fa-brands fa-windows"></i> EXE
+            </a>
+            <a href="/autoshare-privacy-policy/" class="action-btn btn-privacy-action" title="Privacy Policy">
+              <i class="fa-solid fa-shield-halved"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- 4. SubZip -->
+        <article class="app-card" data-category="mobile utilities">
+          <div class="app-header">
+            <div class="app-icon-wrap" style="background: linear-gradient(135deg, #8b5cf6, #6d28d9);">
+              <i class="fa-solid fa-file-zipper"></i>
+            </div>
+            <div class="app-meta">
+              <h3 class="app-title">SubZip</h3>
+              <div class="app-category"><i class="fa-solid fa-folder-open"></i> Archive & File Manager</div>
+            </div>
+          </div>
+          <p class="app-desc">
+            Modern Android file manager and archive utility designed for ZIP, 7Z, and TAR compression workflows with background processing and storage analytics.
+          </p>
+          <ul class="app-highlights">
+            <li><i class="fa-solid fa-check"></i> High-speed archive extraction & creation</li>
+            <li><i class="fa-solid fa-check"></i> Folder customization & storage visualizer</li>
+            <li><i class="fa-solid fa-check"></i> Clean, privacy-first local file operations</li>
+          </ul>
+          <div class="app-tags">
+            <span class="app-tag">Flutter</span>
+            <span class="app-tag">Android</span>
+            <span class="app-tag">ZIP</span>
+            <span class="app-tag">File Manager</span>
+          </div>
+          <div class="app-actions">
+            <a href="https://play.google.com/store/apps/details?id=www.subzip.app" target="_blank" class="action-btn btn-playstore">
+              <i class="fa-brands fa-google-play"></i> Play Store
+            </a>
+            <a href="/subzip-privacy-policy/" class="action-btn btn-privacy-action" title="Privacy Policy">
+              <i class="fa-solid fa-shield-halved"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- 5. Flappy Rogue -->
+        <article class="app-card" data-category="mobile games">
+          <div class="app-header">
+            <div class="app-icon-wrap" style="background: linear-gradient(135deg, #f59e0b, #d97706);">
+              <i class="fa-solid fa-gamepad"></i>
+            </div>
+            <div class="app-meta">
+              <h3 class="app-title">Flappy Rogue</h3>
+              <div class="app-category"><i class="fa-solid fa-ghost"></i> Roguelite Arcade Game</div>
+            </div>
+          </div>
+          <p class="app-desc">
+            Fast-paced arcade game combining classic flappy physics with rogue-lite ability upgrades, dynamic obstacle generation, and unlockable character skins.
+          </p>
+          <ul class="app-highlights">
+            <li><i class="fa-solid fa-check"></i> Addictive rogue-lite powerups & progression</li>
+            <li><i class="fa-solid fa-check"></i> Dynamic high-score ranking & leaderboard</li>
+            <li><i class="fa-solid fa-check"></i> Offline single-player arcade fun</li>
+          </ul>
+          <div class="app-tags">
+            <span class="app-tag">Flutter</span>
+            <span class="app-tag">Arcade</span>
+            <span class="app-tag">Gaming</span>
+            <span class="app-tag">Physics</span>
+          </div>
+          <div class="app-actions">
+            <a href="/flappy-rogue-privacy/" class="action-btn btn-web-action">
+              <i class="fa-solid fa-info-circle"></i> Info & Details
+            </a>
+            <a href="/flappy-rogue-privacy/" class="action-btn btn-privacy-action" title="Privacy Policy">
+              <i class="fa-solid fa-shield-halved"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- 6. Stokapp -->
+        <article class="app-card" data-category="desktop utilities">
+          <div class="app-header">
+            <div class="app-icon-wrap" style="background: linear-gradient(135deg, #10b981, #059669);">
+              <i class="fa-solid fa-boxes-stacked"></i>
+            </div>
+            <div class="app-meta">
+              <h3 class="app-title">Stokapp</h3>
+              <div class="app-category"><i class="fa-solid fa-chart-pie"></i> Inventory & Stock Manager</div>
+            </div>
+          </div>
+          <p class="app-desc">
+            Sleek stock and inventory management web & desktop application featuring profit/loss visual analytics, low-stock notifications, and Excel data import/export.
+          </p>
+          <ul class="app-highlights">
+            <li><i class="fa-solid fa-check"></i> Real-time inventory tracking & barcode support</li>
+            <li><i class="fa-solid fa-check"></i> Financial revenue & profit analytics</li>
+            <li><i class="fa-solid fa-check"></i> Excel / CSV data export and backup</li>
+          </ul>
+          <div class="app-tags">
+            <span class="app-tag">React</span>
+            <span class="app-tag">Vite</span>
+            <span class="app-tag">Tailwind</span>
+            <span class="app-tag">Desktop / Web</span>
+          </div>
+          <div class="app-actions">
+            <a href="/Stokapp/" target="_blank" class="action-btn btn-web-action">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> Open Web App
+            </a>
+          </div>
+        </article>
+
+        <!-- 7. OpenSCAD AI -->
+        <article class="app-card" data-category="desktop utilities">
+          <div class="app-header">
+            <div class="app-icon-wrap" style="background: linear-gradient(135deg, #ec4899, #be185d);">
+              <i class="fa-solid fa-cube"></i>
+            </div>
+            <div class="app-meta">
+              <h3 class="app-title">OpenSCAD AI</h3>
+              <div class="app-category"><i class="fa-solid fa-wand-magic-sparkles"></i> 3D AI CAD Studio</div>
+            </div>
+          </div>
+          <p class="app-desc">
+            Transform natural language prompts into parametric, 3D-printable OpenSCAD CAD models powered by state-of-the-art artificial intelligence models.
+          </p>
+          <ul class="app-highlights">
+            <li><i class="fa-solid fa-check"></i> Text-to-CAD prompt generation</li>
+            <li><i class="fa-solid fa-check"></i> Instant OpenSCAD code compilation</li>
+            <li><i class="fa-solid fa-check"></i> Ready for 3D printer STL export</li>
+          </ul>
+          <div class="app-tags">
+            <span class="app-tag">Python</span>
+            <span class="app-tag">AI / LLM</span>
+            <span class="app-tag">3D Printing</span>
+            <span class="app-tag">CAD</span>
+          </div>
+          <div class="app-actions">
+            <a href="https://github.com/serdevir91/openscad-ai" target="_blank" class="action-btn btn-web-action">
+              <i class="fa-brands fa-github"></i> Repository
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Privacy Policy Center -->
+    <section class="privacy-section" id="privacy">
+      <div class="section-title-wrap">
+        <h2><i class="fa-solid fa-shield-halved" style="color: var(--accent-cyan);"></i> Privacy Policy & Compliance Center</h2>
+        <p>Erdevir Labs applications are built with a strict privacy-first architecture. User data remains locally on-device and is never harvested.</p>
+      </div>
+
+      <div class="privacy-grid">
+        <a href="/ezan-vakti-privacy/" class="privacy-card">
+          <span class="privacy-card-title"><i class="fa-solid fa-mosque" style="color: #10b981;"></i> Ezan Vakti Privacy</span>
+          <i class="fa-solid fa-arrow-right arrow"></i>
+        </a>
+        <a href="/workout-tracker-privacy/" class="privacy-card">
+          <span class="privacy-card-title"><i class="fa-solid fa-dumbbell" style="color: #ef4444;"></i> Workout Tracker Privacy</span>
+          <i class="fa-solid fa-arrow-right arrow"></i>
+        </a>
+        <a href="/autoshare-privacy-policy/" class="privacy-card">
+          <span class="privacy-card-title"><i class="fa-solid fa-share-nodes" style="color: #3b82f6;"></i> AutoShare Privacy</span>
+          <i class="fa-solid fa-arrow-right arrow"></i>
+        </a>
+        <a href="/subzip-privacy-policy/" class="privacy-card">
+          <span class="privacy-card-title"><i class="fa-solid fa-file-zipper" style="color: #8b5cf6;"></i> SubZip Privacy</span>
+          <i class="fa-solid fa-arrow-right arrow"></i>
+        </a>
+        <a href="/flappy-rogue-privacy/" class="privacy-card">
+          <span class="privacy-card-title"><i class="fa-solid fa-gamepad" style="color: #f59e0b;"></i> Flappy Rogue Privacy</span>
+          <i class="fa-solid fa-arrow-right arrow"></i>
+        </a>
+        <a href="/app-ads.txt" class="privacy-card" style="border-color: rgba(16, 185, 129, 0.3);">
+          <span class="privacy-card-title"><i class="fa-solid fa-certificate" style="color: #10b981;"></i> app-ads.txt (AdMob)</span>
+          <i class="fa-solid fa-arrow-right arrow"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- Technologies -->
+    <section style="text-align: center; margin-bottom: 70px;">
+      <h3 style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; color: #fff; margin-bottom: 8px;">Engineering & Technologies</h3>
+      <p style="color: var(--text-muted); font-size: 14px;">We build modern software utilizing reliable, high-performance tech stacks.</p>
+      
+      <div class="tech-stack-wrap">
+        <div class="tech-item"><i class="fa-brands fa-flutter" style="color: #02569B;"></i> Flutter SDK</div>
+        <div class="tech-item"><i class="fa-brands fa-android" style="color: #3DDC84;"></i> Android Native</div>
+        <div class="tech-item"><i class="fa-brands fa-react" style="color: #61DAFB;"></i> React & Vite</div>
+        <div class="tech-item"><i class="fa-brands fa-python" style="color: #3776AB;"></i> Python AI</div>
+        <div class="tech-item"><i class="fa-brands fa-windows" style="color: #0078D6;"></i> Windows Desktop</div>
+        <div class="tech-item"><i class="fa-brands fa-google" style="color: #4285F4;"></i> Google AdMob</div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="brand-logo">
+          <div class="logo-badge-icon" style="width: 36px; height: 36px; font-size: 16px;">
+            <i class="fa-solid fa-layer-group"></i>
+          </div>
+          <div class="brand-text">
+            <span class="brand-name" style="font-size: 18px;">Erdevir Labs</span>
+            <span class="brand-tag">Software Studio</span>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <a href="/my-store/" class="footer-link">App Store</a>
+          <a href="#apps" class="footer-link">Applications</a>
+          <a href="#privacy" class="footer-link">Privacy Policies</a>
+          <a href="/app-ads.txt" class="footer-link">app-ads.txt</a>
+          <a href="https://github.com/serdevir91" target="_blank" class="footer-link"><i class="fa-brands fa-github"></i> GitHub</a>
+          <a href="mailto:serde.dev91@gmail.com" class="footer-link"><i class="fa-solid fa-envelope"></i> Contact</a>
+        </div>
+      </div>
+
+      <div class="footer-copy">
+        <p>&copy; 2026 Erdevir Labs. All rights reserved. | Official Developer Portal for Google Play Store applications.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Search & Filter Script -->
+  <script>
+    const searchInput = document.getElementById('appSearchInput');
+    const categoryPills = document.querySelectorAll('.cat-pill');
+    const appCards = document.querySelectorAll('.app-card');
+
+    let activeCategory = 'all';
+
+    function filterApplications() {
+      const query = searchInput.value.toLowerCase().trim();
+
+      appCards.forEach(card => {
+        const categoryMatches = activeCategory === 'all' || card.dataset.category.includes(activeCategory);
+        const cardText = card.textContent.toLowerCase();
+        const searchMatches = !query || cardText.includes(query);
+
+        if (categoryMatches && searchMatches) {
+          card.style.display = 'flex';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    categoryPills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        categoryPills.forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+        activeCategory = pill.dataset.filter;
+        filterApplications();
+      });
+    });
+
+    searchInput.addEventListener('input', filterApplications);
+  </script>
 </body>
 </html>
