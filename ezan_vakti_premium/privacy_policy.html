@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ezan Vakti Premium - Privacy Policy</title>
+    <style>
+        :root {
+            --primary: #0F5132;
+            --accent: #D4AF37;
+            --bg: #F8F9FA;
+            --card-bg: #FFFFFF;
+            --text: #212529;
+            --text-muted: #6C757D;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --primary: #198754;
+                --accent: #FFD700;
+                --bg: #12181B;
+                --card-bg: #1E262C;
+                --text: #F8F9FA;
+                --text-muted: #A0AEC0;
+            }
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            background-color: var(--card-bg);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        header {
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        h1 {
+            color: var(--primary);
+            margin: 0 0 10px 0;
+            font-size: 28px;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: var(--primary);
+            color: #ffffff;
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        h2 {
+            color: var(--primary);
+            font-size: 20px;
+            margin-top: 30px;
+            border-left: 4px solid var(--accent);
+            padding-left: 10px;
+        }
+
+        p, li {
+            font-size: 15px;
+            color: var(--text);
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        .highlight-box {
+            background-color: rgba(212, 175, 55, 0.12);
+            border: 1px solid var(--accent);
+            padding: 16px;
+            border-radius: 12px;
+            margin: 20px 0;
+        }
+
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+            text-align: center;
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Ezan Vakti Premium</h1>
+        <div class="badge">Privacy Policy / Gizlilik Politikası</div>
+        <p style="margin-top: 10px; font-size: 13px; color: var(--text-muted);">Last Updated: August 7, 2026</p>
+    </header>
+
+    <div class="highlight-box">
+        <strong>Summary:</strong> Ezan Vakti Premium does not collect, sell, or transmit any personal user data to external servers. Your location and sensor data are processed strictly locally on your device to calculate accurate prayer times and Qibla direction.
+    </div>
+
+    <h2>1. Data Collection and Usage</h2>
+    <p>Ezan Vakti Premium ("the App") respects your privacy. Below is an explanation of data used to deliver core application features:</p>
+
+    <h3>a. Location Data</h3>
+    <p>The App requests access to your device's fine/coarse location (GPS/Network) solely to compute accurate Islamic Prayer Times (Fajr, Dhuhr, Asr, Maghrib, Isha) and exact Qibla direction towards Mecca.</p>
+    <ul>
+        <li>Location data is processed <strong>locally on your device only</strong>.</li>
+        <li>Location information is <strong>never transmitted to external servers, stored remotely, tracked, or shared with third parties.</strong></li>
+    </ul>
+
+    <h3>b. Magnetometer & Compass Sensors</h3>
+    <p>Device magnetometer and accelerometer sensors are read in real-time on the Qibla Compass screen to point towards the Kaaba. Sensor readings are never stored or uploaded.</p>
+
+    <h3>c. Local Storage</h3>
+    <p>User preferences (prayer completion status, zikr counts, bookmark notes, theme choices) are stored <strong>locally on your device</strong> via <code>SharedPreferences</code>. This data remains on your device and is erased when uninstalling the App.</p>
+
+    <h2>2. Local Notifications & Adhan Alarms</h2>
+    <p>Local notifications are scheduled on-device to trigger Adhan alarms at prayer times. Notifications operate offline and do not rely on remote tracking or external push servers.</p>
+
+    <h2>3. Third-Party Services</h2>
+    <p>The App fetches Quran text and translations via public APIs (AlQuran Cloud API, Fawaz Ahmed Quran CDN). No personally identifiable user data is sent with these requests.</p>
+
+    <h2>4. Children's Privacy</h2>
+    <p>The App does not knowingly collect or solicit personal information from children under 13. All features are designed for safe use by all age groups.</p>
+
+    <h2>5. Contact Us</h2>
+    <p>If you have any questions regarding this Privacy Policy, please contact:</p>
+    <ul>
+        <li><strong>Email:</strong> serde.dev91@gmail.com</li>
+        <li><strong>App Name:</strong> Ezan Vakti Premium</li>
+    </ul>
+
+    <footer>
+        &copy; 2026 Ezan Vakti Premium. All Rights Reserved.
+    </footer>
+</div>
+
+</body>
+</html>
