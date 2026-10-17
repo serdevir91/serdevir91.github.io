@@ -572,7 +572,8 @@
 
     .app-actions {
       display: flex;
-      gap: 10px;
+      align-items: center;
+      gap: 8px;
       margin-top: auto;
       padding-top: 16px;
       border-top: 1px solid var(--border-subtle);
@@ -584,12 +585,14 @@
       align-items: center;
       justify-content: center;
       gap: 8px;
-      padding: 11px 14px;
+      padding: 10px 12px;
       border-radius: 12px;
-      font-size: 13.5px;
+      font-size: 13px;
       font-weight: 700;
       text-decoration: none;
       transition: all 0.2s ease;
+      white-space: nowrap;
+      min-width: 0;
     }
 
     .btn-playstore {
@@ -632,8 +635,15 @@
       background: rgba(255, 255, 255, 0.04);
       color: var(--text-muted);
       border: 1px solid var(--border-subtle);
-      flex: 0 0 auto;
-      padding: 11px 13px;
+      flex: 0 0 38px;
+      width: 38px;
+      height: 38px;
+      padding: 0;
+      border-radius: 12px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13.5px;
     }
 
     .btn-privacy-action:hover {
@@ -1070,9 +1080,6 @@
             </a>
             <a href="https://apps.microsoft.com/detail/9PGM24F50VR8" target="_blank" class="action-btn btn-msstore">
               <i class="fa-brands fa-microsoft"></i> MS Store
-            </a>
-            <a href="https://github.com/serdevir91/autoshare/releases/latest" target="_blank" class="action-btn btn-web-action" title="Standalone Windows EXE">
-              <i class="fa-brands fa-windows"></i> EXE
             </a>
             <a href="/autoshare-privacy-policy/privacy.html" class="action-btn btn-privacy-action" title="Privacy Policy">
               <i class="fa-solid fa-shield-halved"></i>
