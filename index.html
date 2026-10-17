@@ -804,12 +804,381 @@
 
     /* Responsive adjustments */
     @media (max-width: 768px) {
-      .hero-title { font-size: 38px; }
-      .stats-bar { grid-template-columns: repeat(2, 1fr); }
-      .stat-item:nth-child(2)::after { display: none; }
-      .apps-grid { grid-template-columns: 1fr; }
-      .nav-content { flex-direction: column; gap: 16px; }
-      .footer-content { flex-direction: column; text-align: center; }
+      .container {
+        padding: 0 16px;
+      }
+
+      /* Header & Nav */
+      .nav-content {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+        padding: 12px 0;
+      }
+
+      .brand-logo {
+        justify-content: center;
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        padding: 2px 2px 6px;
+        width: 100%;
+      }
+
+      .nav-links::-webkit-scrollbar {
+        display: none;
+      }
+
+      .nav-btn {
+        flex-shrink: 0;
+        padding: 8px 12px;
+        font-size: 13px;
+        border-radius: 10px;
+      }
+
+      /* Hero Section */
+      .hero {
+        padding: 42px 0 28px;
+      }
+
+      .hero-pill {
+        font-size: 12px;
+        padding: 6px 14px;
+        margin-bottom: 16px;
+      }
+
+      .hero-title {
+        font-size: 34px;
+        letter-spacing: -1px;
+        line-height: 1.2;
+        margin-bottom: 14px;
+      }
+
+      .hero-description {
+        font-size: 15px;
+        line-height: 1.6;
+        margin-bottom: 24px;
+        padding: 0 4px;
+      }
+
+      .hero-cta-group {
+        gap: 10px;
+        margin-bottom: 36px;
+      }
+
+      /* Stats Bar */
+      .stats-bar {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px 10px;
+        padding: 18px 14px;
+        margin-bottom: 36px;
+      }
+
+      .stat-item:nth-child(2)::after,
+      .stat-item:nth-child(4)::after {
+        display: none;
+      }
+
+      .stat-number {
+        font-size: 24px;
+      }
+
+      .stat-label {
+        font-size: 11.5px;
+      }
+
+      /* Section Header */
+      .section-header {
+        margin-bottom: 20px;
+      }
+
+      .section-title-wrap h2 {
+        font-size: 24px;
+        gap: 10px;
+      }
+
+      .section-title-wrap p {
+        font-size: 13.5px;
+      }
+
+      /* Filter Controls */
+      .filter-controls {
+        padding: 14px;
+        margin-bottom: 24px;
+        gap: 12px;
+        border-radius: var(--radius-md);
+      }
+
+      .search-input {
+        padding: 11px 14px 11px 40px;
+        font-size: 14px;
+      }
+
+      .search-icon {
+        font-size: 14px;
+        left: 14px;
+      }
+
+      .category-pills {
+        gap: 6px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        flex-wrap: nowrap;
+        padding-bottom: 2px;
+      }
+
+      .category-pills::-webkit-scrollbar {
+        display: none;
+      }
+
+      .cat-pill {
+        flex-shrink: 0;
+        padding: 7px 13px;
+        font-size: 12.5px;
+      }
+
+      /* Apps Grid */
+      .apps-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        margin-bottom: 48px;
+      }
+
+      .app-card {
+        padding: 20px 18px;
+        border-radius: var(--radius-md);
+      }
+
+      /* Privacy Center Section */
+      .privacy-section {
+        padding: 22px 16px;
+        margin-bottom: 48px;
+      }
+
+      .privacy-grid {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 12px;
+      }
+
+      /* Footer */
+      .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+      }
+
+      .footer-links {
+        justify-content: center;
+        gap: 12px 16px;
+      }
+    }
+
+    /* Small Mobile Phones (iPhone SE, Galaxy S, Xiaomi, 320px - 520px) */
+    @media (max-width: 520px) {
+      .container {
+        padding: 0 12px;
+      }
+
+      .hero {
+        padding: 32px 0 20px;
+      }
+
+      .hero-pill {
+        font-size: 11px;
+        padding: 5px 12px;
+        margin-bottom: 12px;
+      }
+
+      .hero-title {
+        font-size: 27px;
+        letter-spacing: -0.5px;
+        line-height: 1.25;
+      }
+
+      .hero-description {
+        font-size: 14px;
+        margin-bottom: 20px;
+      }
+
+      .hero-cta-group {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+        margin-bottom: 28px;
+      }
+
+      .cta-btn {
+        width: 100%;
+        justify-content: center;
+        padding: 12px 18px;
+        font-size: 14px;
+      }
+
+      /* Stats */
+      .stats-bar {
+        padding: 14px 10px;
+        gap: 10px 6px;
+        margin-bottom: 28px;
+      }
+
+      .stat-number {
+        font-size: 21px;
+      }
+
+      .stat-label {
+        font-size: 11px;
+      }
+
+      /* App Card Inner Details */
+      .app-card {
+        padding: 16px 14px;
+      }
+
+      .app-header {
+        gap: 12px;
+        margin-bottom: 12px;
+      }
+
+      .app-icon-wrap {
+        width: 52px;
+        height: 52px;
+        border-radius: 13px;
+      }
+
+      .app-icon-wrap img {
+        border-radius: 12px;
+      }
+
+      .app-title {
+        font-size: 17px;
+      }
+
+      .app-category {
+        font-size: 11px;
+      }
+
+      .app-desc {
+        font-size: 13px;
+        line-height: 1.55;
+        margin-bottom: 12px;
+      }
+
+      .app-highlights {
+        padding: 8px 10px;
+        margin-bottom: 12px;
+      }
+
+      .app-highlights li {
+        font-size: 11.5px;
+      }
+
+      .app-tags {
+        gap: 4px;
+        margin-bottom: 14px;
+      }
+
+      .app-tag {
+        font-size: 10px;
+        padding: 3px 7px;
+      }
+
+      /* Card Action Buttons: Balanced 2-Row Layout */
+      .app-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        padding-top: 12px;
+      }
+
+      .action-btn {
+        font-size: 12.5px;
+        padding: 10px 8px;
+        border-radius: 10px;
+        min-width: 0;
+      }
+
+      /* Primary Store / Web Links: 50% width each when 2 exist */
+      .action-btn:not(.btn-privacy-action) {
+        flex: 1 1 calc(50% - 4px);
+      }
+
+      /* Full width for cards with only 1 primary action */
+      .action-btn:not(.btn-privacy-action):first-child:nth-last-child(3),
+      .action-btn:not(.btn-privacy-action):first-child:nth-last-child(1) {
+        flex: 1 1 100%;
+        padding: 11px 14px;
+        font-size: 13px;
+      }
+
+      /* Privacy & Terms: 50% width on row 2 with text labels */
+      .btn-privacy-action {
+        flex: 1 1 calc(50% - 4px);
+        width: auto;
+        height: 38px;
+        font-size: 12px;
+        gap: 6px;
+      }
+
+      .btn-privacy-action[title="Privacy Policy"]::after {
+        content: "Privacy";
+        font-size: 12px;
+        font-weight: 600;
+      }
+
+      .btn-privacy-action[title="Terms of Use"]::after {
+        content: "Terms";
+        font-size: 12px;
+        font-weight: 600;
+      }
+
+      .btn-privacy-action[title="GitHub Repository"]::after {
+        content: "GitHub";
+        font-size: 12px;
+        font-weight: 600;
+      }
+
+      /* Privacy Center Section */
+      .privacy-section {
+        padding: 18px 12px;
+      }
+
+      .privacy-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .privacy-card-container {
+        padding: 12px;
+      }
+
+      .privacy-card-title {
+        font-size: 13.5px;
+      }
+
+      .privacy-sublink {
+        padding: 8px;
+        font-size: 11.5px;
+      }
+
+      .tech-item {
+        padding: 7px 12px;
+        font-size: 12px;
+      }
+
+      .footer-link {
+        font-size: 12px;
+      }
+
+      .footer-copy {
+        font-size: 11.5px;
+      }
     }
   </style>
 </head>
