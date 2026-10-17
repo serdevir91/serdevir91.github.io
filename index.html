@@ -484,6 +484,16 @@
       flex-shrink: 0;
       border: 1px solid rgba(255, 255, 255, 0.15);
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      overflow: hidden;
+      background: rgba(15, 23, 42, 0.85);
+    }
+
+    .app-icon-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      border-radius: 15px;
     }
 
     .app-meta {
@@ -606,6 +616,18 @@
       transform: translateY(-1px);
     }
 
+    .btn-msstore {
+      background: rgba(0, 120, 215, 0.14);
+      color: #60a5fa;
+      border: 1px solid rgba(0, 120, 215, 0.35);
+    }
+
+    .btn-msstore:hover {
+      background: rgba(0, 120, 215, 0.28);
+      color: #93c5fd;
+      transform: translateY(-1px);
+    }
+
     .btn-privacy-action {
       background: rgba(255, 255, 255, 0.04);
       color: var(--text-muted);
@@ -631,47 +653,76 @@
 
     .privacy-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
       gap: 16px;
       margin-top: 24px;
     }
 
-    .privacy-card {
-      background: rgba(7, 11, 20, 0.6);
+    .privacy-card-container {
+      background: rgba(7, 11, 20, 0.75);
       border: 1px solid var(--border-subtle);
       border-radius: var(--radius-md);
-      padding: 18px 20px;
-      text-decoration: none;
+      padding: 16px 18px;
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      transition: all 0.2s ease;
+      flex-direction: column;
+      gap: 12px;
+      transition: all 0.25s ease;
     }
 
-    .privacy-card:hover {
-      border-color: var(--accent-cyan);
-      background: rgba(6, 182, 212, 0.08);
+    .privacy-card-container:hover {
+      border-color: rgba(6, 182, 212, 0.4);
+      background: rgba(15, 23, 42, 0.9);
       transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
+    }
+
+    .privacy-card-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .privacy-mini-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      object-fit: cover;
+      flex-shrink: 0;
+      border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .privacy-card-title {
       font-size: 14.5px;
       font-weight: 700;
       color: #fff;
+    }
+
+    .privacy-card-links {
       display: flex;
-      align-items: center;
-      gap: 10px;
+      gap: 8px;
     }
 
-    .privacy-card i.arrow {
-      color: var(--text-muted);
+    .privacy-sublink {
+      flex: 1;
+      padding: 7px 10px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.04);
+      color: var(--text-sub);
       font-size: 12px;
-      transition: transform 0.2s;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      transition: all 0.2s ease;
     }
 
-    .privacy-card:hover i.arrow {
-      color: var(--accent-cyan);
-      transform: translateX(3px);
+    .privacy-sublink:hover {
+      color: #fff;
+      background: rgba(6, 182, 212, 0.2);
+      border-color: rgba(6, 182, 212, 0.4);
     }
 
     /* Tech Stack Section */
@@ -816,7 +867,7 @@
       <!-- Stats Bar -->
       <div class="stats-bar">
         <div class="stat-item">
-          <div class="stat-number">7+</div>
+          <div class="stat-number">11+</div>
           <div class="stat-label">Production Apps & Tools</div>
         </div>
         <div class="stat-item">
@@ -850,10 +901,10 @@
           <input type="text" id="appSearchInput" class="search-input" placeholder="Search by app name, feature, or technology..." />
         </div>
         <div class="category-pills" id="categoryFilterContainer">
-          <div class="cat-pill active" data-filter="all">All Apps (7)</div>
+          <div class="cat-pill active" data-filter="all">All Apps (11)</div>
           <div class="cat-pill" data-filter="mobile">📱 Android Mobile</div>
-          <div class="cat-pill" data-filter="desktop">💻 Desktop & Web</div>
-          <div class="cat-pill" data-filter="utilities">🛠️ Utilities & Tools</div>
+          <div class="cat-pill" data-filter="desktop">💻 Windows & Desktop</div>
+          <div class="cat-pill" data-filter="utilities">🛠️ Utilities & Education</div>
           <div class="cat-pill" data-filter="games">🎮 Games</div>
         </div>
       </div>
@@ -861,11 +912,345 @@
       <!-- Apps Grid -->
       <div class="apps-grid" id="appsGrid">
 
-        <!-- 1. Ezan Vakti: Prayer Times Qibla -->
+        <!-- 1. My Language Tracker -->
         <article class="app-card" data-category="mobile utilities">
           <div class="app-header">
-            <div class="app-icon-wrap" style="background: linear-gradient(135deg, #10b981, #047857);">
-              <i class="fa-solid fa-mosque"></i>
+            <div class="app-icon-wrap">
+              <img src="/icons/my_language_tracker.png" alt="My Language Tracker" />
+            </div>
+            <div class="app-meta">
+              <h3 class="app-title">My Language Tracker</h3>
+              <div class="app-category"><i class="fa-solid fa-graduation-cap"></i> Vocabulary & Habit Mastery</div>
+            </div>
+          </div>
+          <p class="app-desc">
+            Master English vocabulary through spaced repetition (SRS), 50-word adaptive placement testing, studio Oxford audio pronunciations, and Duolingo-style habit streak calendar.
+          </p>
+          <ul class="app-highlights">
+            <li><i class="fa-solid fa-check"></i> 4,820+ Oxford 3000 & 5000 CEFR-graded word pool (A1-C1)</li>
+            <li><i class="fa-solid fa-check"></i> 50-word adaptive placement test with instant scoring</li>
+            <li><i class="fa-solid fa-check"></i> Spaced Repetition (SRS) memory engine & studio audio</li>
+          </ul>
+          <div class="app-tags">
+            <span class="app-tag">Flutter</span>
+            <span class="app-tag">Android</span>
+            <span class="app-tag">Oxford 5000</span>
+            <span class="app-tag">CEFR</span>
+            <span class="app-tag">SRS Algorithm</span>
+            <span class="app-tag">100% Offline</span>
+          </div>
+          <div class="app-actions">
+            <a href="https://play.google.com/store/apps/details?id=www.mylanguagetracker.app" target="_blank" class="action-btn btn-playstore">
+              <i class="fa-brands fa-google-play"></i> Play Store
+            </a>
+            <a href="/my-language-tracker-privacy/privacy.html" class="action-btn btn-privacy-action" title="Privacy Policy">
+              <i class="fa-solid fa-shield-halved"></i>
+            </a>
+            <a href="/my-language-tracker-privacy/terms.html" class="action-btn btn-privacy-action" title="Terms of Use">
+              <i class="fa-solid fa-file-contract"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- 2. Core Defender: Rogue Survivor -->
+        <article class="app-card" data-category="mobile desktop games">
+          <div class="app-header">
+            <div class="app-icon-wrap">
+              <img src="/icons/core_defender.png" alt="Core Defender: Rogue Survivor" />
+            </div>
+            <div class="app-meta">
+              <h3 class="app-title">Core Defender: Rogue Survivor</h3>
+              <div class="app-category"><i class="fa-solid fa-shield-halved"></i> Roguelike Defense RPG</div>
+            </div>
+          </div>
+          <p class="app-desc">
+            Defend the Ancient Energy Core against relentless alien insectoid swarms. Choose dynamic hero perks, synthesize legendary turrets, and conquer endless cosmic waves.
+          </p>
+          <ul class="app-highlights">
+            <li><i class="fa-solid fa-check"></i> Google Play Games Services v2 leaderboards & 30 achievements</li>
+            <li><i class="fa-solid fa-check"></i> Dynamic hero synergies, turret synthesis & scrap bounties</li>
+            <li><i class="fa-solid fa-check"></i> High-performance Godot 4.3 engine with smooth 60 FPS</li>
+          </ul>
+          <div class="app-tags">
+            <span class="app-tag">Godot 4.3</span>
+            <span class="app-tag">Android</span>
+            <span class="app-tag">Windows</span>
+            <span class="app-tag">Roguelike</span>
+            <span class="app-tag">Tower Defense</span>
+            <span class="app-tag">MS Store</span>
+          </div>
+          <div class="app-actions">
+            <a href="https://play.google.com/store/apps/details?id=www.coredefender.app" target="_blank" class="action-btn btn-playstore">
+              <i class="fa-brands fa-google-play"></i> Play Store
+            </a>
+            <a href="https://apps.microsoft.com/detail/9NNHWLW1WMQL" target="_blank" class="action-btn btn-msstore">
+              <i class="fa-brands fa-microsoft"></i> MS Store
+            </a>
+            <a href="/core-defender-privacy/privacy.html" class="action-btn btn-privacy-action" title="Privacy Policy">
+              <i class="fa-solid fa-shield-halved"></i>
+            </a>
+            <a href="/core-defender-privacy/terms.html" class="action-btn btn-privacy-action" title="Terms of Use">
+              <i class="fa-solid fa-file-contract"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- 3. Markdown Keeper -->
+        <article class="app-card" data-category="mobile desktop utilities">
+          <div class="app-header">
+            <div class="app-icon-wrap">
+              <img src="/icons/markdown_keeper.png" alt="Markdown Keeper" />
+            </div>
+            <div class="app-meta">
+              <h3 class="app-title">Markdown Keeper</h3>
+              <div class="app-category"><i class="fa-solid fa-diagram-project"></i> Notes & Infinite Concept Map</div>
+            </div>
+          </div>
+          <p class="app-desc">
+            Next-generation Markdown note-taking and visual concept mapping app with Google Drive cloud sync, checklists, voice/image attachments, and hierarchical mind mapping.
+          </p>
+          <ul class="app-highlights">
+            <li><i class="fa-solid fa-check"></i> Dual view: Keep Masonry Grid & Infinite Concept Map</li>
+            <li><i class="fa-solid fa-check"></i> Automatic Google Drive personal cloud synchronization</li>
+            <li><i class="fa-solid fa-check"></i> Single & Bulk Markdown (.md / ZIP) Import & Export</li>
+          </ul>
+          <div class="app-tags">
+            <span class="app-tag">Flutter</span>
+            <span class="app-tag">Android</span>
+            <span class="app-tag">Windows</span>
+            <span class="app-tag">Markdown</span>
+            <span class="app-tag">Concept Map</span>
+            <span class="app-tag">MS Store</span>
+          </div>
+          <div class="app-actions">
+            <a href="https://play.google.com/store/apps/details?id=www.markdownkeeper.app" target="_blank" class="action-btn btn-playstore">
+              <i class="fa-brands fa-google-play"></i> Play Store
+            </a>
+            <a href="https://apps.microsoft.com/detail/9P03P665MMTC" target="_blank" class="action-btn btn-msstore">
+              <i class="fa-brands fa-microsoft"></i> MS Store
+            </a>
+            <a href="/markdown-keeper-privacy/privacy.html" class="action-btn btn-privacy-action" title="Privacy Policy">
+              <i class="fa-solid fa-shield-halved"></i>
+            </a>
+            <a href="/markdown-keeper-privacy/terms.html" class="action-btn btn-privacy-action" title="Terms of Use">
+              <i class="fa-solid fa-file-contract"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- 4. AutoShare -->
+        <article class="app-card" data-category="mobile desktop utilities">
+          <div class="app-header">
+            <div class="app-icon-wrap">
+              <img src="/icons/autoshare.png" alt="AutoShare" />
+            </div>
+            <div class="app-meta">
+              <h3 class="app-title">AutoShare</h3>
+              <div class="app-category"><i class="fa-solid fa-wifi"></i> Cross-Platform Local Transfer</div>
+            </div>
+          </div>
+          <p class="app-desc">
+            Ultra-fast local Wi-Fi file sharing tool between Android and Windows devices featuring UDP auto-discovery, PIN pairing, zero data quota consumption, and queue management.
+          </p>
+          <ul class="app-highlights">
+            <li><i class="fa-solid fa-check"></i> Zero mobile internet quota consumption</li>
+            <li><i class="fa-solid fa-check"></i> High-speed local peer-to-peer Wi-Fi network (80+ MB/s)</li>
+            <li><i class="fa-solid fa-check"></i> Windows Microsoft Store native app & Android companion</li>
+          </ul>
+          <div class="app-tags">
+            <span class="app-tag">Flutter</span>
+            <span class="app-tag">Android</span>
+            <span class="app-tag">Windows</span>
+            <span class="app-tag">Networking</span>
+            <span class="app-tag">MS Store</span>
+          </div>
+          <div class="app-actions">
+            <a href="https://play.google.com/store/apps/details?id=com.autoshare.app" target="_blank" class="action-btn btn-playstore">
+              <i class="fa-brands fa-google-play"></i> Play Store
+            </a>
+            <a href="https://apps.microsoft.com/detail/9PGM24F50VR8" target="_blank" class="action-btn btn-msstore">
+              <i class="fa-brands fa-microsoft"></i> MS Store
+            </a>
+            <a href="https://github.com/serdevir91/autoshare/releases/latest" target="_blank" class="action-btn btn-web-action" title="Standalone Windows EXE">
+              <i class="fa-brands fa-windows"></i> EXE
+            </a>
+            <a href="/autoshare-privacy-policy/privacy.html" class="action-btn btn-privacy-action" title="Privacy Policy">
+              <i class="fa-solid fa-shield-halved"></i>
+            </a>
+            <a href="/autoshare-privacy-policy/terms.html" class="action-btn btn-privacy-action" title="Terms of Use">
+              <i class="fa-solid fa-file-contract"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- 5. Snakey Rogue: Pixel Snake RPG -->
+        <article class="app-card" data-category="mobile desktop games">
+          <div class="app-header">
+            <div class="app-icon-wrap">
+              <img src="/icons/sneaky_rogue.png" alt="Snakey Rogue" />
+            </div>
+            <div class="app-meta">
+              <h3 class="app-title">Snakey Rogue: Pixel Snake RPG</h3>
+              <div class="app-category"><i class="fa-solid fa-staff-snake"></i> 2D Roguelike Arcade Crawler</div>
+            </div>
+          </div>
+          <p class="app-desc">
+            Classic snake meets roguelike dungeon crawler! Slither through 15 unique dungeons, stack synergies with Rare/Epic perk cards, collect apples, and fight deadly bosses.
+          </p>
+          <ul class="app-highlights">
+            <li><i class="fa-solid fa-check"></i> 15 Handcrafted dungeon maps with portal gates & traps</li>
+            <li><i class="fa-solid fa-check"></i> Upgrade cards (Fireball, Ghost Phase, Magnet)</li>
+            <li><i class="fa-solid fa-check"></i> 4 playable snake heroes with distinct stats & permanent shop</li>
+          </ul>
+          <div class="app-tags">
+            <span class="app-tag">Flutter</span>
+            <span class="app-tag">Flame Engine</span>
+            <span class="app-tag">Android</span>
+            <span class="app-tag">Windows</span>
+            <span class="app-tag">Pixel Art</span>
+            <span class="app-tag">MS Store</span>
+          </div>
+          <div class="app-actions">
+            <a href="https://play.google.com/store/apps/details?id=com.sneakyrogue.app" target="_blank" class="action-btn btn-playstore">
+              <i class="fa-brands fa-google-play"></i> Play Store
+            </a>
+            <a href="https://apps.microsoft.com/detail/9PJTFGMG98WF" target="_blank" class="action-btn btn-msstore">
+              <i class="fa-brands fa-microsoft"></i> MS Store
+            </a>
+            <a href="/sneaky-rogue-privacy/privacy.html" class="action-btn btn-privacy-action" title="Privacy Policy">
+              <i class="fa-solid fa-shield-halved"></i>
+            </a>
+            <a href="/sneaky-rogue-privacy/terms.html" class="action-btn btn-privacy-action" title="Terms of Use">
+              <i class="fa-solid fa-file-contract"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- 6. SupZip: File Manager & Unzip -->
+        <article class="app-card" data-category="mobile desktop utilities">
+          <div class="app-header">
+            <div class="app-icon-wrap">
+              <img src="/icons/supzip.png" alt="SupZip" />
+            </div>
+            <div class="app-meta">
+              <h3 class="app-title">SupZip: File Manager & Unzip</h3>
+              <div class="app-category"><i class="fa-solid fa-file-zipper"></i> Archive & File Explorer</div>
+            </div>
+          </div>
+          <p class="app-desc">
+            Fast, lightweight file manager and multi-format archive extractor. Unpack ZIP, RAR, 7Z, TAR, GZ in seconds; create password-protected encrypted archives with multi-core acceleration.
+          </p>
+          <ul class="app-highlights">
+            <li><i class="fa-solid fa-check"></i> Extract ZIP, RAR, 7Z, TAR, GZ, and BZ2 archives</li>
+            <li><i class="fa-solid fa-check"></i> Encrypted password protection & multi-core compression</li>
+            <li><i class="fa-solid fa-check"></i> Storage visualizer & clean Material You Amoled dark UI</li>
+          </ul>
+          <div class="app-tags">
+            <span class="app-tag">Flutter</span>
+            <span class="app-tag">Android</span>
+            <span class="app-tag">Windows</span>
+            <span class="app-tag">ZIP & RAR</span>
+            <span class="app-tag">MS Store</span>
+          </div>
+          <div class="app-actions">
+            <a href="https://play.google.com/store/apps/details?id=www.subzip.app" target="_blank" class="action-btn btn-playstore">
+              <i class="fa-brands fa-google-play"></i> Play Store
+            </a>
+            <a href="https://apps.microsoft.com/detail/9MV22F9W72FC" target="_blank" class="action-btn btn-msstore">
+              <i class="fa-brands fa-microsoft"></i> MS Store
+            </a>
+            <a href="/subzip-privacy-policy/privacy.html" class="action-btn btn-privacy-action" title="Privacy Policy">
+              <i class="fa-solid fa-shield-halved"></i>
+            </a>
+            <a href="/subzip-privacy-policy/terms.html" class="action-btn btn-privacy-action" title="Terms of Use">
+              <i class="fa-solid fa-file-contract"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- 7. Workout Tracker -->
+        <article class="app-card" data-category="mobile utilities">
+          <div class="app-header">
+            <div class="app-icon-wrap">
+              <img src="/icons/workout_tracker.png" alt="Workout Tracker" />
+            </div>
+            <div class="app-meta">
+              <h3 class="app-title">Workout Tracker</h3>
+              <div class="app-category"><i class="fa-solid fa-dumbbell"></i> Fitness & 1RM Progression</div>
+            </div>
+          </div>
+          <p class="app-desc">
+            Comprehensive gym and fitness training log app with custom routines, live set recording, volume analytics, 1RM progression charts, and sleek Obsidian AMOLED dark mode.
+          </p>
+          <ul class="app-highlights">
+            <li><i class="fa-solid fa-check"></i> Custom routines, exercise sets & rest timer</li>
+            <li><i class="fa-solid fa-check"></i> Advanced volume & muscle group progression heatmaps</li>
+            <li><i class="fa-solid fa-check"></i> Pure local storage, offline backup & Dynamic Island overlay</li>
+          </ul>
+          <div class="app-tags">
+            <span class="app-tag">Flutter</span>
+            <span class="app-tag">Android</span>
+            <span class="app-tag">Fitness</span>
+            <span class="app-tag">Analytics</span>
+            <span class="app-tag">AMOLED Dark</span>
+          </div>
+          <div class="app-actions">
+            <a href="https://play.google.com/store/apps/details?id=com.workouttracker.workout_tracker" target="_blank" class="action-btn btn-playstore">
+              <i class="fa-brands fa-google-play"></i> Play Store
+            </a>
+            <a href="/workout-tracker-privacy/privacy.html" class="action-btn btn-privacy-action" title="Privacy Policy">
+              <i class="fa-solid fa-shield-halved"></i>
+            </a>
+            <a href="/workout-tracker-privacy/terms.html" class="action-btn btn-privacy-action" title="Terms of Use">
+              <i class="fa-solid fa-file-contract"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- 8. Flappy Rogue -->
+        <article class="app-card" data-category="mobile games">
+          <div class="app-header">
+            <div class="app-icon-wrap">
+              <img src="/icons/flappy_rogue.png" alt="Flappy Rogue" />
+            </div>
+            <div class="app-meta">
+              <h3 class="app-title">Flappy Rogue</h3>
+              <div class="app-category"><i class="fa-solid fa-ghost"></i> Roguelite Arcade Runner</div>
+            </div>
+          </div>
+          <p class="app-desc">
+            Fast-paced arcade game combining classic flappy physics with rogue-lite ability upgrades, dynamic obstacle generation, and unlockable character skins.
+          </p>
+          <ul class="app-highlights">
+            <li><i class="fa-solid fa-check"></i> Addictive rogue-lite powerups & character progression</li>
+            <li><i class="fa-solid fa-check"></i> Dynamic high-score ranking & Google Play Leaderboards</li>
+            <li><i class="fa-solid fa-check"></i> Smooth 60 FPS offline arcade action</li>
+          </ul>
+          <div class="app-tags">
+            <span class="app-tag">Flutter</span>
+            <span class="app-tag">Flame Engine</span>
+            <span class="app-tag">Android</span>
+            <span class="app-tag">Arcade</span>
+            <span class="app-tag">High-Score</span>
+          </div>
+          <div class="app-actions">
+            <a href="https://play.google.com/store/apps/details?id=www.flappyrogue.app" target="_blank" class="action-btn btn-playstore">
+              <i class="fa-brands fa-google-play"></i> Play Store
+            </a>
+            <a href="/flappy-rogue-privacy/privacy.html" class="action-btn btn-privacy-action" title="Privacy Policy">
+              <i class="fa-solid fa-shield-halved"></i>
+            </a>
+            <a href="/flappy-rogue-privacy/terms.html" class="action-btn btn-privacy-action" title="Terms of Use">
+              <i class="fa-solid fa-file-contract"></i>
+            </a>
+          </div>
+        </article>
+
+        <!-- 9. Ezan Vakti: Prayer Times Qibla -->
+        <article class="app-card" data-category="mobile utilities">
+          <div class="app-header">
+            <div class="app-icon-wrap">
+              <img src="/icons/ezan_vakti.png" alt="Ezan Vakti: Prayer Times Qibla" />
             </div>
             <div class="app-meta">
               <h3 class="app-title">Ezan Vakti: Prayer Times Qibla</h3>
@@ -876,8 +1261,8 @@
             Accurate GPS-based prayer times, live high-precision Qibla compass, Holy Quran with multilingual translations, digital tasbih with haptic feedback, and monthly spiritual goals.
           </p>
           <ul class="app-highlights">
-            <li><i class="fa-solid fa-check"></i> High-precision GPS prayer calculations & countdown</li>
-            <li><i class="fa-solid fa-check"></i> Live sensor-driven Qibla finder compass</li>
+            <li><i class="fa-solid fa-check"></i> High-precision GPS prayer calculations & background adhan</li>
+            <li><i class="fa-solid fa-check"></i> Live sensor-driven Qibla finder compass & Holy Days calendar</li>
             <li><i class="fa-solid fa-check"></i> 100% on-device offline processing & zero tracking</li>
           </ul>
           <div class="app-tags">
@@ -891,199 +1276,20 @@
             <a href="https://play.google.com/store/apps/details?id=com.erdevirlabs.athan_premium" target="_blank" class="action-btn btn-playstore">
               <i class="fa-brands fa-google-play"></i> Play Store
             </a>
-            <a href="/ezan-vakti-privacy/" class="action-btn btn-privacy-action" title="Privacy Policy & Details">
+            <a href="/ezan-vakti-privacy/privacy.html" class="action-btn btn-privacy-action" title="Privacy Policy">
               <i class="fa-solid fa-shield-halved"></i>
+            </a>
+            <a href="/ezan-vakti-privacy/terms.html" class="action-btn btn-privacy-action" title="Terms of Use">
+              <i class="fa-solid fa-file-contract"></i>
             </a>
           </div>
         </article>
 
-        <!-- 2. Workout Tracker -->
-        <article class="app-card" data-category="mobile utilities">
-          <div class="app-header">
-            <div class="app-icon-wrap" style="background: linear-gradient(135deg, #ef4444, #b91c1c);">
-              <i class="fa-solid fa-dumbbell"></i>
-            </div>
-            <div class="app-meta">
-              <h3 class="app-title">Workout Tracker</h3>
-              <div class="app-category"><i class="fa-solid fa-heart-pulse"></i> Health & Fitness</div>
-            </div>
-          </div>
-          <p class="app-desc">
-            Comprehensive gym and fitness training log app with custom routines, live set recording, volume analytics, 1RM progression charts, and AMOLED dark mode.
-          </p>
-          <ul class="app-highlights">
-            <li><i class="fa-solid fa-check"></i> Custom routines, exercise sets & rest timer</li>
-            <li><i class="fa-solid fa-check"></i> Advanced volume & muscle group analytics</li>
-            <li><i class="fa-solid fa-check"></i> Pure local storage & offline backup support</li>
-          </ul>
-          <div class="app-tags">
-            <span class="app-tag">Flutter</span>
-            <span class="app-tag">Android</span>
-            <span class="app-tag">Fitness</span>
-            <span class="app-tag">Analytics</span>
-            <span class="app-tag">AMOLED Dark</span>
-          </div>
-          <div class="app-actions">
-            <a href="https://play.google.com/store/apps/details?id=com.workouttracker.workout_tracker" target="_blank" class="action-btn btn-playstore">
-              <i class="fa-brands fa-google-play"></i> Play Store
-            </a>
-            <a href="/workout-tracker-privacy/" class="action-btn btn-privacy-action" title="Privacy Policy">
-              <i class="fa-solid fa-shield-halved"></i>
-            </a>
-          </div>
-        </article>
-
-        <!-- 3. AutoShare -->
-        <article class="app-card" data-category="mobile desktop utilities">
-          <div class="app-header">
-            <div class="app-icon-wrap" style="background: linear-gradient(135deg, #3b82f6, #1d4ed8);">
-              <i class="fa-solid fa-share-nodes"></i>
-            </div>
-            <div class="app-meta">
-              <h3 class="app-title">AutoShare</h3>
-              <div class="app-category"><i class="fa-solid fa-wifi"></i> Cross-Platform Transfer</div>
-            </div>
-          </div>
-          <p class="app-desc">
-            Ultra-fast local Wi-Fi file sharing tool between Android and Windows devices featuring UDP auto-discovery, PIN pairing, and background queue management.
-          </p>
-          <ul class="app-highlights">
-            <li><i class="fa-solid fa-check"></i> Zero mobile internet quota consumption</li>
-            <li><i class="fa-solid fa-check"></i> High-speed local peer-to-peer Wi-Fi network</li>
-            <li><i class="fa-solid fa-check"></i> Windows Desktop client & Android companion</li>
-          </ul>
-          <div class="app-tags">
-            <span class="app-tag">Flutter</span>
-            <span class="app-tag">Android</span>
-            <span class="app-tag">Windows</span>
-            <span class="app-tag">Networking</span>
-          </div>
-          <div class="app-actions">
-            <a href="https://play.google.com/store/apps/details?id=com.autoshare.app" target="_blank" class="action-btn btn-playstore">
-              <i class="fa-brands fa-google-play"></i> Play Store
-            </a>
-            <a href="https://apps.microsoft.com/detail/9PGM24F50VR8" target="_blank" class="action-btn btn-msstore" style="background: linear-gradient(135deg, #0078d4, #005a9e); color: white;">
-              <i class="fa-brands fa-microsoft"></i> MS Store
-            </a>
-            <a href="https://github.com/serdevir91/autoshare/releases/latest" target="_blank" class="action-btn btn-web-action">
-              <i class="fa-brands fa-windows"></i> EXE
-            </a>
-            <a href="/autoshare-privacy-policy/" class="action-btn btn-privacy-action" title="Privacy Policy">
-              <i class="fa-solid fa-shield-halved"></i>
-            </a>
-          </div>
-        </article>
-
-        <!-- 4. SubZip -->
-        <article class="app-card" data-category="mobile utilities">
-          <div class="app-header">
-            <div class="app-icon-wrap" style="background: linear-gradient(135deg, #8b5cf6, #6d28d9);">
-              <i class="fa-solid fa-file-zipper"></i>
-            </div>
-            <div class="app-meta">
-              <h3 class="app-title">SubZip</h3>
-              <div class="app-category"><i class="fa-solid fa-folder-open"></i> Archive & File Manager</div>
-            </div>
-          </div>
-          <p class="app-desc">
-            Modern Android file manager and archive utility designed for ZIP, 7Z, and TAR compression workflows with background processing and storage analytics.
-          </p>
-          <ul class="app-highlights">
-            <li><i class="fa-solid fa-check"></i> High-speed archive extraction & creation</li>
-            <li><i class="fa-solid fa-check"></i> Folder customization & storage visualizer</li>
-            <li><i class="fa-solid fa-check"></i> Clean, privacy-first local file operations</li>
-          </ul>
-          <div class="app-tags">
-            <span class="app-tag">Flutter</span>
-            <span class="app-tag">Android</span>
-            <span class="app-tag">ZIP</span>
-            <span class="app-tag">File Manager</span>
-          </div>
-          <div class="app-actions">
-            <a href="https://play.google.com/store/apps/details?id=www.subzip.app" target="_blank" class="action-btn btn-playstore">
-              <i class="fa-brands fa-google-play"></i> Play Store
-            </a>
-            <a href="/subzip-privacy-policy/" class="action-btn btn-privacy-action" title="Privacy Policy">
-              <i class="fa-solid fa-shield-halved"></i>
-            </a>
-          </div>
-        </article>
-
-        <!-- 5. Flappy Rogue -->
-        <article class="app-card" data-category="mobile games">
-          <div class="app-header">
-            <div class="app-icon-wrap" style="background: linear-gradient(135deg, #f59e0b, #d97706);">
-              <i class="fa-solid fa-gamepad"></i>
-            </div>
-            <div class="app-meta">
-              <h3 class="app-title">Flappy Rogue</h3>
-              <div class="app-category"><i class="fa-solid fa-ghost"></i> Roguelite Arcade Game</div>
-            </div>
-          </div>
-          <p class="app-desc">
-            Fast-paced arcade game combining classic flappy physics with rogue-lite ability upgrades, dynamic obstacle generation, and unlockable character skins.
-          </p>
-          <ul class="app-highlights">
-            <li><i class="fa-solid fa-check"></i> Addictive rogue-lite powerups & progression</li>
-            <li><i class="fa-solid fa-check"></i> Dynamic high-score ranking & leaderboard</li>
-            <li><i class="fa-solid fa-check"></i> Offline single-player arcade fun</li>
-          </ul>
-          <div class="app-tags">
-            <span class="app-tag">Flutter</span>
-            <span class="app-tag">Arcade</span>
-            <span class="app-tag">Gaming</span>
-            <span class="app-tag">Physics</span>
-          </div>
-          <div class="app-actions">
-            <a href="/flappy-rogue-privacy/" class="action-btn btn-web-action">
-              <i class="fa-solid fa-info-circle"></i> Info & Details
-            </a>
-            <a href="/flappy-rogue-privacy/" class="action-btn btn-privacy-action" title="Privacy Policy">
-              <i class="fa-solid fa-shield-halved"></i>
-            </a>
-          </div>
-        </article>
-
-        <!-- Sneaky Rogue -->
-        <article class="app-card" data-category="mobile games">
-          <div class="app-header">
-            <div class="app-icon-wrap" style="background: linear-gradient(135deg, #10b981, #059669);">
-              <i class="fa-solid fa-staff-snake"></i>
-            </div>
-            <div class="app-meta">
-              <h3 class="app-title">Sneaky Rogue</h3>
-              <div class="app-category"><i class="fa-solid fa-ghost"></i> 2D Roguelike Snake Game</div>
-            </div>
-          </div>
-          <p class="app-desc">
-            Tactical 2D Roguelike Snake arcade game with 17+ upgrade cards, dynamic dungeon curses, playable snake heroes, and AMOLED dark mode.
-          </p>
-          <ul class="app-highlights">
-            <li><i class="fa-solid fa-check"></i> 17 Upgrade cards (Fireball, Ghost Phase, Magnet)</li>
-            <li><i class="fa-solid fa-check"></i> Dynamic dungeon curses, mystery chests & hazards</li>
-            <li><i class="fa-solid fa-check"></i> 4 playable snake heroes with distinct stats</li>
-          </ul>
-          <div class="app-tags">
-            <span class="app-tag">Flutter</span>
-            <span class="app-tag">Snake</span>
-            <span class="app-tag">Roguelike</span>
-            <span class="app-tag">Arcade</span>
-          </div>
-          <div class="app-actions">
-            <a href="/sneaky-rogue-privacy/" class="action-btn btn-web-action">
-              <i class="fa-solid fa-info-circle"></i> Info & Details
-            </a>
-            <a href="/sneaky-rogue-privacy/" class="action-btn btn-privacy-action" title="Privacy Policy">
-              <i class="fa-solid fa-shield-halved"></i>
-            </a>
-          </div>
-        </article>
-
-        <!-- 6. Stokapp -->
+        <!-- 10. Stokapp -->
         <article class="app-card" data-category="desktop utilities">
           <div class="app-header">
-            <div class="app-icon-wrap" style="background: linear-gradient(135deg, #10b981, #059669);">
-              <i class="fa-solid fa-boxes-stacked"></i>
+            <div class="app-icon-wrap">
+              <img src="/icons/stokapp.png" alt="Stokapp" />
             </div>
             <div class="app-meta">
               <h3 class="app-title">Stokapp</h3>
@@ -1091,11 +1297,11 @@
             </div>
           </div>
           <p class="app-desc">
-            Sleek stock and inventory management web & desktop application featuring profit/loss visual analytics, low-stock notifications, and Excel data import/export.
+            Sleek stock and inventory management web & desktop application featuring real-time barcode scanning, revenue and profit/loss visual analytics, low-stock notifications, and Excel data import/export.
           </p>
           <ul class="app-highlights">
             <li><i class="fa-solid fa-check"></i> Real-time inventory tracking & barcode support</li>
-            <li><i class="fa-solid fa-check"></i> Financial revenue & profit analytics</li>
+            <li><i class="fa-solid fa-check"></i> Financial revenue, cost & profit analytics</li>
             <li><i class="fa-solid fa-check"></i> Excel / CSV data export and backup</li>
           </ul>
           <div class="app-tags">
@@ -1108,14 +1314,17 @@
             <a href="/Stokapp/" target="_blank" class="action-btn btn-web-action">
               <i class="fa-solid fa-arrow-up-right-from-square"></i> Open Web App
             </a>
+            <a href="https://github.com/serdevir91/Stokapp" target="_blank" class="action-btn btn-privacy-action" title="GitHub Repository">
+              <i class="fa-brands fa-github"></i>
+            </a>
           </div>
         </article>
 
-        <!-- 7. OpenSCAD AI -->
+        <!-- 11. OpenSCAD AI -->
         <article class="app-card" data-category="desktop utilities">
           <div class="app-header">
-            <div class="app-icon-wrap" style="background: linear-gradient(135deg, #ec4899, #be185d);">
-              <i class="fa-solid fa-cube"></i>
+            <div class="app-icon-wrap">
+              <img src="/icons/openscad_ai.png" alt="OpenSCAD AI" />
             </div>
             <div class="app-meta">
               <h3 class="app-title">OpenSCAD AI</h3>
@@ -1141,44 +1350,7 @@
               <i class="fa-brands fa-github"></i> Repository
             </a>
           </div>
-        </article>
-
-        <!-- 8. Markdown Keeper -->
-        <article class="app-card" data-category="mobile desktop utilities">
-          <div class="app-header">
-            <div class="app-icon-wrap" style="background: linear-gradient(135deg, #f59e0b, #d97706);">
-              <i class="fa-solid fa-note-sticky"></i>
-            </div>
-            <div class="app-meta">
-              <h3 class="app-title">Markdown Keeper</h3>
-              <div class="app-category"><i class="fa-solid fa-diagram-project"></i> Markdown Notes & Concept Map</div>
-            </div>
-          </div>
-          <p class="app-desc">
-            Next-generation Markdown note-taking and visual concept mapping app with Google Drive cloud sync, checklists, voice/image attachments, and hierarchical mind mapping.
-          </p>
-          <ul class="app-highlights">
-            <li><i class="fa-solid fa-check"></i> Dual view: Keep Masonry Grid & Infinite Concept Map</li>
-            <li><i class="fa-solid fa-check"></i> Automatic Google Drive personal cloud synchronization</li>
-            <li><i class="fa-solid fa-check"></i> Single & Bulk Markdown (.md / ZIP) Import & Export</li>
-          </ul>
-          <div class="app-tags">
-            <span class="app-tag">Flutter</span>
-            <span class="app-tag">Markdown</span>
-            <span class="app-tag">Concept Map</span>
-            <span class="app-tag">Google Drive</span>
-          </div>
-          <div class="app-actions">
-            <a href="/markdown-keeper-privacy/" class="action-btn btn-web-action">
-              <i class="fa-solid fa-info-circle"></i> Info & Details
-            </a>
-            <a href="/markdown-keeper-privacy/" class="action-btn btn-privacy-action" title="Privacy Policy">
-              <i class="fa-solid fa-shield-halved"></i>
-            </a>
-          </div>
-        </article>
-
-      </div>
+        </article></div>
     </section>
 
     <!-- Privacy Policy Center -->
@@ -1189,39 +1361,117 @@
       </div>
 
       <div class="privacy-grid">
-        <a href="/ezan-vakti-privacy/" class="privacy-card">
-          <span class="privacy-card-title"><i class="fa-solid fa-mosque" style="color: #10b981;"></i> Ezan Vakti Privacy</span>
-          <i class="fa-solid fa-arrow-right arrow"></i>
-        </a>
-        <a href="/markdown-keeper-privacy/" class="privacy-card">
-          <span class="privacy-card-title"><i class="fa-solid fa-note-sticky" style="color: #6366f1;"></i> Markdown Keeper Privacy</span>
-          <i class="fa-solid fa-arrow-right arrow"></i>
-        </a>
-        <a href="/workout-tracker-privacy/" class="privacy-card">
-          <span class="privacy-card-title"><i class="fa-solid fa-dumbbell" style="color: #ef4444;"></i> Workout Tracker Privacy</span>
-          <i class="fa-solid fa-arrow-right arrow"></i>
-        </a>
-        <a href="/autoshare-privacy-policy/" class="privacy-card">
-          <span class="privacy-card-title"><i class="fa-solid fa-share-nodes" style="color: #3b82f6;"></i> AutoShare Privacy</span>
-          <i class="fa-solid fa-arrow-right arrow"></i>
-        </a>
-        <a href="/subzip-privacy-policy/" class="privacy-card">
-          <span class="privacy-card-title"><i class="fa-solid fa-file-zipper" style="color: #8b5cf6;"></i> SubZip Privacy</span>
-          <i class="fa-solid fa-arrow-right arrow"></i>
-        </a>
-        <a href="/flappy-rogue-privacy/" class="privacy-card">
-          <span class="privacy-card-title"><i class="fa-solid fa-gamepad" style="color: #f59e0b;"></i> Flappy Rogue Privacy</span>
-          <i class="fa-solid fa-arrow-right arrow"></i>
-        </a>
-        <a href="/sneaky-rogue-privacy/" class="privacy-card">
-          <span class="privacy-card-title"><i class="fa-solid fa-staff-snake" style="color: #10b981;"></i> Sneaky Rogue Privacy</span>
-          <i class="fa-solid fa-arrow-right arrow"></i>
-        </a>
-        <a href="/app-ads.txt" class="privacy-card" style="border-color: rgba(16, 185, 129, 0.3);">
-          <span class="privacy-card-title"><i class="fa-solid fa-certificate" style="color: #10b981;"></i> app-ads.txt (AdMob)</span>
-          <i class="fa-solid fa-arrow-right arrow"></i>
-        </a>
-      </div>
+
+        <div class="privacy-card-container">
+          <div class="privacy-card-header">
+            <img src="/icons/my_language_tracker.png" class="privacy-mini-icon" alt="My Language Tracker" />
+            <span class="privacy-card-title">My Language Tracker</span>
+          </div>
+          <div class="privacy-card-links">
+            <a href="/my-language-tracker-privacy/privacy.html" class="privacy-sublink"><i class="fa-solid fa-shield-halved"></i> Privacy</a>
+            <a href="/my-language-tracker-privacy/terms.html" class="privacy-sublink"><i class="fa-solid fa-file-contract"></i> Terms</a>
+          </div>
+        </div>
+
+        <div class="privacy-card-container">
+          <div class="privacy-card-header">
+            <img src="/icons/core_defender.png" class="privacy-mini-icon" alt="Core Defender" />
+            <span class="privacy-card-title">Core Defender</span>
+          </div>
+          <div class="privacy-card-links">
+            <a href="/core-defender-privacy/privacy.html" class="privacy-sublink"><i class="fa-solid fa-shield-halved"></i> Privacy</a>
+            <a href="/core-defender-privacy/terms.html" class="privacy-sublink"><i class="fa-solid fa-file-contract"></i> Terms</a>
+          </div>
+        </div>
+
+        <div class="privacy-card-container">
+          <div class="privacy-card-header">
+            <img src="/icons/markdown_keeper.png" class="privacy-mini-icon" alt="Markdown Keeper" />
+            <span class="privacy-card-title">Markdown Keeper</span>
+          </div>
+          <div class="privacy-card-links">
+            <a href="/markdown-keeper-privacy/privacy.html" class="privacy-sublink"><i class="fa-solid fa-shield-halved"></i> Privacy</a>
+            <a href="/markdown-keeper-privacy/terms.html" class="privacy-sublink"><i class="fa-solid fa-file-contract"></i> Terms</a>
+          </div>
+        </div>
+
+        <div class="privacy-card-container">
+          <div class="privacy-card-header">
+            <img src="/icons/autoshare.png" class="privacy-mini-icon" alt="AutoShare" />
+            <span class="privacy-card-title">AutoShare</span>
+          </div>
+          <div class="privacy-card-links">
+            <a href="/autoshare-privacy-policy/privacy.html" class="privacy-sublink"><i class="fa-solid fa-shield-halved"></i> Privacy</a>
+            <a href="/autoshare-privacy-policy/terms.html" class="privacy-sublink"><i class="fa-solid fa-file-contract"></i> Terms</a>
+          </div>
+        </div>
+
+        <div class="privacy-card-container">
+          <div class="privacy-card-header">
+            <img src="/icons/sneaky_rogue.png" class="privacy-mini-icon" alt="Snakey Rogue" />
+            <span class="privacy-card-title">Snakey Rogue</span>
+          </div>
+          <div class="privacy-card-links">
+            <a href="/sneaky-rogue-privacy/privacy.html" class="privacy-sublink"><i class="fa-solid fa-shield-halved"></i> Privacy</a>
+            <a href="/sneaky-rogue-privacy/terms.html" class="privacy-sublink"><i class="fa-solid fa-file-contract"></i> Terms</a>
+          </div>
+        </div>
+
+        <div class="privacy-card-container">
+          <div class="privacy-card-header">
+            <img src="/icons/supzip.png" class="privacy-mini-icon" alt="SupZip" />
+            <span class="privacy-card-title">SupZip</span>
+          </div>
+          <div class="privacy-card-links">
+            <a href="/subzip-privacy-policy/privacy.html" class="privacy-sublink"><i class="fa-solid fa-shield-halved"></i> Privacy</a>
+            <a href="/subzip-privacy-policy/terms.html" class="privacy-sublink"><i class="fa-solid fa-file-contract"></i> Terms</a>
+          </div>
+        </div>
+
+        <div class="privacy-card-container">
+          <div class="privacy-card-header">
+            <img src="/icons/workout_tracker.png" class="privacy-mini-icon" alt="Workout Tracker" />
+            <span class="privacy-card-title">Workout Tracker</span>
+          </div>
+          <div class="privacy-card-links">
+            <a href="/workout-tracker-privacy/privacy.html" class="privacy-sublink"><i class="fa-solid fa-shield-halved"></i> Privacy</a>
+            <a href="/workout-tracker-privacy/terms.html" class="privacy-sublink"><i class="fa-solid fa-file-contract"></i> Terms</a>
+          </div>
+        </div>
+
+        <div class="privacy-card-container">
+          <div class="privacy-card-header">
+            <img src="/icons/flappy_rogue.png" class="privacy-mini-icon" alt="Flappy Rogue" />
+            <span class="privacy-card-title">Flappy Rogue</span>
+          </div>
+          <div class="privacy-card-links">
+            <a href="/flappy-rogue-privacy/privacy.html" class="privacy-sublink"><i class="fa-solid fa-shield-halved"></i> Privacy</a>
+            <a href="/flappy-rogue-privacy/terms.html" class="privacy-sublink"><i class="fa-solid fa-file-contract"></i> Terms</a>
+          </div>
+        </div>
+
+        <div class="privacy-card-container">
+          <div class="privacy-card-header">
+            <img src="/icons/ezan_vakti.png" class="privacy-mini-icon" alt="Ezan Vakti" />
+            <span class="privacy-card-title">Ezan Vakti Premium</span>
+          </div>
+          <div class="privacy-card-links">
+            <a href="/ezan-vakti-privacy/privacy.html" class="privacy-sublink"><i class="fa-solid fa-shield-halved"></i> Privacy</a>
+            <a href="/ezan-vakti-privacy/terms.html" class="privacy-sublink"><i class="fa-solid fa-file-contract"></i> Terms</a>
+          </div>
+        </div>
+
+        <div class="privacy-card-container" style="border-color: rgba(16, 185, 129, 0.35);">
+          <div class="privacy-card-header">
+            <div class="logo-badge-icon" style="width: 34px; height: 34px; font-size: 15px; border-radius: 8px;">
+              <i class="fa-solid fa-certificate"></i>
+            </div>
+            <span class="privacy-card-title">Google AdMob Compliance</span>
+          </div>
+          <div class="privacy-card-links">
+            <a href="/app-ads.txt" class="privacy-sublink" style="color: #34d399;"><i class="fa-solid fa-file-lines"></i> app-ads.txt</a>
+          </div>
+        </div></div>
     </section>
 
     <!-- Technologies -->
