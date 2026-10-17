@@ -133,9 +133,11 @@
       font-size: 22px;
       font-weight: 700;
       letter-spacing: -0.5px;
+      color: #ffffff;
       background: linear-gradient(135deg, #ffffff 40%, #93c5fd 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
     .brand-tag {
@@ -185,6 +187,132 @@
       box-shadow: 0 6px 20px rgba(37, 99, 235, 0.5);
     }
 
+    /* Mobile Header Controls - Hidden on desktop */
+    .mobile-header-actions {
+      display: none;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .mobile-header-store-btn {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      background: rgba(16, 185, 129, 0.14);
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      color: #34d399;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .mobile-header-store-btn:hover {
+      background: rgba(16, 185, 129, 0.25);
+      color: #6ee7b7;
+    }
+
+    .mobile-menu-btn {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-subtle);
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 17px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .mobile-menu-btn:hover,
+    .mobile-menu-btn:active {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(255, 255, 255, 0.25);
+    }
+
+    /* Mobile Drawer */
+    .mobile-drawer {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: rgba(7, 11, 20, 0.98);
+      backdrop-filter: blur(25px);
+      -webkit-backdrop-filter: blur(25px);
+      border-bottom: 1px solid var(--border-subtle);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.85);
+      overflow: hidden;
+      max-height: 0;
+      opacity: 0;
+      pointer-events: none;
+      transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease;
+    }
+
+    .mobile-drawer.open {
+      max-height: 520px;
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .mobile-drawer-content {
+      padding: 16px 16px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .mobile-nav-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 14px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      color: var(--text-main);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+
+    .mobile-nav-item i {
+      font-size: 16px;
+      color: var(--accent-cyan);
+      width: 20px;
+      text-align: center;
+    }
+
+    .mobile-nav-item:hover,
+    .mobile-nav-item:active {
+      background: rgba(59, 130, 246, 0.12);
+      border-color: rgba(59, 130, 246, 0.3);
+      color: #fff;
+    }
+
+    .mobile-nav-cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 13px 18px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #2563eb, #7c3aed);
+      color: white;
+      text-decoration: none;
+      font-size: 14.5px;
+      font-weight: 700;
+      margin-top: 4px;
+      box-shadow: 0 4px 18px rgba(37, 99, 235, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
     /* Hero Section */
     .hero {
       position: relative;
@@ -219,9 +347,11 @@
     }
 
     .hero-title-gradient {
-      background: linear-gradient(135deg, #ffffff 20%, #93c5fd 50%, #c084fc 90%);
+      color: #38bdf8;
+      background: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #c084fc 100%);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
     .hero-description {
@@ -808,38 +938,45 @@
         padding: 0 16px;
       }
 
-      /* Header & Nav */
+      /* Header & Nav - Sleek Single Row */
       .nav-content {
-        flex-direction: column;
-        align-items: stretch;
-        gap: 12px;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
         padding: 12px 0;
       }
 
       .brand-logo {
-        justify-content: center;
+        justify-content: flex-start;
       }
 
-      .nav-links {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-        padding: 2px 2px 6px;
-        width: 100%;
-      }
-
-      .nav-links::-webkit-scrollbar {
-        display: none;
-      }
-
-      .nav-btn {
-        flex-shrink: 0;
-        padding: 8px 12px;
-        font-size: 13px;
+      .logo-badge-icon {
+        width: 38px;
+        height: 38px;
+        font-size: 17px;
         border-radius: 10px;
+      }
+
+      .brand-name {
+        font-size: 19px;
+      }
+
+      .brand-tag {
+        font-size: 10px;
+      }
+
+      /* Hide horizontal desktop nav */
+      .nav-links {
+        display: none !important;
+      }
+
+      /* Show mobile header controls */
+      .mobile-header-actions {
+        display: flex;
+      }
+
+      .mobile-drawer {
+        display: block;
       }
 
       /* Hero Section */
@@ -1201,6 +1338,7 @@
         </div>
       </a>
 
+      <!-- Desktop Nav Links -->
       <nav class="nav-links">
         <a href="#apps" class="nav-btn"><i class="fa-solid fa-mobile-screen-button"></i> Apps</a>
         <a href="#privacy" class="nav-btn"><i class="fa-solid fa-shield-halved"></i> Privacy Center</a>
@@ -1210,6 +1348,45 @@
           <i class="fa-brands fa-google-play"></i> Play Store
         </a>
       </nav>
+
+      <!-- Mobile Header Actions (Visible on mobile only) -->
+      <div class="mobile-header-actions">
+        <a href="https://play.google.com/store/apps/dev?id=6728487283410636967" target="_blank" class="mobile-header-store-btn" title="Google Play Store">
+          <i class="fa-brands fa-google-play"></i>
+        </a>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu">
+          <i class="fa-solid fa-bars" id="menuIcon"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Drawer -->
+    <div class="mobile-drawer" id="mobileDrawer">
+      <div class="mobile-drawer-content">
+        <a href="#apps" class="mobile-nav-item">
+          <i class="fa-solid fa-mobile-screen-button"></i>
+          <span>Featured Applications</span>
+        </a>
+        <a href="#privacy" class="mobile-nav-item">
+          <i class="fa-solid fa-shield-halved"></i>
+          <span>Privacy & Compliance Center</span>
+        </a>
+        <a href="/soner-portfolio/" target="_blank" class="mobile-nav-item">
+          <i class="fa-solid fa-user-astronaut"></i>
+          <span>Developer Portfolio</span>
+        </a>
+        <a href="/my-store/" class="mobile-nav-item">
+          <i class="fa-solid fa-store"></i>
+          <span>App Store Catalog</span>
+        </a>
+        <a href="/app-ads.txt" class="mobile-nav-item">
+          <i class="fa-solid fa-file-lines"></i>
+          <span>app-ads.txt Verification</span>
+        </a>
+        <a href="https://play.google.com/store/apps/dev?id=6728487283410636967" target="_blank" class="mobile-nav-cta">
+          <i class="fa-brands fa-google-play"></i> Official Google Play Store
+        </a>
+      </div>
     </div>
   </header>
 
@@ -1932,6 +2109,44 @@
     });
 
     searchInput.addEventListener('input', filterApplications);
+
+    // Mobile Navigation Drawer Toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileDrawer = document.getElementById('mobileDrawer');
+    const menuIcon = document.getElementById('menuIcon');
+    const mobileNavItems = document.querySelectorAll('.mobile-nav-item, .mobile-nav-cta');
+
+    if (mobileMenuBtn && mobileDrawer) {
+      mobileMenuBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = mobileDrawer.classList.toggle('open');
+        if (isOpen) {
+          menuIcon.classList.remove('fa-bars');
+          menuIcon.classList.add('fa-xmark');
+        } else {
+          menuIcon.classList.remove('fa-xmark');
+          menuIcon.classList.add('fa-bars');
+        }
+      });
+
+      // Close drawer when any navigation link is clicked
+      mobileNavItems.forEach(item => {
+        item.addEventListener('click', () => {
+          mobileDrawer.classList.remove('open');
+          menuIcon.classList.remove('fa-xmark');
+          menuIcon.classList.add('fa-bars');
+        });
+      });
+
+      // Close drawer when tapping outside
+      document.addEventListener('click', (e) => {
+        if (!mobileDrawer.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+          mobileDrawer.classList.remove('open');
+          menuIcon.classList.remove('fa-xmark');
+          menuIcon.classList.add('fa-bars');
+        }
+      });
+    }
   </script>
 </body>
 </html>
