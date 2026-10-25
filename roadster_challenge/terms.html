@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms of Service & EULA - Roadster Challenge | Erdevir Labs</title>
+  <meta name="description" content="Terms of Service and End User License Agreement (EULA) for Roadster Challenge." />
+  <meta name="theme-color" content="#070b14" />
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <style>
+    :root {
+      --bg: #070b14;
+      --card-bg: rgba(15, 23, 42, 0.88);
+      --card-border: rgba(0, 240, 255, 0.18);
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent: #00f0ff;
+      --accent-gold: #fbbf24;
+      --accent-glow: rgba(0, 240, 255, 0.22);
+      --radius: 16px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.65;
+      min-height: 100vh;
+      background-image: 
+        radial-gradient(at 0% 0%, var(--accent-glow) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(251, 191, 36, 0.12) 0px, transparent 50%);
+      background-attachment: fixed;
+      padding: 30px 16px 60px;
+    }
+    .wrap { max-width: 900px; margin: 0 auto; }
+    .nav-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      padding: 12px 20px;
+      background: rgba(15, 23, 42, 0.65);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .nav-link {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: opacity 0.2s;
+    }
+    .nav-link:hover { opacity: 0.8; }
+    .card {
+      background: var(--card-bg);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 32px;
+      margin-bottom: 24px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
+    .header-logo {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .header-logo img {
+      width: 64px;
+      height: 64px;
+      border-radius: 14px;
+      border: 2px solid var(--accent);
+      box-shadow: 0 0 20px var(--accent-glow);
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 9999px;
+      background: var(--accent-glow);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      border: 1px solid rgba(0, 240, 255, 0.35);
+    }
+    h1 {
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 4px;
+      color: #fff;
+    }
+    .subtitle {
+      color: var(--text-muted);
+      font-size: 13px;
+      margin-bottom: 24px;
+    }
+    h2 {
+      font-size: 19px;
+      font-weight: 700;
+      margin-top: 32px;
+      margin-bottom: 12px;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    h2 i { color: var(--accent); font-size: 18px; }
+    p, li { color: var(--text-muted); font-size: 15px; margin-bottom: 14px; }
+    ul, ol { padding-left: 24px; margin-bottom: 18px; }
+    li { margin-bottom: 8px; }
+    strong { color: var(--text-main); }
+    a { color: var(--accent); text-decoration: underline; }
+    a:hover { opacity: 0.8; }
+    .alert-box {
+      background: rgba(0, 240, 255, 0.08);
+      border-left: 4px solid var(--accent);
+      padding: 16px 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+    }
+    .alert-box p {
+      color: var(--text-main);
+      margin: 0;
+      font-size: 14px;
+    }
+    .nav-tabs {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+      flex-wrap: wrap;
+    }
+    .tab-btn {
+      padding: 6px 14px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--card-border);
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+    .tab-btn.active, .tab-btn:hover {
+      background: var(--accent-glow);
+      color: #fff;
+      border-color: var(--accent);
+    }
+    .footer {
+      text-align: center;
+      padding-top: 24px;
+      color: var(--text-muted);
+      font-size: 13px;
+      border-top: 1px solid var(--card-border);
+      margin-top: 32px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="nav-bar">
+      <a href="https://serdevir91.github.io" class="nav-link">
+        <i class="fa-solid fa-arrow-left"></i> Erdevir Labs Portfolio
+      </a>
+      <div class="nav-tabs">
+        <a href="index.html" class="tab-btn">Overview</a>
+        <a href="privacy.html" class="tab-btn">Privacy Policy</a>
+        <a href="terms.html" class="tab-btn active">Terms of Service</a>
+        <a href="support.html" class="tab-btn">Support</a>
+        <a href="data-deletion.html" class="tab-btn">Data Deletion</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="header-logo">
+        <img src="icon.png" alt="Roadster Challenge Icon" />
+        <div>
+          <div class="badge"><i class="fa-solid fa-scale-balanced"></i> Terms of Service & EULA</div>
+          <h1>Roadster Challenge</h1>
+          <p class="subtitle">Effective Date: October 2026 &bull; Publisher: Soner Erdevir (Erdevir Labs)</p>
+        </div>
+      </div>
+
+      <div class="alert-box">
+        <p><strong>License Notice:</strong> This software is licensed, not sold. By downloading, installing, or playing <strong>Roadster Challenge</strong>, you agree to these Terms of Service and End User License Agreement (EULA). On iOS devices, the application is also governed by Apple's standard EULA (<a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">Apple Standard EULA</a>).</p>
+      </div>
+
+      <h2><i class="fa-solid fa-file-contract"></i> 1. Acceptance of Terms</h2>
+      <p>By downloading, installing, launching, or using <strong>Roadster Challenge</strong> ("the Game"), developed and published by <strong>Soner Erdevir (Erdevir Labs)</strong> ("we", "us", or "our"), you agree to be bound by these Terms of Service and EULA. If you do not agree, do not install or use the Game.</p>
+
+      <h2><i class="fa-solid fa-shield-halved"></i> 2. Grant of License</h2>
+      <p>Erdevir Labs grants you a personal, revocable, non-exclusive, non-transferable, limited license to install and play the Game for personal, non-commercial entertainment purposes on your authorized devices (Android, Windows, iOS).</p>
+
+      <h2><i class="fa-solid fa-coins"></i> 3. In-App Purchases & Virtual Currency</h2>
+      <p>The Game includes optional digital items and features:</p>
+      <ul>
+        <li><strong>Ad-Free Edition:</strong> A permanent non-consumable license that removes third-party advertising banners and interstitials. This purchase is tied to your store account and can be restored using the "RESTORE PURCHASES" feature.</li>
+        <li><strong>Pro Tier Pass:</strong> Unlocks premium vehicles, custom neon paint skins, and experimental racetrack configurations.</li>
+        <li><strong>All-Access Lifetime Pass:</strong> A single purchase unlocking all current and future premium garage assets and game modes.</li>
+        <li><strong>Supercharger Packs & Virtual Coins:</strong> Consumable in-game currency used to upgrade chassis attributes, handling, and nitro speed. Virtual coins and energy cells possess no monetary value outside the game and cannot be redeemed for legal tender.</li>
+      </ul>
+      <p>All in-app purchases are final and processed exclusively through the respective app store (Google Play, Apple App Store, or Microsoft Store) under their applicable refund guidelines.</p>
+
+      <h2><i class="fa-solid fa-ban"></i> 4. Prohibited Conduct</h2>
+      <p>You agree not to reverse engineer, decompile, disassemble, exploit bugs for malicious advantage, modify executable game files, or distribute unauthorized forks of Roadster Challenge. Circumventing store digital rights management or security mechanisms is strictly prohibited.</p>
+
+      <h2><i class="fa-solid fa-triangle-exclamation"></i> 5. Disclaimer of Warranties</h2>
+      <p>The Game is provided on an "AS IS" and "AS AVAILABLE" basis without warranties of any kind, whether express or implied. Erdevir Labs does not warrant uninterrupted, error-free gameplay across all device specifications or third-party operating systems.</p>
+
+      <h2><i class="fa-solid fa-gavel"></i> 6. Limitation of Liability</h2>
+      <p>To the fullest extent permitted by applicable law, Erdevir Labs and Soner Erdevir shall not be liable for any indirect, incidental, special, or consequential damages resulting from your access to or inability to use the Game.</p>
+
+      <h2><i class="fa-solid fa-envelope"></i> 7. Contact Us</h2>
+      <p>For questions regarding these Terms or the EULA, contact us at <a href="mailto:serdevir91@gmail.com">serdevir91@gmail.com</a>.</p>
+
+      <div class="footer">
+        &copy; 2026 Erdevir Labs. All rights reserved. &bull; Contact: <a href="mailto:serdevir91@gmail.com">serdevir91@gmail.com</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

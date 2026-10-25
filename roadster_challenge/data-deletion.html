@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Data Deletion Request - Roadster Challenge | Erdevir Labs</title>
+  <meta name="description" content="Data deletion policy and step-by-step instructions for Roadster Challenge." />
+  <meta name="theme-color" content="#070b14" />
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <style>
+    :root {
+      --bg: #070b14;
+      --card-bg: rgba(15, 23, 42, 0.88);
+      --card-border: rgba(0, 240, 255, 0.18);
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent: #00f0ff;
+      --accent-glow: rgba(0, 240, 255, 0.22);
+      --radius: 16px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.65;
+      min-height: 100vh;
+      background-image: 
+        radial-gradient(at 0% 0%, var(--accent-glow) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(251, 191, 36, 0.12) 0px, transparent 50%);
+      background-attachment: fixed;
+      padding: 30px 16px 60px;
+    }
+    .wrap { max-width: 900px; margin: 0 auto; }
+    .nav-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      padding: 12px 20px;
+      background: rgba(15, 23, 42, 0.65);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .nav-link {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .card {
+      background: var(--card-bg);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 32px;
+      margin-bottom: 24px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
+    .header-logo {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .header-logo img {
+      width: 64px;
+      height: 64px;
+      border-radius: 14px;
+      border: 2px solid var(--accent);
+      box-shadow: 0 0 20px var(--accent-glow);
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 9999px;
+      background: var(--accent-glow);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      border: 1px solid rgba(0, 240, 255, 0.35);
+    }
+    h1 {
+      font-size: 28px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 4px;
+      color: #fff;
+    }
+    .subtitle { color: var(--text-muted); font-size: 13px; margin-bottom: 24px; }
+    h2 {
+      font-size: 19px;
+      font-weight: 700;
+      margin-top: 32px;
+      margin-bottom: 12px;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    h2 i { color: var(--accent); font-size: 18px; }
+    p, li { color: var(--text-muted); font-size: 15px; margin-bottom: 14px; }
+    ul, ol { padding-left: 24px; margin-bottom: 18px; }
+    li { margin-bottom: 8px; }
+    strong { color: var(--text-main); }
+    a { color: var(--accent); text-decoration: underline; }
+    a:hover { opacity: 0.8; }
+    .step-box {
+      background: rgba(255, 255, 255, 0.03);
+      border-left: 4px solid var(--accent);
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin-bottom: 16px;
+    }
+    .step-box h3 { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+    .step-box p { margin: 0; font-size: 14px; }
+    .nav-tabs { display: flex; gap: 10px; margin-top: 10px; flex-wrap: wrap; }
+    .tab-btn {
+      padding: 6px 14px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--card-border);
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+    .tab-btn.active, .tab-btn:hover { background: var(--accent-glow); color: #fff; border-color: var(--accent); }
+    .footer { text-align: center; padding-top: 24px; color: var(--text-muted); font-size: 13px; border-top: 1px solid var(--card-border); margin-top: 32px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="nav-bar">
+      <a href="https://serdevir91.github.io" class="nav-link">
+        <i class="fa-solid fa-arrow-left"></i> Erdevir Labs Portfolio
+      </a>
+      <div class="nav-tabs">
+        <a href="index.html" class="tab-btn">Overview</a>
+        <a href="privacy.html" class="tab-btn">Privacy Policy</a>
+        <a href="terms.html" class="tab-btn">Terms of Service</a>
+        <a href="support.html" class="tab-btn">Support</a>
+        <a href="data-deletion.html" class="tab-btn active">Data Deletion</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="header-logo">
+        <img src="icon.png" alt="Roadster Challenge Icon" />
+        <div>
+          <div class="badge"><i class="fa-solid fa-trash-can"></i> User Data Control</div>
+          <h1>Roadster Challenge Data Deletion</h1>
+          <p class="subtitle">GDPR & CCPA Data Deletion Policy &bull; Publisher: Soner Erdevir (Erdevir Labs)</p>
+        </div>
+      </div>
+
+      <h2><i class="fa-solid fa-shield-halved"></i> How Your Data is Handled</h2>
+      <p>Because <strong>Roadster Challenge</strong> is an offline-first application, we do not store your gameplay saves, profile information, or credentials on remote company servers. All game data is stored directly on your physical device.</p>
+
+      <h2><i class="fa-solid fa-list-check"></i> Methods to Delete Your Data</h2>
+
+      <div class="step-box">
+        <h3>Method 1: In-Game Reset (Immediate)</h3>
+        <p>Launch Roadster Challenge &gt; Open <strong>Settings</strong> &gt; Select <strong>"Reset Progression Data"</strong>. This immediately purges all locally stored coins, vehicle unlocks, high scores, and custom preferences.</p>
+      </div>
+
+      <div class="step-box">
+        <h3>Method 2: Clear Application Storage (Android Settings)</h3>
+        <p>Go to your device's <strong>Settings &gt; Apps &gt; Roadster Challenge &gt; Storage &gt; Clear Storage / Clear Data</strong>. This wipes all local sandbox data completely.</p>
+      </div>
+
+      <div class="step-box">
+        <h3>Method 3: Uninstall the Application</h3>
+        <p>Uninstalling Roadster Challenge removes the application sandbox along with all stored data and configuration files.</p>
+      </div>
+
+      <h2><i class="fa-solid fa-envelope"></i> Formal Data Deletion Requests</h2>
+      <p>If you have any questions regarding telemetry or would like to submit a formal data deletion inquiry, please email us at <a href="mailto:serdevir91@gmail.com">serdevir91@gmail.com</a>. Requests will be acknowledged and processed within 30 business days in compliance with GDPR and CCPA.</p>
+
+      <div class="footer">
+        &copy; 2026 Erdevir Labs. All rights reserved. &bull; Contact: <a href="mailto:serdevir91@gmail.com">serdevir91@gmail.com</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
