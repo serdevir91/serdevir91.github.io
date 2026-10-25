@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms of Service - Chronicle Lens | Erdevir Labs</title>
+  <meta name="description" content="Official Terms of Service and End User License Agreement for Chronicle Lens content and Chronicle Lens Uploader." />
+  <meta name="theme-color" content="#070b14" />
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <style>
+    :root {
+      --bg: #070b14;
+      --card-bg: rgba(15, 23, 42, 0.90);
+      --card-border: rgba(245, 158, 11, 0.22);
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent: #f59e0b;
+      --accent-secondary: #ea580c;
+      --accent-glow: rgba(245, 158, 11, 0.20);
+      --radius: 16px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.68;
+      min-height: 100vh;
+      background-image: 
+        radial-gradient(at 0% 0%, var(--accent-glow) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(234, 88, 12, 0.12) 0px, transparent 50%);
+      background-attachment: fixed;
+      padding: 30px 16px 60px;
+    }
+    .wrap {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .nav-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      padding: 12px 20px;
+      background: rgba(15, 23, 42, 0.7);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .nav-link {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: opacity 0.2s;
+    }
+    .nav-link:hover { opacity: 0.8; }
+    .card {
+      background: var(--card-bg);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 36px;
+      margin-bottom: 24px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+    }
+    .header-logo {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .header-logo img {
+      width: 72px;
+      height: 72px;
+      border-radius: 16px;
+      border: 2px solid var(--accent);
+      box-shadow: 0 0 20px var(--accent-glow);
+      object-fit: cover;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 9999px;
+      background: var(--accent-glow);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      border: 1px solid rgba(245, 158, 11, 0.35);
+    }
+    h1 {
+      font-size: 30px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 6px;
+      color: #fff;
+    }
+    .subtitle {
+      color: var(--text-muted);
+      font-size: 13px;
+      margin-bottom: 24px;
+    }
+    h2 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-top: 36px;
+      margin-bottom: 12px;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    h2 i { color: var(--accent); font-size: 18px; }
+    p, li {
+      color: var(--text-muted);
+      font-size: 15px;
+      margin-bottom: 14px;
+    }
+    ul, ol {
+      padding-left: 24px;
+      margin-bottom: 18px;
+    }
+    li { margin-bottom: 8px; }
+    strong { color: var(--text-main); }
+    code {
+      background: rgba(245, 158, 11, 0.12);
+      color: #fde68a;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 13px;
+      font-family: monospace;
+    }
+    a {
+      color: var(--accent);
+      text-decoration: underline;
+      transition: opacity 0.2s;
+    }
+    a:hover { opacity: 0.8; }
+    .alert-box {
+      background: rgba(245, 158, 11, 0.08);
+      border-left: 4px solid var(--accent);
+      padding: 18px 22px;
+      border-radius: 8px;
+      margin: 22px 0;
+    }
+    .alert-box p {
+      color: var(--text-main);
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    .nav-tabs {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+      flex-wrap: wrap;
+    }
+    .tab-btn {
+      padding: 6px 14px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--card-border);
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+    .tab-btn.active, .tab-btn:hover {
+      background: var(--accent-glow);
+      color: #fff;
+      border-color: var(--accent);
+    }
+    .footer {
+      text-align: center;
+      padding-top: 24px;
+      color: var(--text-muted);
+      font-size: 13px;
+      border-top: 1px solid var(--card-border);
+      margin-top: 32px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="nav-bar">
+      <a href="https://serdevir91.github.io" class="nav-link">
+        <i class="fa-solid fa-arrow-left"></i> Erdevir Labs Portfolio
+      </a>
+      <div class="nav-tabs">
+        <a href="index.html" class="tab-btn">Overview</a>
+        <a href="privacy.html" class="tab-btn">Privacy Policy</a>
+        <a href="terms.html" class="tab-btn active">Terms of Service</a>
+        <a href="https://www.youtube.com/@Chroniclelensworld" target="_blank" rel="noopener noreferrer" class="tab-btn">
+          <i class="fa-brands fa-youtube" style="color: #ef4444; margin-right: 4px;"></i> YouTube Channel
+        </a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="header-logo">
+        <img src="icon.png" alt="Chronicle Lens Icon" />
+        <div>
+          <div class="badge"><i class="fa-solid fa-file-contract"></i> Official Terms & Conditions</div>
+          <h1>Chronicle Lens</h1>
+          <p class="subtitle">
+            Application: <strong>Chronicle Lens Uploader</strong> &bull; 
+            Publisher: <strong>Soner Erdevir (Erdevir Labs)</strong> &bull; 
+            Effective Date: October 25, 2026
+          </p>
+        </div>
+      </div>
+
+      <div class="alert-box">
+        <p>
+          <strong>Summary of Terms:</strong> These Terms of Service govern your access to the content produced by <strong>Chronicle Lens</strong> and the operation of the internal publication software <strong>Chronicle Lens Uploader</strong>. By viewing our content or accessing our services, you agree to comply with these terms as well as the terms of the third-party platforms on which our content is delivered (YouTube, TikTok, and Meta/Instagram).
+        </p>
+      </div>
+
+      <h2><i class="fa-solid fa-gavel"></i> 1. Acceptance & Scope</h2>
+      <p>
+        These Terms of Service ("Terms") constitute a legally binding agreement between you and <strong>Chronicle Lens</strong> / <strong>Erdevir Labs</strong> ("we", "us", "our"). These Terms apply to:
+      </p>
+      <ul>
+        <li>Videos, audio, scripts, graphics, and materials distributed through our official channels under the Chronicle Lens brand.</li>
+        <li>The automated deployment and upload tool named <strong>Chronicle Lens Uploader</strong> (Google Cloud Project ID: <code>chronicle-lens-uploader</code>).</li>
+        <li>Our legal and informational portals hosted under <code>serdevir91.github.io/chronicle-lens-legal/</code>.</li>
+      </ul>
+
+      <h2><i class="fa-solid fa-gears"></i> 2. Purpose and Permitted Use of Software</h2>
+      <p>
+        <strong>Chronicle Lens Uploader</strong> is an internal content management and publication software designed exclusively for the Chronicle Lens production team. It automates scheduled rendering and uploading of original video episodes to our designated channels.
+      </p>
+      <p>
+        The software is not a public service or consumer application. Any unauthorized attempt to reverse-engineer, decompile, extract credentials from, or abuse the software or its associated API quotas is strictly prohibited.
+      </p>
+
+      <h2><i class="fa-brands fa-youtube"></i> 3. Third-Party Platform Terms & Compliance</h2>
+      <p>
+        Our content is delivered primarily via <strong>YouTube</strong>, as well as <strong>TikTok</strong> and <strong>Instagram</strong>. By accessing our videos through these platforms, you acknowledge and agree to be bound by their respective terms of service:
+      </p>
+      <ul>
+        <li><a href="https://www.youtube.com/t/terms" target="_blank" rel="noopener noreferrer">YouTube Terms of Service</a></li>
+        <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a></li>
+        <li><a href="https://www.youtube.com/howyoutubeworks/policies/community-guidelines/" target="_blank" rel="noopener noreferrer">YouTube Community Guidelines</a></li>
+        <li><a href="https://www.tiktok.com/legal/terms-of-service" target="_blank" rel="noopener noreferrer">TikTok Terms of Service</a></li>
+        <li><a href="https://help.instagram.com/581066165581870" target="_blank" rel="noopener noreferrer">Instagram Terms of Use</a></li>
+      </ul>
+      <p>
+        Chronicle Lens Uploader adheres strictly to all developer terms, API usage quotas, rate limits, and community standards established by Google LLC, ByteDance Ltd., and Meta Platforms, Inc.
+      </p>
+
+      <h2><i class="fa-solid fa-copyright"></i> 4. Intellectual Property Rights</h2>
+      <p>
+        All rights, title, and interest in and to the Chronicle Lens brand, logo, animations, motion design templates, original script writing, and video compilations are owned exclusively by Soner Erdevir (Erdevir Labs).
+      </p>
+      <p><strong>Permitted Use:</strong></p>
+      <ul>
+        <li>You may share links, embed public YouTube Shorts, and engage through standard platform features (liking, commenting, sharing).</li>
+      </ul>
+      <p><strong>Prohibited Actions:</strong></p>
+      <ul>
+        <li>You may <strong>not</strong> re-upload, broadcast, mirror, sell, license, or commercially redistribute Chronicle Lens video or audio files in whole or in part without prior written permission.</li>
+        <li>You may not remove watermarks, copyright notices, or attribution links from our media.</li>
+      </ul>
+
+      <h2><i class="fa-solid fa-microchip"></i> 5. AI Narration & Content Factuality Disclaimer</h2>
+      <p>
+        Chronicle Lens creates educational and informational short-form videos. In accordance with platform guidelines:
+      </p>
+      <ul>
+        <li><strong>Synthetic Narration:</strong> Voice narration in our videos is synthesized using artificial intelligence / text-to-speech technology.</li>
+        <li><strong>Research & Fact-Checking:</strong> Every script is researched using reputable historical sources, academic literature, and confirmed news outlets. However, videos are produced for general educational, historical, and entertainment purposes.</li>
+        <li><strong>No Professional Advice:</strong> Content should not be construed as legal, medical, or financial advice.</li>
+      </ul>
+
+      <h2><i class="fa-solid fa-shield-virus"></i> 6. Disclaimer of Warranties</h2>
+      <p>
+        Chronicle Lens content, websites, and publishing tools are provided on an <strong>"AS IS"</strong> and <strong>"AS AVAILABLE"</strong> basis without warranties of any kind, whether express or implied. We do not warrant that our services will be uninterrupted, error-free, completely accurate, or free from harmful components.
+      </p>
+
+      <h2><i class="fa-solid fa-triangle-exclamation"></i> 7. Limitation of Liability</h2>
+      <p>
+        To the fullest extent permitted by applicable law, in no event shall Chronicle Lens, Erdevir Labs, or Soner Erdevir be liable for any direct, indirect, incidental, special, consequential, or punitive damages arising out of or related to your access to or inability to access our content or tools, even if advised of the possibility of such damages.
+      </p>
+
+      <h2><i class="fa-solid fa-landmark"></i> 8. Governing Law & Jurisdiction</h2>
+      <p>
+        These Terms shall be governed by and construed in accordance with the laws of <strong>Türkiye</strong>, without giving effect to any principles of conflicts of law. Any legal proceeding arising out of or relating to these Terms shall be subject to the exclusive jurisdiction of the competent courts of Türkiye.
+      </p>
+
+      <h2><i class="fa-solid fa-pen-to-square"></i> 9. Changes to These Terms</h2>
+      <p>
+        We reserve the right to revise or replace these Terms at any time. Any changes will become effective immediately upon posting to this website. The effective date at the top of this page indicates the most recent revision date.
+      </p>
+
+      <h2><i class="fa-solid fa-envelope"></i> 10. Contact Information</h2>
+      <p>
+        For inquiries regarding these Terms of Service or permissions regarding content syndication, please contact:
+      </p>
+      <ul>
+        <li><strong>Publisher / Developer:</strong> Soner Erdevir (Erdevir Labs)</li>
+        <li><strong>Email:</strong> <a href="mailto:serdevir91@gmail.com">serdevir91@gmail.com</a></li>
+        <li><strong>Website:</strong> <a href="https://serdevir91.github.io">https://serdevir91.github.io</a></li>
+      </ul>
+
+      <div class="footer">
+        &copy; 2026 Chronicle Lens &bull; Erdevir Labs. All rights reserved.
+      </div>
+    </div>
+  </div>
+</body>
+</html>

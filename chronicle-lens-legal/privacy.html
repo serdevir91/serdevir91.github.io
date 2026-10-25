@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy - Chronicle Lens | Erdevir Labs</title>
+  <meta name="description" content="Official Privacy Policy and Google API Services User Data Policy disclosure for Chronicle Lens and Chronicle Lens Uploader." />
+  <meta name="theme-color" content="#070b14" />
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+  <style>
+    :root {
+      --bg: #070b14;
+      --card-bg: rgba(15, 23, 42, 0.90);
+      --card-border: rgba(245, 158, 11, 0.22);
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent: #f59e0b;
+      --accent-secondary: #ea580c;
+      --accent-glow: rgba(245, 158, 11, 0.20);
+      --radius: 16px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.68;
+      min-height: 100vh;
+      background-image: 
+        radial-gradient(at 0% 0%, var(--accent-glow) 0px, transparent 50%),
+        radial-gradient(at 100% 100%, rgba(234, 88, 12, 0.12) 0px, transparent 50%);
+      background-attachment: fixed;
+      padding: 30px 16px 60px;
+    }
+    .wrap {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .nav-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      padding: 12px 20px;
+      background: rgba(15, 23, 42, 0.7);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .nav-link {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: opacity 0.2s;
+    }
+    .nav-link:hover { opacity: 0.8; }
+    .card {
+      background: var(--card-bg);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius);
+      padding: 36px;
+      margin-bottom: 24px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+    }
+    .header-logo {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .header-logo img {
+      width: 72px;
+      height: 72px;
+      border-radius: 16px;
+      border: 2px solid var(--accent);
+      box-shadow: 0 0 20px var(--accent-glow);
+      object-fit: cover;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 9999px;
+      background: var(--accent-glow);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      border: 1px solid rgba(245, 158, 11, 0.35);
+    }
+    h1 {
+      font-size: 30px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      margin-bottom: 6px;
+      color: #fff;
+    }
+    .subtitle {
+      color: var(--text-muted);
+      font-size: 13px;
+      margin-bottom: 24px;
+    }
+    h2 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-top: 36px;
+      margin-bottom: 12px;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    h2 i { color: var(--accent); font-size: 18px; }
+    p, li {
+      color: var(--text-muted);
+      font-size: 15px;
+      margin-bottom: 14px;
+    }
+    ul, ol {
+      padding-left: 24px;
+      margin-bottom: 18px;
+    }
+    li { margin-bottom: 8px; }
+    strong { color: var(--text-main); }
+    code {
+      background: rgba(245, 158, 11, 0.12);
+      color: #fde68a;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 13px;
+      font-family: monospace;
+    }
+    a {
+      color: var(--accent);
+      text-decoration: underline;
+      transition: opacity 0.2s;
+    }
+    a:hover { opacity: 0.8; }
+    .alert-box {
+      background: rgba(245, 158, 11, 0.08);
+      border-left: 4px solid var(--accent);
+      padding: 18px 22px;
+      border-radius: 8px;
+      margin: 22px 0;
+    }
+    .alert-box p {
+      color: var(--text-main);
+      margin: 0;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    .nav-tabs {
+      display: flex;
+      gap: 10px;
+      margin-top: 10px;
+      flex-wrap: wrap;
+    }
+    .tab-btn {
+      padding: 6px 14px;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--card-border);
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      transition: all 0.2s;
+    }
+    .tab-btn.active, .tab-btn:hover {
+      background: var(--accent-glow);
+      color: #fff;
+      border-color: var(--accent);
+    }
+    .footer {
+      text-align: center;
+      padding-top: 24px;
+      color: var(--text-muted);
+      font-size: 13px;
+      border-top: 1px solid var(--card-border);
+      margin-top: 32px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="nav-bar">
+      <a href="https://serdevir91.github.io" class="nav-link">
+        <i class="fa-solid fa-arrow-left"></i> Erdevir Labs Portfolio
+      </a>
+      <div class="nav-tabs">
+        <a href="index.html" class="tab-btn">Overview</a>
+        <a href="privacy.html" class="tab-btn active">Privacy Policy</a>
+        <a href="terms.html" class="tab-btn">Terms of Service</a>
+        <a href="https://www.youtube.com/@Chroniclelensworld" target="_blank" rel="noopener noreferrer" class="tab-btn">
+          <i class="fa-brands fa-youtube" style="color: #ef4444; margin-right: 4px;"></i> YouTube Channel
+        </a>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="header-logo">
+        <img src="icon.png" alt="Chronicle Lens Icon" />
+        <div>
+          <div class="badge"><i class="fa-solid fa-user-shield"></i> Official Privacy Policy</div>
+          <h1>Chronicle Lens</h1>
+          <p class="subtitle">
+            Application: <strong>Chronicle Lens Uploader</strong> &bull; 
+            Publisher: <strong>Soner Erdevir (Erdevir Labs)</strong> &bull; 
+            Effective Date: October 25, 2026
+          </p>
+        </div>
+      </div>
+
+      <div class="alert-box">
+        <p>
+          <strong>Privacy & Data Protection Commitment:</strong> 
+          <strong>Chronicle Lens</strong> ("we", "our", "us") produces educational short-form documentary videos covering world history, modern global affairs, and curious facts. 
+          <strong>Chronicle Lens Uploader</strong> is an internal automation software used exclusively to publish original video content to our verified channels on YouTube, TikTok, and Instagram. 
+          We do <strong>not</strong> collect, process, sell, rent, or share personal data of viewers or the public.
+        </p>
+      </div>
+
+      <h2><i class="fa-solid fa-circle-info"></i> 1. Scope & Purpose</h2>
+      <p>
+        This Privacy Policy describes how <strong>Chronicle Lens</strong> and its internal publishing software, <strong>Chronicle Lens Uploader</strong> (Google Cloud Project ID: <code>chronicle-lens-uploader</code>), access, use, store, and protect information when integrating with third-party developer APIs, including the <strong>Google YouTube Data API v3</strong>, <strong>TikTok Content Posting API</strong>, and <strong>Meta Graph API</strong>.
+      </p>
+      <p>
+        The software is an internal tool operated solely by the publisher (Soner Erdevir / Erdevir Labs) to automate video scheduling and uploads to authorized brand channels. It is not offered as a multi-user SaaS or commercial public platform.
+      </p>
+
+      <h2><i class="fa-brands fa-google"></i> 2. Google User Data & YouTube API Disclosure</h2>
+      <p>
+        Chronicle Lens Uploader connects to Google APIs via standard OAuth 2.0 authorization protocols to interact with the owner's YouTube channel. When authorized, the tool requests and utilizes the following OAuth scopes:
+      </p>
+      <ul>
+        <li><code>https://www.googleapis.com/auth/youtube.upload</code> — Allows the software to upload original educational videos, set privacy levels (private, unlisted, or scheduled public releases), and attach localized titles, descriptions, and tags.</li>
+        <li><code>https://www.googleapis.com/auth/youtube</code> or <code>https://www.googleapis.com/auth/youtube.readonly</code> — Used to retrieve channel identification data (Channel ID, Title) and track the upload/processing status of videos published by the tool.</li>
+      </ul>
+      <p><strong>Specific Data Accessed:</strong></p>
+      <ul>
+        <li><strong>OAuth Authentication Credentials:</strong> Secure temporary access tokens and refresh tokens issued by Google Identity Services.</li>
+        <li><strong>Channel Identity:</strong> Channel ID and channel display name, used solely to confirm the tool is delivering videos to the designated Chronicle Lens channel.</li>
+        <li><strong>Upload Metadata:</strong> Returned Video IDs, processing state, and scheduling timestamps for local record-keeping and quota monitoring.</li>
+      </ul>
+
+      <h2><i class="fa-solid fa-ban"></i> 3. Data We Do NOT Collect</h2>
+      <p>
+        We strictly limit our access to what is necessary for publishing videos. We do <strong>NOT</strong> collect, read, or process:
+      </p>
+      <ul>
+        <li>Personal identifying information of viewers, subscribers, or commenters.</li>
+        <li>Private messages, comments, viewing history, or search queries.</li>
+        <li>Google account contacts, emails, or personal Drive/Docs data.</li>
+        <li>Analytics tracking, tracking pixels, or cross-site behavioral cookies on this legal site or within the software.</li>
+      </ul>
+
+      <h2><i class="fa-solid fa-certificate"></i> 4. Compliance with Google API Services User Data Policy</h2>
+      <div class="alert-box">
+        <p>
+          <strong>Limited Use Disclosure:</strong><br />
+          <strong>Chronicle Lens Uploader</strong>'s use and transfer of information received from Google APIs to any other app will adhere to the 
+          <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" rel="noopener noreferrer">Google API Services User Data Policy</a>, including the Limited Use requirements.
+        </p>
+      </div>
+      <p>Specifically:</p>
+      <ul>
+        <li>Google user data is used solely to provide user-facing video publishing and management features for the authenticated channel.</li>
+        <li>Data received through Google APIs is <strong>never</strong> transferred to external parties, third-party advertising networks, data brokers, or information resellers.</li>
+        <li>Data is <strong>never</strong> used for serving advertisements, retargeting, or building user interest profiles.</li>
+        <li>Humans are not permitted to read Google user data, except where required by law, necessary for security investigations, or with explicit prior consent.</li>
+      </ul>
+
+      <h2><i class="fa-solid fa-shield-halved"></i> 5. Data Storage, Security & Confidentiality</h2>
+      <p>
+        All authorization tokens (e.g., <code>token.json</code>) and API keys are stored locally on a secured, password-protected production workstation. Tokens are never committed to public version control or transmitted to any secondary servers. All communications with Google, TikTok, and Meta endpoints occur strictly over encrypted Transport Layer Security (TLS/HTTPS).
+      </p>
+
+      <h2><i class="fa-solid fa-trash-can"></i> 6. Data Retention, Revocation & User Rights</h2>
+      <p>
+        Authentication tokens are retained locally only as long as necessary to maintain scheduled automated publishing to the authorized channel.
+      </p>
+      <p>
+        You have the right to revoke Chronicle Lens Uploader's access at any time:
+      </p>
+      <ul>
+        <li>
+          <strong>Google & YouTube:</strong> Visit the official Google Account Third-Party Access portal at 
+          <a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener noreferrer">https://myaccount.google.com/permissions</a>, locate <strong>Chronicle Lens Uploader</strong>, and click <em>Remove Access</em>.
+        </li>
+        <li>
+          <strong>TikTok:</strong> Navigate to your profile settings &gt; <em>Security and permissions</em> &gt; <em>Manage app permissions</em> and remove access.
+        </li>
+        <li>
+          <strong>Meta / Instagram:</strong> Navigate to <em>Settings</em> &gt; <em>Apps and websites</em> and remove authorized access.
+        </li>
+      </ul>
+      <p>
+        Upon revocation of permissions, existing access tokens become immediately void, and local cached tokens are deleted permanently.
+      </p>
+
+      <h2><i class="fa-solid fa-robot"></i> 7. AI & Synthetic Media Transparency</h2>
+      <p>
+        In compliance with YouTube, TikTok, and Meta community policies regarding altered and synthetic content:
+      </p>
+      <ul>
+        <li>Chronicle Lens videos utilize AI-generated synthetic voice narration (text-to-speech) paired with original visual animations, timelines, and licensed archival sound effects.</li>
+        <li>All scripts undergo factual research and editorial review against authoritative historical, scientific, and journalistic records prior to video synthesis.</li>
+        <li>Every published video is explicitly flagged as containing altered or synthetic media in YouTube Studio upload metadata.</li>
+      </ul>
+
+      <h2><i class="fa-solid fa-children"></i> 8. Children's Online Privacy (COPPA & GDPR-K)</h2>
+      <p>
+        Chronicle Lens produces general informational content intended for general audiences. The publishing tool does not collect personal information from any user, including children under 13 (or under 16 in the European Economic Area). Our channel upload settings explicitly mark videos as "Not Made for Kids" under COPPA standards.
+      </p>
+
+      <h2><i class="fa-solid fa-scale-balanced"></i> 9. Third-Party Platform Policies</h2>
+      <p>
+        By interacting with videos published by Chronicle Lens on external platforms, users are subject to the terms and privacy practices of those platforms:
+      </p>
+      <ul>
+        <li><a href="https://www.youtube.com/t/terms" target="_blank" rel="noopener noreferrer">YouTube Terms of Service</a></li>
+        <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a></li>
+        <li><a href="https://www.tiktok.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">TikTok Privacy Policy</a></li>
+        <li><a href="https://www.facebook.com/privacy/policy" target="_blank" rel="noopener noreferrer">Meta Privacy Policy</a></li>
+      </ul>
+
+      <h2><i class="fa-solid fa-clock-rotate-left"></i> 10. Amendments & Updates</h2>
+      <p>
+        We may update this Privacy Policy from time to time to reflect platform API updates or legal requirements. Any modifications will be posted to this page with an updated effective date.
+      </p>
+
+      <h2><i class="fa-solid fa-envelope"></i> 11. Contact Information</h2>
+      <p>
+        If you have questions, inquiries, or requests regarding this Privacy Policy or data security practices, please contact:
+      </p>
+      <ul>
+        <li><strong>Publisher / Developer:</strong> Soner Erdevir (Erdevir Labs)</li>
+        <li><strong>Email:</strong> <a href="mailto:serdevir91@gmail.com">serdevir91@gmail.com</a></li>
+        <li><strong>Website:</strong> <a href="https://serdevir91.github.io">https://serdevir91.github.io</a></li>
+        <li><strong>Location:</strong> Türkiye</li>
+      </ul>
+
+      <div class="footer">
+        &copy; 2026 Chronicle Lens &bull; Erdevir Labs. All rights reserved.
+      </div>
+    </div>
+  </div>
+</body>
+</html>
