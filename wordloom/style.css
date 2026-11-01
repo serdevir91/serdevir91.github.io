@@ -1,0 +1,14 @@
+:root{--paper:#EEE3CC;--card:#F7EFDD;--raised:#E4D5B7;--ink:#2E1F2B;--soft:#6F5E68;--rule:#D5C5A8;--accent:#A8325E;--woad:#36578F;--weld:#C99318;--verdigris:#3D8C7F}
+@media (prefers-color-scheme:dark){:root{--paper:#19141D;--card:#241D2A;--raised:#2F2636;--ink:#F1E7D6;--soft:#B3A6B0;--rule:#382E40;--accent:#E0668E;--woad:#7FA3E0;--weld:#E8B640;--verdigris:#5FBFAE}}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:17px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+main{max-width:720px;margin:0 auto;padding:32px 16px 64px}
+.card{background:var(--card);border:1px solid var(--rule);border-radius:12px;padding:28px 24px;box-shadow:0 4px 18px rgba(46,31,43,.06)}
+.label{display:inline-block;font:700 13px/1.4 "Futura",ui-sans-serif,system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.stamp{display:inline-block;margin:10px 0 4px;padding:2px 11px;border:1.5px solid var(--weld);border-radius:999px;color:var(--weld);font:600 12px/1.6 ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.06em;text-transform:uppercase}
+h1{font-family:"Futura",-apple-system,BlinkMacSystemFont,sans-serif;font-weight:700;font-size:34px;line-height:1.2;letter-spacing:.04em;margin:6px 0 4px;overflow-wrap:anywhere}
+h2{font-family:"Futura",-apple-system,BlinkMacSystemFont,sans-serif;font-weight:700;font-size:19px;letter-spacing:.03em;margin:28px 0 6px}
+a{color:var(--woad)}hr{border:0;border-top:1px dashed var(--rule);margin:22px 0}.muted{color:var(--soft);font-size:15px}
+ul{padding-left:22px}li{margin:4px 0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 4px;padding:0;list-style:none}
+.chips li{margin:0;padding:4px 12px;border-radius:999px;background:var(--raised);border:1px solid var(--rule);font:600 12px/1.6 "Futura",ui-sans-serif,sans-serif;letter-spacing:.08em;text-transform:uppercase}
+nav.foot a{white-space:nowrap}
