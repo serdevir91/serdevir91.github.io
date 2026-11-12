@@ -704,6 +704,7 @@
 
     .app-actions {
       display: flex;
+      flex-wrap: wrap;
       align-items: center;
       gap: 8px;
       margin-top: auto;
@@ -712,7 +713,7 @@
     }
 
     .action-btn {
-      flex: 1;
+      flex: 1 1 calc(50% - 56px);
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -760,6 +761,20 @@
     .btn-msstore:hover {
       background: rgba(0, 120, 215, 0.28);
       color: #93c5fd;
+      transform: translateY(-1px);
+    }
+
+    html, body { overflow-x: clip; }
+
+    .btn-testflight {
+      background: rgba(10, 132, 255, 0.14);
+      color: #64b5ff;
+      border: 1px solid rgba(10, 132, 255, 0.35);
+    }
+
+    .btn-testflight:hover {
+      background: rgba(10, 132, 255, 0.28);
+      color: #a5d4ff;
       transform: translateY(-1px);
     }
 
@@ -1425,7 +1440,7 @@
       <!-- Stats Bar -->
       <div class="stats-bar">
         <div class="stat-item">
-          <div class="stat-number">11+</div>
+          <div class="stat-number">21+</div>
           <div class="stat-label">Production Apps & Tools</div>
         </div>
         <div class="stat-item">
@@ -1459,7 +1474,8 @@
           <input type="text" id="appSearchInput" class="search-input" placeholder="Search by app name, feature, or technology..." />
         </div>
         <div class="category-pills" id="categoryFilterContainer">
-          <div class="cat-pill active" data-filter="all">All Apps (11)</div>
+          <div class="cat-pill active" data-filter="all">All Apps (21)</div>
+          <div class="cat-pill" data-filter="ios">🍏 iOS & TestFlight</div>
           <div class="cat-pill" data-filter="mobile">📱 Android Mobile</div>
           <div class="cat-pill" data-filter="desktop">💻 Windows & Desktop</div>
           <div class="cat-pill" data-filter="utilities">🛠️ Utilities & Education</div>
@@ -1471,7 +1487,7 @@
       <div class="apps-grid" id="appsGrid">
 
         <!-- 1. My Language Tracker -->
-        <article class="app-card" data-category="mobile utilities">
+        <article class="app-card" data-category="ios mobile utilities">
           <div class="app-header">
             <div class="app-icon-wrap">
               <img src="/icons/my_language_tracker.png" alt="My Language Tracker" />
@@ -1492,6 +1508,7 @@
           <div class="app-tags">
             <span class="app-tag">Flutter</span>
             <span class="app-tag">Android</span>
+            <span class="app-tag">iOS Beta</span>
             <span class="app-tag">Oxford 5000</span>
             <span class="app-tag">CEFR</span>
             <span class="app-tag">SRS Algorithm</span>
@@ -1500,6 +1517,9 @@
           <div class="app-actions">
             <a href="https://play.google.com/store/apps/details?id=www.mylanguagetracker.app" target="_blank" class="action-btn btn-playstore">
               <i class="fa-brands fa-google-play"></i> Play Store
+            </a>
+            <a href="https://testflight.apple.com/join/R7KVbU4S" target="_blank" rel="noopener" class="action-btn btn-testflight" title="Join the iOS beta on TestFlight">
+              <i class="fa-brands fa-apple"></i> TestFlight
             </a>
             <a href="/my-language-tracker-privacy/privacy.html" class="action-btn btn-privacy-action" title="Privacy Policy">
               <i class="fa-solid fa-shield-halved"></i>
@@ -1511,7 +1531,7 @@
         </article>
 
         <!-- 2. Core Defender: Rogue Survivor -->
-        <article class="app-card" data-category="mobile desktop games">
+        <article class="app-card" data-category="ios mobile desktop games">
           <div class="app-header">
             <div class="app-icon-wrap">
               <img src="/icons/core_defender.png" alt="Core Defender: Rogue Survivor" />
@@ -1532,6 +1552,7 @@
           <div class="app-tags">
             <span class="app-tag">Godot 4.3</span>
             <span class="app-tag">Android</span>
+            <span class="app-tag">iOS Beta</span>
             <span class="app-tag">Windows</span>
             <span class="app-tag">Roguelike</span>
             <span class="app-tag">Tower Defense</span>
@@ -1544,6 +1565,9 @@
             <a href="https://apps.microsoft.com/detail/9NNHWLW1WMQL" target="_blank" class="action-btn btn-msstore">
               <i class="fa-brands fa-microsoft"></i> MS Store
             </a>
+            <a href="https://testflight.apple.com/join/CCYhvd91" target="_blank" rel="noopener" class="action-btn btn-testflight" title="Join the iOS beta on TestFlight">
+              <i class="fa-brands fa-apple"></i> TestFlight
+            </a>
             <a href="/core-defender-privacy/privacy.html" class="action-btn btn-privacy-action" title="Privacy Policy">
               <i class="fa-solid fa-shield-halved"></i>
             </a>
@@ -1554,7 +1578,7 @@
         </article>
 
         <!-- 3. Markdown Keeper -->
-        <article class="app-card" data-category="mobile desktop utilities">
+        <article class="app-card" data-category="ios mobile desktop utilities">
           <div class="app-header">
             <div class="app-icon-wrap">
               <img src="/icons/markdown_keeper.png" alt="Markdown Keeper" />
@@ -1575,6 +1599,7 @@
           <div class="app-tags">
             <span class="app-tag">Flutter</span>
             <span class="app-tag">Android</span>
+            <span class="app-tag">iOS Beta</span>
             <span class="app-tag">Windows</span>
             <span class="app-tag">Markdown</span>
             <span class="app-tag">Concept Map</span>
@@ -1587,6 +1612,9 @@
             <a href="https://apps.microsoft.com/detail/9P03P665MMTC" target="_blank" class="action-btn btn-msstore">
               <i class="fa-brands fa-microsoft"></i> MS Store
             </a>
+            <a href="https://testflight.apple.com/join/36ZY1gA2" target="_blank" rel="noopener" class="action-btn btn-testflight" title="Join the iOS beta on TestFlight">
+              <i class="fa-brands fa-apple"></i> TestFlight
+            </a>
             <a href="/markdown-keeper-privacy/privacy.html" class="action-btn btn-privacy-action" title="Privacy Policy">
               <i class="fa-solid fa-shield-halved"></i>
             </a>
@@ -1597,7 +1625,7 @@
         </article>
 
         <!-- 4. AutoShare -->
-        <article class="app-card" data-category="mobile desktop utilities">
+        <article class="app-card" data-category="ios mobile desktop utilities">
           <div class="app-header">
             <div class="app-icon-wrap">
               <img src="/icons/autoshare.png" alt="AutoShare" />
@@ -1618,6 +1646,7 @@
           <div class="app-tags">
             <span class="app-tag">Flutter</span>
             <span class="app-tag">Android</span>
+            <span class="app-tag">iOS Beta</span>
             <span class="app-tag">Windows</span>
             <span class="app-tag">Networking</span>
             <span class="app-tag">MS Store</span>
@@ -1629,6 +1658,9 @@
             <a href="https://apps.microsoft.com/detail/9PGM24F50VR8" target="_blank" class="action-btn btn-msstore">
               <i class="fa-brands fa-microsoft"></i> MS Store
             </a>
+            <a href="https://testflight.apple.com/join/67VcQRs6" target="_blank" rel="noopener" class="action-btn btn-testflight" title="Join the iOS beta on TestFlight">
+              <i class="fa-brands fa-apple"></i> TestFlight
+            </a>
             <a href="/autoshare-privacy-policy/privacy.html" class="action-btn btn-privacy-action" title="Privacy Policy">
               <i class="fa-solid fa-shield-halved"></i>
             </a>
@@ -1639,7 +1671,7 @@
         </article>
 
         <!-- 5. Snakey Rogue: Pixel Snake RPG -->
-        <article class="app-card" data-category="mobile desktop games">
+        <article class="app-card" data-category="ios mobile desktop games">
           <div class="app-header">
             <div class="app-icon-wrap">
               <img src="/icons/sneaky_rogue.png" alt="Snakey Rogue" />
@@ -1661,6 +1693,7 @@
             <span class="app-tag">Flutter</span>
             <span class="app-tag">Flame Engine</span>
             <span class="app-tag">Android</span>
+            <span class="app-tag">iOS Beta</span>
             <span class="app-tag">Windows</span>
             <span class="app-tag">Pixel Art</span>
             <span class="app-tag">MS Store</span>
@@ -1672,6 +1705,9 @@
             <a href="https://apps.microsoft.com/detail/9PJTFGMG98WF" target="_blank" class="action-btn btn-msstore">
               <i class="fa-brands fa-microsoft"></i> MS Store
             </a>
+            <a href="https://testflight.apple.com/join/V6PjGEan" target="_blank" rel="noopener" class="action-btn btn-testflight" title="Join the iOS beta on TestFlight">
+              <i class="fa-brands fa-apple"></i> TestFlight
+            </a>
             <a href="/sneaky-rogue-privacy/privacy.html" class="action-btn btn-privacy-action" title="Privacy Policy">
               <i class="fa-solid fa-shield-halved"></i>
             </a>
@@ -1682,7 +1718,7 @@
         </article>
 
         <!-- 6. SupZip: File Manager & Unzip -->
-        <article class="app-card" data-category="mobile desktop utilities">
+        <article class="app-card" data-category="ios mobile desktop utilities">
           <div class="app-header">
             <div class="app-icon-wrap">
               <img src="/icons/supzip.png" alt="SupZip" />
@@ -1703,6 +1739,7 @@
           <div class="app-tags">
             <span class="app-tag">Flutter</span>
             <span class="app-tag">Android</span>
+            <span class="app-tag">iOS Beta</span>
             <span class="app-tag">Windows</span>
             <span class="app-tag">ZIP & RAR</span>
             <span class="app-tag">MS Store</span>
@@ -1714,6 +1751,9 @@
             <a href="https://apps.microsoft.com/detail/9MV22F9W72FC" target="_blank" class="action-btn btn-msstore">
               <i class="fa-brands fa-microsoft"></i> MS Store
             </a>
+            <a href="https://testflight.apple.com/join/MBpbdFRx" target="_blank" rel="noopener" class="action-btn btn-testflight" title="Join the iOS beta on TestFlight">
+              <i class="fa-brands fa-apple"></i> TestFlight
+            </a>
             <a href="/subzip-privacy-policy/privacy.html" class="action-btn btn-privacy-action" title="Privacy Policy">
               <i class="fa-solid fa-shield-halved"></i>
             </a>
@@ -1724,7 +1764,7 @@
         </article>
 
         <!-- 7. Workout Tracker -->
-        <article class="app-card" data-category="mobile utilities">
+        <article class="app-card" data-category="ios mobile utilities">
           <div class="app-header">
             <div class="app-icon-wrap">
               <img src="/icons/workout_tracker.png" alt="Workout Tracker" />
@@ -1745,6 +1785,7 @@
           <div class="app-tags">
             <span class="app-tag">Flutter</span>
             <span class="app-tag">Android</span>
+            <span class="app-tag">iOS Beta</span>
             <span class="app-tag">Fitness</span>
             <span class="app-tag">Analytics</span>
             <span class="app-tag">AMOLED Dark</span>
@@ -1752,6 +1793,9 @@
           <div class="app-actions">
             <a href="https://play.google.com/store/apps/details?id=com.workouttracker.workout_tracker" target="_blank" class="action-btn btn-playstore">
               <i class="fa-brands fa-google-play"></i> Play Store
+            </a>
+            <a href="https://testflight.apple.com/join/rsKexDPJ" target="_blank" rel="noopener" class="action-btn btn-testflight" title="Join the iOS beta on TestFlight">
+              <i class="fa-brands fa-apple"></i> TestFlight
             </a>
             <a href="/workout-tracker-privacy/privacy.html" class="action-btn btn-privacy-action" title="Privacy Policy">
               <i class="fa-solid fa-shield-halved"></i>
@@ -1763,7 +1807,7 @@
         </article>
 
         <!-- 8. Flappy Rogue -->
-        <article class="app-card" data-category="mobile games">
+        <article class="app-card" data-category="ios mobile games">
           <div class="app-header">
             <div class="app-icon-wrap">
               <img src="/icons/flappy_rogue.png" alt="Flappy Rogue" />
@@ -1785,12 +1829,16 @@
             <span class="app-tag">Flutter</span>
             <span class="app-tag">Flame Engine</span>
             <span class="app-tag">Android</span>
+            <span class="app-tag">iOS Beta</span>
             <span class="app-tag">Arcade</span>
             <span class="app-tag">High-Score</span>
           </div>
           <div class="app-actions">
             <a href="https://play.google.com/store/apps/details?id=www.flappyrogue.app" target="_blank" class="action-btn btn-playstore">
               <i class="fa-brands fa-google-play"></i> Play Store
+            </a>
+            <a href="https://testflight.apple.com/join/XX4dKJS3" target="_blank" rel="noopener" class="action-btn btn-testflight" title="Join the iOS beta on TestFlight">
+              <i class="fa-brands fa-apple"></i> TestFlight
             </a>
             <a href="/flappy-rogue-privacy/privacy.html" class="action-btn btn-privacy-action" title="Privacy Policy">
               <i class="fa-solid fa-shield-halved"></i>
@@ -1802,7 +1850,7 @@
         </article>
 
         <!-- 9. Ezan Vakti: Prayer Times Qibla -->
-        <article class="app-card" data-category="mobile utilities">
+        <article class="app-card" data-category="ios mobile utilities">
           <div class="app-header">
             <div class="app-icon-wrap">
               <img src="/icons/ezan_vakti.png" alt="Ezan Vakti: Prayer Times Qibla" />
@@ -1823,6 +1871,7 @@
           <div class="app-tags">
             <span class="app-tag">Flutter</span>
             <span class="app-tag">Android</span>
+            <span class="app-tag">iOS Beta</span>
             <span class="app-tag">Prayer Times</span>
             <span class="app-tag">Quran</span>
             <span class="app-tag">Qibla</span>
@@ -1830,6 +1879,9 @@
           <div class="app-actions">
             <a href="https://play.google.com/store/apps/details?id=com.erdevirlabs.athan_premium" target="_blank" class="action-btn btn-playstore">
               <i class="fa-brands fa-google-play"></i> Play Store
+            </a>
+            <a href="https://testflight.apple.com/join/eG3Aw1ZG" target="_blank" rel="noopener" class="action-btn btn-testflight" title="Join the iOS beta on TestFlight">
+              <i class="fa-brands fa-apple"></i> TestFlight
             </a>
             <a href="/ezan-vakti-privacy/privacy.html" class="action-btn btn-privacy-action" title="Privacy Policy">
               <i class="fa-solid fa-shield-halved"></i>
@@ -1908,7 +1960,7 @@
         </article>
 
         <!-- 12. Roadster Challenge -->
-        <article class="app-card" data-category="mobile desktop games">
+        <article class="app-card" data-category="ios mobile desktop games">
           <div class="app-header">
             <div class="app-icon-wrap">
               <img src="/icons/roadster_challenge.png" alt="Roadster Challenge" />
@@ -1929,13 +1981,17 @@
           <div class="app-tags">
             <span class="app-tag">Unity</span>
             <span class="app-tag">Android</span>
+            <span class="app-tag">iOS Beta</span>
             <span class="app-tag">Windows</span>
             <span class="app-tag">Arcade</span>
             <span class="app-tag">Racing</span>
           </div>
           <div class="app-actions">
-            <a href="https://play.google.com/store/apps/details?id=com.serdevir.roadsterchallenge" target="_blank" class="action-btn btn-playstore">
+            <a href="https://play.google.com/store/apps/details?id=www.roadsterchallenge.app" target="_blank" class="action-btn btn-playstore">
               <i class="fa-brands fa-google-play"></i> Play Store
+            </a>
+            <a href="https://testflight.apple.com/join/F9kNWQ5h" target="_blank" rel="noopener" class="action-btn btn-testflight" title="Join the iOS beta on TestFlight">
+              <i class="fa-brands fa-apple"></i> TestFlight
             </a>
             <a href="/roadster-challenge-privacy/privacy.html" class="action-btn btn-privacy-action" title="Privacy Policy">
               <i class="fa-solid fa-shield-halved"></i>
@@ -1944,7 +2000,368 @@
               <i class="fa-solid fa-file-contract"></i>
             </a>
           </div>
-        </article></div>
+        </article>
+        <!-- 13. Tillwise: Receipt Scanner -->
+        <article class="app-card" data-category="ios utilities">
+          <div class="app-header">
+            <div class="app-icon-wrap">
+              <img src="/icons/tillwise.png" alt="Tillwise: Receipt Scanner" />
+            </div>
+            <div class="app-meta">
+              <h3 class="app-title">Tillwise: Receipt Scanner</h3>
+              <div class="app-category"><i class="fa-solid fa-receipt"></i> Receipts & Expense Reports</div>
+            </div>
+          </div>
+          <p class="app-desc">
+            Receipt scanner and expense reports for iPhone. Text is read on the device, so receipts stay private.
+          </p>
+          <ul class="app-highlights">
+            <li><i class="fa-solid fa-check"></i> On-device receipt reading with editable fields</li>
+            <li><i class="fa-solid fa-check"></i> Fields the app is unsure about are marked "Check this"</li>
+            <li><i class="fa-solid fa-check"></i> Expense reports and export</li>
+          </ul>
+          <div class="app-tags">
+            <span class="app-tag">SwiftUI</span>
+            <span class="app-tag">iOS</span>
+            <span class="app-tag">Vision OCR</span>
+            <span class="app-tag">On-device</span>
+          </div>
+          <div class="app-actions">
+            <a href="https://testflight.apple.com/join/E6msPT6w" target="_blank" rel="noopener" class="action-btn btn-testflight" title="Join the iOS beta on TestFlight">
+              <i class="fa-brands fa-apple"></i> TestFlight
+            </a>
+            <a href="/tillwise/" class="action-btn btn-web-action">
+              <i class="fa-solid fa-circle-info"></i> Details
+            </a>
+            <a href="/tillwise/privacy.html" class="action-btn btn-privacy-action" title="Privacy Policy">
+              <i class="fa-solid fa-shield-halved"></i>
+            </a>
+            <a href="/tillwise/support.html" class="action-btn btn-privacy-action" title="Support">
+              <i class="fa-solid fa-life-ring"></i>
+            </a>
+          </div>
+        </article>
+        <!-- 14. Mixmere: Color Pour Puzzle -->
+        <article class="app-card" data-category="ios games">
+          <div class="app-header">
+            <div class="app-icon-wrap">
+              <img src="/icons/mixmere.png" alt="Mixmere: Color Pour Puzzle" />
+            </div>
+            <div class="app-meta">
+              <h3 class="app-title">Mixmere: Color Pour Puzzle</h3>
+              <div class="app-category"><i class="fa-solid fa-droplet"></i> Color Pour Puzzle</div>
+            </div>
+          </div>
+          <p class="app-desc">
+            Pour, blend and match the target color. 300 handcrafted puzzles and a new daily mix every day.
+          </p>
+          <ul class="app-highlights">
+            <li><i class="fa-solid fa-check"></i> 300 handcrafted color puzzles</li>
+            <li><i class="fa-solid fa-check"></i> Daily Mix shared by all players</li>
+            <li><i class="fa-solid fa-check"></i> Hints and undos paid with earned drops</li>
+          </ul>
+          <div class="app-tags">
+            <span class="app-tag">SwiftUI</span>
+            <span class="app-tag">iOS</span>
+            <span class="app-tag">Puzzle</span>
+            <span class="app-tag">Daily</span>
+          </div>
+          <div class="app-actions">
+            <a href="https://testflight.apple.com/join/JHuQfzxX" target="_blank" rel="noopener" class="action-btn btn-testflight" title="Join the iOS beta on TestFlight">
+              <i class="fa-brands fa-apple"></i> TestFlight
+            </a>
+            <a href="/mixmere/" class="action-btn btn-web-action">
+              <i class="fa-solid fa-circle-info"></i> Details
+            </a>
+            <a href="/mixmere/privacy.html" class="action-btn btn-privacy-action" title="Privacy Policy">
+              <i class="fa-solid fa-shield-halved"></i>
+            </a>
+            <a href="/mixmere/support.html" class="action-btn btn-privacy-action" title="Support">
+              <i class="fa-solid fa-life-ring"></i>
+            </a>
+          </div>
+        </article>
+        <!-- 15. Wherelens: Daily Geo Guess -->
+        <article class="app-card" data-category="ios games">
+          <div class="app-header">
+            <div class="app-icon-wrap">
+              <img src="/icons/wherelens.png" alt="Wherelens: Daily Geo Guess" />
+            </div>
+            <div class="app-meta">
+              <h3 class="app-title">Wherelens: Daily Geo Guess</h3>
+              <div class="app-category"><i class="fa-solid fa-earth-europe"></i> Daily Geo Guessing Game</div>
+            </div>
+          </div>
+          <p class="app-desc">
+            Look around a real street, drop your pin on the map and see how close you got. Five new places every day, the same for everyone.
+          </p>
+          <ul class="app-highlights">
+            <li><i class="fa-solid fa-check"></i> Real street scenes from Apple Maps Look Around</li>
+            <li><i class="fa-solid fa-check"></i> 5 rounds a day, up to 25,000 points</li>
+            <li><i class="fa-solid fa-check"></i> Same daily places for every player</li>
+          </ul>
+          <div class="app-tags">
+            <span class="app-tag">SwiftUI</span>
+            <span class="app-tag">iOS</span>
+            <span class="app-tag">MapKit</span>
+            <span class="app-tag">Geo Game</span>
+          </div>
+          <div class="app-actions">
+            <a href="https://testflight.apple.com/join/6rt2x5JU" target="_blank" rel="noopener" class="action-btn btn-testflight" title="Join the iOS beta on TestFlight">
+              <i class="fa-brands fa-apple"></i> TestFlight
+            </a>
+            <a href="/wherelens/" class="action-btn btn-web-action">
+              <i class="fa-solid fa-circle-info"></i> Details
+            </a>
+            <a href="/wherelens/privacy.html" class="action-btn btn-privacy-action" title="Privacy Policy">
+              <i class="fa-solid fa-shield-halved"></i>
+            </a>
+            <a href="/wherelens/support.html" class="action-btn btn-privacy-action" title="Support">
+              <i class="fa-solid fa-life-ring"></i>
+            </a>
+          </div>
+        </article>
+        <!-- 16. Blockgrove: Garden Blocks -->
+        <article class="app-card" data-category="ios games">
+          <div class="app-header">
+            <div class="app-icon-wrap">
+              <img src="/icons/blockgrove.png" alt="Blockgrove: Garden Blocks" />
+            </div>
+            <div class="app-meta">
+              <h3 class="app-title">Blockgrove: Garden Blocks</h3>
+              <div class="app-category"><i class="fa-solid fa-seedling"></i> Block Puzzle & Garden</div>
+            </div>
+          </div>
+          <p class="app-desc">
+            A calm 8×8 block puzzle in a hand-carved wooden tray. Cleared lines earn leaves that grow your own garden.
+          </p>
+          <ul class="app-highlights">
+            <li><i class="fa-solid fa-check"></i> 8×8 tray with classic line clears</li>
+            <li><i class="fa-solid fa-check"></i> Daily Grove and 60 Bloom Quests</li>
+            <li><i class="fa-solid fa-check"></i> 12-plot garden that grows as you play</li>
+          </ul>
+          <div class="app-tags">
+            <span class="app-tag">SwiftUI</span>
+            <span class="app-tag">iOS</span>
+            <span class="app-tag">Block Puzzle</span>
+            <span class="app-tag">Relaxing</span>
+          </div>
+          <div class="app-actions">
+            <a href="https://testflight.apple.com/join/8AhNq3eE" target="_blank" rel="noopener" class="action-btn btn-testflight" title="Join the iOS beta on TestFlight">
+              <i class="fa-brands fa-apple"></i> TestFlight
+            </a>
+            <a href="/blockgrove/" class="action-btn btn-web-action">
+              <i class="fa-solid fa-circle-info"></i> Details
+            </a>
+            <a href="/blockgrove/privacy.html" class="action-btn btn-privacy-action" title="Privacy Policy">
+              <i class="fa-solid fa-shield-halved"></i>
+            </a>
+            <a href="/blockgrove/terms.html" class="action-btn btn-privacy-action" title="Terms of Use">
+              <i class="fa-solid fa-file-contract"></i>
+            </a>
+          </div>
+        </article>
+        <!-- 17. Homespun: Aesthetic Widgets -->
+        <article class="app-card" data-category="ios utilities">
+          <div class="app-header">
+            <div class="app-icon-wrap">
+              <img src="/icons/homespun.png" alt="Homespun: Aesthetic Widgets" />
+            </div>
+            <div class="app-meta">
+              <h3 class="app-title">Homespun: Aesthetic Widgets</h3>
+              <div class="app-category"><i class="fa-solid fa-house-chimney"></i> Home & Lock Screen Widgets</div>
+            </div>
+          </div>
+          <p class="app-desc">
+            A cozy studio for your iPhone Home Screen and Lock Screen. Design a widget in the app, then place it from the widget gallery.
+          </p>
+          <ul class="app-highlights">
+            <li><i class="fa-solid fa-check"></i> Seven kinds of widgets</li>
+            <li><i class="fa-solid fa-check"></i> Home Screen and Lock Screen designs</li>
+            <li><i class="fa-solid fa-check"></i> Live preview while you design</li>
+          </ul>
+          <div class="app-tags">
+            <span class="app-tag">SwiftUI</span>
+            <span class="app-tag">iOS</span>
+            <span class="app-tag">WidgetKit</span>
+            <span class="app-tag">Personalization</span>
+          </div>
+          <div class="app-actions">
+            <a href="https://testflight.apple.com/join/YJZNJNUE" target="_blank" rel="noopener" class="action-btn btn-testflight" title="Join the iOS beta on TestFlight">
+              <i class="fa-brands fa-apple"></i> TestFlight
+            </a>
+            <a href="/homespun/" class="action-btn btn-web-action">
+              <i class="fa-solid fa-circle-info"></i> Details
+            </a>
+            <a href="/homespun/privacy.html" class="action-btn btn-privacy-action" title="Privacy Policy">
+              <i class="fa-solid fa-shield-halved"></i>
+            </a>
+            <a href="/homespun/terms.html" class="action-btn btn-privacy-action" title="Terms of Use">
+              <i class="fa-solid fa-file-contract"></i>
+            </a>
+          </div>
+        </article>
+        <!-- 18. Unbolt: Screw Puzzle -->
+        <article class="app-card" data-category="ios games">
+          <div class="app-header">
+            <div class="app-icon-wrap">
+              <img src="/icons/unbolt.png" alt="Unbolt: Screw Puzzle" />
+            </div>
+            <div class="app-meta">
+              <h3 class="app-title">Unbolt: Screw Puzzle</h3>
+              <div class="app-category"><i class="fa-solid fa-screwdriver-wrench"></i> Screw-Removal Puzzle</div>
+            </div>
+          </div>
+          <p class="app-desc">
+            A tactile screw-removal puzzle on a restorer's workshop wall. Every cleared board restores a classic workshop antique.
+          </p>
+          <ul class="app-highlights">
+            <li><i class="fa-solid fa-check"></i> 300+ levels of overlapping plates</li>
+            <li><i class="fa-solid fa-check"></i> 20 antiques to restore</li>
+            <li><i class="fa-solid fa-check"></i> Daily Workbench and X-ray view</li>
+          </ul>
+          <div class="app-tags">
+            <span class="app-tag">SwiftUI</span>
+            <span class="app-tag">iOS</span>
+            <span class="app-tag">Puzzle</span>
+            <span class="app-tag">Haptics</span>
+          </div>
+          <div class="app-actions">
+            <a href="https://testflight.apple.com/join/BrWSK7Fv" target="_blank" rel="noopener" class="action-btn btn-testflight" title="Join the iOS beta on TestFlight">
+              <i class="fa-brands fa-apple"></i> TestFlight
+            </a>
+            <a href="/unbolt/" class="action-btn btn-web-action">
+              <i class="fa-solid fa-circle-info"></i> Details
+            </a>
+            <a href="/unbolt/privacy.html" class="action-btn btn-privacy-action" title="Privacy Policy">
+              <i class="fa-solid fa-shield-halved"></i>
+            </a>
+            <a href="/unbolt/terms.html" class="action-btn btn-privacy-action" title="Terms of Use">
+              <i class="fa-solid fa-file-contract"></i>
+            </a>
+          </div>
+        </article>
+        <!-- 19. Wordloom: Word Puzzle -->
+        <article class="app-card" data-category="ios games">
+          <div class="app-header">
+            <div class="app-icon-wrap">
+              <img src="/icons/wordloom.png" alt="Wordloom: Word Puzzle" />
+            </div>
+            <div class="app-meta">
+              <h3 class="app-title">Wordloom: Word Puzzle</h3>
+              <div class="app-category"><i class="fa-solid fa-spell-check"></i> Crossword Word Game</div>
+            </div>
+          </div>
+          <p class="app-desc">
+            A crossword-style word game on a weaver's table. Swipe across the letters to spell words; every solved puzzle weaves a band of a city tapestry.
+          </p>
+          <ul class="app-highlights">
+            <li><i class="fa-solid fa-check"></i> 180 levels and 12 city tapestries</li>
+            <li><i class="fa-solid fa-check"></i> Daily Weave</li>
+            <li><i class="fa-solid fa-check"></i> Word of the Day</li>
+          </ul>
+          <div class="app-tags">
+            <span class="app-tag">SwiftUI</span>
+            <span class="app-tag">iOS</span>
+            <span class="app-tag">Word Game</span>
+            <span class="app-tag">Daily</span>
+          </div>
+          <div class="app-actions">
+            <a href="https://testflight.apple.com/join/kD8pPa4G" target="_blank" rel="noopener" class="action-btn btn-testflight" title="Join the iOS beta on TestFlight">
+              <i class="fa-brands fa-apple"></i> TestFlight
+            </a>
+            <a href="/wordloom/" class="action-btn btn-web-action">
+              <i class="fa-solid fa-circle-info"></i> Details
+            </a>
+            <a href="/wordloom/privacy.html" class="action-btn btn-privacy-action" title="Privacy Policy">
+              <i class="fa-solid fa-shield-halved"></i>
+            </a>
+            <a href="/wordloom/terms.html" class="action-btn btn-privacy-action" title="Terms of Use">
+              <i class="fa-solid fa-file-contract"></i>
+            </a>
+          </div>
+        </article>
+        <!-- 20. Stridemap: Walking Journeys -->
+        <article class="app-card" data-category="ios utilities">
+          <div class="app-header">
+            <div class="app-icon-wrap">
+              <img src="/icons/stridemap.png" alt="Stridemap: Walking Journeys" />
+            </div>
+            <div class="app-meta">
+              <h3 class="app-title">Stridemap: Walking Journeys</h3>
+              <div class="app-category"><i class="fa-solid fa-person-walking"></i> Virtual Walking Journeys</div>
+            </div>
+          </div>
+          <p class="app-desc">
+            Turn everyday steps into virtual journeys along famous real-world routes. Reach landmarks and collect illustrated postcards.
+          </p>
+          <ul class="app-highlights">
+            <li><i class="fa-solid fa-check"></i> 12 iconic world routes</li>
+            <li><i class="fa-solid fa-check"></i> Illustrated postcards and certificates</li>
+            <li><i class="fa-solid fa-check"></i> Daily walking journal with Apple Health steps</li>
+          </ul>
+          <div class="app-tags">
+            <span class="app-tag">SwiftUI</span>
+            <span class="app-tag">iOS</span>
+            <span class="app-tag">HealthKit</span>
+            <span class="app-tag">Fitness</span>
+          </div>
+          <div class="app-actions">
+            <a href="https://testflight.apple.com/join/TJ94jn9p" target="_blank" rel="noopener" class="action-btn btn-testflight" title="Join the iOS beta on TestFlight">
+              <i class="fa-brands fa-apple"></i> TestFlight
+            </a>
+            <a href="/stridemap/" class="action-btn btn-web-action">
+              <i class="fa-solid fa-circle-info"></i> Details
+            </a>
+            <a href="/stridemap/privacy.html" class="action-btn btn-privacy-action" title="Privacy Policy">
+              <i class="fa-solid fa-shield-halved"></i>
+            </a>
+            <a href="/stridemap/terms.html" class="action-btn btn-privacy-action" title="Terms of Use">
+              <i class="fa-solid fa-file-contract"></i>
+            </a>
+          </div>
+        </article>
+        <!-- 21. Fastwell - Fasting Tracker -->
+        <article class="app-card" data-category="ios utilities">
+          <div class="app-header">
+            <div class="app-icon-wrap">
+              <img src="/icons/fastwell.png" alt="Fastwell - Fasting Tracker" />
+            </div>
+            <div class="app-meta">
+              <h3 class="app-title">Fastwell - Fasting Tracker</h3>
+              <div class="app-category"><i class="fa-solid fa-hourglass-half"></i> Intermittent Fasting</div>
+            </div>
+          </div>
+          <p class="app-desc">
+            A calm intermittent fasting timer with gentle stages, water and weight tracking, and a private journal.
+          </p>
+          <ul class="app-highlights">
+            <li><i class="fa-solid fa-check"></i> Fasting timer with eating window</li>
+            <li><i class="fa-solid fa-check"></i> Plans for every rhythm</li>
+            <li><i class="fa-solid fa-check"></i> Water, weight and Apple Health</li>
+          </ul>
+          <div class="app-tags">
+            <span class="app-tag">SwiftUI</span>
+            <span class="app-tag">iOS</span>
+            <span class="app-tag">HealthKit</span>
+            <span class="app-tag">Wellness</span>
+          </div>
+          <div class="app-actions">
+            <a href="https://testflight.apple.com/join/BQ5aVTZe" target="_blank" rel="noopener" class="action-btn btn-testflight" title="Join the iOS beta on TestFlight">
+              <i class="fa-brands fa-apple"></i> TestFlight
+            </a>
+            <a href="/fastwell/" class="action-btn btn-web-action">
+              <i class="fa-solid fa-circle-info"></i> Details
+            </a>
+            <a href="/fastwell/privacy.html" class="action-btn btn-privacy-action" title="Privacy Policy">
+              <i class="fa-solid fa-shield-halved"></i>
+            </a>
+            <a href="/fastwell/terms.html" class="action-btn btn-privacy-action" title="Terms of Use">
+              <i class="fa-solid fa-file-contract"></i>
+            </a>
+          </div>
+        </article>
+      </div>
     </section>
 
     <!-- Privacy Policy Center -->
@@ -2074,6 +2491,105 @@
           <div class="privacy-card-links">
             <a href="/chronicle-lens-legal/privacy.html" class="privacy-sublink"><i class="fa-solid fa-shield-halved"></i> Privacy</a>
             <a href="/chronicle-lens-legal/terms.html" class="privacy-sublink"><i class="fa-solid fa-file-contract"></i> Terms</a>
+          </div>
+        </div>
+
+        <div class="privacy-card-container">
+          <div class="privacy-card-header">
+            <img src="/icons/tillwise.png" class="privacy-mini-icon" alt="Tillwise: Receipt Scanner" />
+            <span class="privacy-card-title">Tillwise</span>
+          </div>
+          <div class="privacy-card-links">
+            <a href="/tillwise/privacy.html" class="privacy-sublink"><i class="fa-solid fa-shield-halved"></i> Privacy</a>
+            <a href="/tillwise/support.html" class="privacy-sublink"><i class="fa-solid fa-life-ring"></i> Support</a>
+          </div>
+        </div>
+
+        <div class="privacy-card-container">
+          <div class="privacy-card-header">
+            <img src="/icons/mixmere.png" class="privacy-mini-icon" alt="Mixmere: Color Pour Puzzle" />
+            <span class="privacy-card-title">Mixmere</span>
+          </div>
+          <div class="privacy-card-links">
+            <a href="/mixmere/privacy.html" class="privacy-sublink"><i class="fa-solid fa-shield-halved"></i> Privacy</a>
+            <a href="/mixmere/support.html" class="privacy-sublink"><i class="fa-solid fa-life-ring"></i> Support</a>
+          </div>
+        </div>
+
+        <div class="privacy-card-container">
+          <div class="privacy-card-header">
+            <img src="/icons/wherelens.png" class="privacy-mini-icon" alt="Wherelens: Daily Geo Guess" />
+            <span class="privacy-card-title">Wherelens</span>
+          </div>
+          <div class="privacy-card-links">
+            <a href="/wherelens/privacy.html" class="privacy-sublink"><i class="fa-solid fa-shield-halved"></i> Privacy</a>
+            <a href="/wherelens/support.html" class="privacy-sublink"><i class="fa-solid fa-life-ring"></i> Support</a>
+          </div>
+        </div>
+
+        <div class="privacy-card-container">
+          <div class="privacy-card-header">
+            <img src="/icons/blockgrove.png" class="privacy-mini-icon" alt="Blockgrove: Garden Blocks" />
+            <span class="privacy-card-title">Blockgrove</span>
+          </div>
+          <div class="privacy-card-links">
+            <a href="/blockgrove/privacy.html" class="privacy-sublink"><i class="fa-solid fa-shield-halved"></i> Privacy</a>
+            <a href="/blockgrove/terms.html" class="privacy-sublink"><i class="fa-solid fa-file-contract"></i> Terms</a>
+          </div>
+        </div>
+
+        <div class="privacy-card-container">
+          <div class="privacy-card-header">
+            <img src="/icons/homespun.png" class="privacy-mini-icon" alt="Homespun: Aesthetic Widgets" />
+            <span class="privacy-card-title">Homespun</span>
+          </div>
+          <div class="privacy-card-links">
+            <a href="/homespun/privacy.html" class="privacy-sublink"><i class="fa-solid fa-shield-halved"></i> Privacy</a>
+            <a href="/homespun/terms.html" class="privacy-sublink"><i class="fa-solid fa-file-contract"></i> Terms</a>
+          </div>
+        </div>
+
+        <div class="privacy-card-container">
+          <div class="privacy-card-header">
+            <img src="/icons/unbolt.png" class="privacy-mini-icon" alt="Unbolt: Screw Puzzle" />
+            <span class="privacy-card-title">Unbolt</span>
+          </div>
+          <div class="privacy-card-links">
+            <a href="/unbolt/privacy.html" class="privacy-sublink"><i class="fa-solid fa-shield-halved"></i> Privacy</a>
+            <a href="/unbolt/terms.html" class="privacy-sublink"><i class="fa-solid fa-file-contract"></i> Terms</a>
+          </div>
+        </div>
+
+        <div class="privacy-card-container">
+          <div class="privacy-card-header">
+            <img src="/icons/wordloom.png" class="privacy-mini-icon" alt="Wordloom: Word Puzzle" />
+            <span class="privacy-card-title">Wordloom</span>
+          </div>
+          <div class="privacy-card-links">
+            <a href="/wordloom/privacy.html" class="privacy-sublink"><i class="fa-solid fa-shield-halved"></i> Privacy</a>
+            <a href="/wordloom/terms.html" class="privacy-sublink"><i class="fa-solid fa-file-contract"></i> Terms</a>
+          </div>
+        </div>
+
+        <div class="privacy-card-container">
+          <div class="privacy-card-header">
+            <img src="/icons/stridemap.png" class="privacy-mini-icon" alt="Stridemap: Walking Journeys" />
+            <span class="privacy-card-title">Stridemap</span>
+          </div>
+          <div class="privacy-card-links">
+            <a href="/stridemap/privacy.html" class="privacy-sublink"><i class="fa-solid fa-shield-halved"></i> Privacy</a>
+            <a href="/stridemap/terms.html" class="privacy-sublink"><i class="fa-solid fa-file-contract"></i> Terms</a>
+          </div>
+        </div>
+
+        <div class="privacy-card-container">
+          <div class="privacy-card-header">
+            <img src="/icons/fastwell.png" class="privacy-mini-icon" alt="Fastwell - Fasting Tracker" />
+            <span class="privacy-card-title">Fastwell</span>
+          </div>
+          <div class="privacy-card-links">
+            <a href="/fastwell/privacy.html" class="privacy-sublink"><i class="fa-solid fa-shield-halved"></i> Privacy</a>
+            <a href="/fastwell/terms.html" class="privacy-sublink"><i class="fa-solid fa-file-contract"></i> Terms</a>
           </div>
         </div>
 
