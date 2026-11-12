@@ -1,0 +1,666 @@
+{
+  "studio": "Erdevir Labs",
+  "email": "serde.dev91@gmail.com",
+  "playDeveloper": "https://play.google.com/store/apps/dev?id=6728487283410636967",
+  "github": "https://github.com/serdevir91",
+  "portfolio": "/soner-portfolio/",
+  "apps": [
+    {
+      "id": "workout_tracker",
+      "name": "Workout Tracker",
+      "category": "Fitness & 1RM Progression",
+      "type": "tool",
+      "icon": "/icons/workout_tracker.png",
+      "description": "Comprehensive gym and fitness training log app with custom routines, live set recording, volume analytics, 1RM progression charts, and sleek Obsidian AMOLED dark mode.",
+      "highlights": [
+        "Custom routines, exercise sets & rest timer",
+        "Advanced volume & muscle group progression heatmaps",
+        "Pure local storage, offline backup & Dynamic Island overlay"
+      ],
+      "tags": [
+        "Flutter",
+        "Fitness",
+        "Analytics",
+        "AMOLED Dark"
+      ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
+      "testflightLive": false,
+      "links": {
+        "play": "https://play.google.com/store/apps/details?id=com.workouttracker.workout_tracker",
+        "privacy": "/workout-tracker-privacy/privacy.html",
+        "terms": "/workout-tracker-privacy/terms.html",
+        "details": "/workout-tracker/",
+        "testflight": "https://testflight.apple.com/join/rsKexDPJ"
+      }
+    },
+    {
+      "id": "my_language_tracker",
+      "name": "My Language Tracker",
+      "category": "Vocabulary & Habit Mastery",
+      "type": "tool",
+      "icon": "/icons/my_language_tracker.png",
+      "description": "Master English vocabulary through spaced repetition (SRS), 50-word adaptive placement testing, studio Oxford audio pronunciations, and Duolingo-style habit streak calendar.",
+      "highlights": [
+        "4,820+ Oxford 3000 & 5000 CEFR-graded word pool (A1-C1)",
+        "50-word adaptive placement test with instant scoring",
+        "Spaced Repetition (SRS) memory engine & studio audio"
+      ],
+      "tags": [
+        "Flutter",
+        "Oxford 5000",
+        "CEFR",
+        "SRS Algorithm",
+        "100% Offline"
+      ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
+      "testflightLive": false,
+      "links": {
+        "play": "https://play.google.com/store/apps/details?id=www.mylanguagetracker.app",
+        "privacy": "/my-language-tracker-privacy/privacy.html",
+        "terms": "/my-language-tracker-privacy/terms.html",
+        "details": "/my_language_tracker/",
+        "testflight": "https://testflight.apple.com/join/R7KVbU4S"
+      }
+    },
+    {
+      "id": "core_defender",
+      "name": "Core Defender: Rogue Survivor",
+      "category": "Roguelike Defense RPG",
+      "type": "game",
+      "icon": "/icons/core_defender.png",
+      "description": "Defend the Ancient Energy Core against relentless alien insectoid swarms. Choose dynamic hero perks, synthesize legendary turrets, and conquer endless cosmic waves.",
+      "highlights": [
+        "Google Play Games Services v2 leaderboards & 30 achievements",
+        "Dynamic hero synergies, turret synthesis & scrap bounties",
+        "High-performance Godot engine with smooth 60 FPS"
+      ],
+      "tags": [
+        "Godot",
+        "Roguelike",
+        "Tower Defense"
+      ],
+      "platforms": [
+        "android",
+        "ios",
+        "windows"
+      ],
+      "testflightLive": false,
+      "links": {
+        "play": "https://play.google.com/store/apps/details?id=www.coredefender.app",
+        "msstore": "https://apps.microsoft.com/detail/9NNHWLW1WMQL",
+        "privacy": "/core-defender-privacy/privacy.html",
+        "terms": "/core-defender-privacy/terms.html",
+        "details": "/core_defender/",
+        "testflight": "https://testflight.apple.com/join/CCYhvd91"
+      }
+    },
+    {
+      "id": "autoshare",
+      "name": "AutoShare",
+      "category": "Cross-Platform Local Transfer",
+      "type": "tool",
+      "icon": "/icons/autoshare.png",
+      "description": "Ultra-fast local Wi-Fi file sharing tool between Android and Windows devices featuring UDP auto-discovery, PIN pairing, zero data quota consumption, and queue management.",
+      "highlights": [
+        "Zero mobile internet quota consumption",
+        "High-speed local peer-to-peer Wi-Fi network (80+ MB/s)",
+        "Windows Microsoft Store native app & Android companion"
+      ],
+      "tags": [
+        "Flutter",
+        "Networking"
+      ],
+      "platforms": [
+        "android",
+        "ios",
+        "windows"
+      ],
+      "testflightLive": false,
+      "links": {
+        "play": "https://play.google.com/store/apps/details?id=com.autoshare.app",
+        "msstore": "https://apps.microsoft.com/detail/9PGM24F50VR8",
+        "privacy": "/autoshare-privacy-policy/privacy.html",
+        "terms": "/autoshare-privacy-policy/terms.html",
+        "details": "/autoshare/",
+        "testflight": "https://testflight.apple.com/join/67VcQRs6"
+      }
+    },
+    {
+      "id": "markdown_keeper",
+      "name": "Markdown Keeper",
+      "category": "Notes & Infinite Concept Map",
+      "type": "tool",
+      "icon": "/icons/markdown_keeper.png",
+      "description": "Next-generation Markdown note-taking and visual concept mapping app with Google Drive cloud sync, checklists, voice/image attachments, and hierarchical mind mapping.",
+      "highlights": [
+        "Dual view: Keep Masonry Grid & Infinite Concept Map",
+        "Automatic Google Drive personal cloud synchronization",
+        "Single & Bulk Markdown (.md / ZIP) Import & Export"
+      ],
+      "tags": [
+        "Flutter",
+        "Markdown",
+        "Concept Map"
+      ],
+      "platforms": [
+        "android",
+        "ios",
+        "windows"
+      ],
+      "testflightLive": false,
+      "links": {
+        "play": "https://play.google.com/store/apps/details?id=www.markdownkeeper.app",
+        "msstore": "https://apps.microsoft.com/detail/9P03P665MMTC",
+        "privacy": "/markdown-keeper-privacy/privacy.html",
+        "terms": "/markdown-keeper-privacy/terms.html",
+        "details": "/markdown_keeper/",
+        "testflight": "https://testflight.apple.com/join/36ZY1gA2"
+      }
+    },
+    {
+      "id": "supzip",
+      "name": "SupZip: File Manager & Unzip",
+      "category": "Archive & File Explorer",
+      "type": "tool",
+      "icon": "/icons/supzip.png",
+      "description": "Fast, lightweight file manager and multi-format archive extractor. Unpack ZIP, RAR, 7Z, TAR, GZ in seconds; create password-protected encrypted archives with multi-core acceleration.",
+      "highlights": [
+        "Extract ZIP, RAR, 7Z, TAR, GZ, and BZ2 archives",
+        "Encrypted password protection & multi-core compression",
+        "Storage visualizer & clean Material You Amoled dark UI"
+      ],
+      "tags": [
+        "Flutter",
+        "ZIP & RAR"
+      ],
+      "platforms": [
+        "android",
+        "ios",
+        "windows"
+      ],
+      "testflightLive": false,
+      "links": {
+        "play": "https://play.google.com/store/apps/details?id=www.subzip.app",
+        "msstore": "https://apps.microsoft.com/detail/9MV22F9W72FC",
+        "privacy": "/subzip-privacy-policy/privacy.html",
+        "terms": "/subzip-privacy-policy/terms.html",
+        "details": "/supzip/",
+        "testflight": "https://testflight.apple.com/join/MBpbdFRx"
+      }
+    },
+    {
+      "id": "sneaky_rogue",
+      "name": "Snakey Rogue: Pixel Snake RPG",
+      "category": "2D Roguelike Arcade Crawler",
+      "type": "game",
+      "icon": "/icons/sneaky_rogue.png",
+      "description": "Classic snake meets roguelike dungeon crawler! Slither through 15 unique dungeons, stack synergies with Rare/Epic perk cards, collect apples, and fight deadly bosses.",
+      "highlights": [
+        "15 Handcrafted dungeon maps with portal gates & traps",
+        "Upgrade cards (Fireball, Ghost Phase, Magnet)",
+        "4 playable snake heroes with distinct stats & permanent shop"
+      ],
+      "tags": [
+        "Flutter",
+        "Flame Engine",
+        "Pixel Art"
+      ],
+      "platforms": [
+        "android",
+        "ios",
+        "windows"
+      ],
+      "testflightLive": false,
+      "links": {
+        "play": "https://play.google.com/store/apps/details?id=com.sneakyrogue.app",
+        "msstore": "https://apps.microsoft.com/detail/9PJTFGMG98WF",
+        "privacy": "/sneaky-rogue-privacy/privacy.html",
+        "terms": "/sneaky-rogue-privacy/terms.html",
+        "details": "/sneaky_rogue/",
+        "testflight": "https://testflight.apple.com/join/V6PjGEan"
+      }
+    },
+    {
+      "id": "flappy_rogue",
+      "name": "Flappy Rogue",
+      "category": "Roguelite Arcade Runner",
+      "type": "game",
+      "icon": "/icons/flappy_rogue.png",
+      "description": "Fast-paced arcade game combining classic flappy physics with rogue-lite ability upgrades, dynamic obstacle generation, and unlockable character skins.",
+      "highlights": [
+        "Addictive rogue-lite powerups & character progression",
+        "Dynamic high-score ranking & Google Play Leaderboards",
+        "Smooth 60 FPS offline arcade action"
+      ],
+      "tags": [
+        "Flutter",
+        "Flame Engine",
+        "Arcade",
+        "High-Score"
+      ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
+      "testflightLive": false,
+      "links": {
+        "play": "https://play.google.com/store/apps/details?id=www.flappyrogue.app",
+        "privacy": "/flappy-rogue-privacy/privacy.html",
+        "terms": "/flappy-rogue-privacy/terms.html",
+        "details": "/flappy_rogue/",
+        "testflight": "https://testflight.apple.com/join/XX4dKJS3"
+      }
+    },
+    {
+      "id": "ezan_vakti",
+      "name": "Ezan Vakti: Prayer Times Qibla",
+      "category": "Islamic Worship Assistant",
+      "type": "tool",
+      "icon": "/icons/ezan_vakti.png",
+      "description": "Accurate GPS-based prayer times, live high-precision Qibla compass, Holy Quran with multilingual translations, digital tasbih with haptic feedback, and monthly spiritual goals.",
+      "highlights": [
+        "High-precision GPS prayer calculations & background adhan",
+        "Live sensor-driven Qibla finder compass & Holy Days calendar",
+        "100% on-device offline processing & zero tracking"
+      ],
+      "tags": [
+        "Flutter",
+        "Prayer Times",
+        "Quran",
+        "Qibla"
+      ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
+      "testflightLive": false,
+      "links": {
+        "play": "https://play.google.com/store/apps/details?id=com.erdevirlabs.athan_premium",
+        "privacy": "/ezan-vakti-privacy/privacy.html",
+        "terms": "/ezan-vakti-privacy/terms.html",
+        "details": "/ezan_vakti_premium/",
+        "testflight": "https://testflight.apple.com/join/eG3Aw1ZG"
+      }
+    },
+    {
+      "id": "roadster_challenge",
+      "name": "Roadster Challenge",
+      "category": "High-Speed Cyber Racing",
+      "type": "game",
+      "icon": "/icons/roadster_challenge.png",
+      "description": "Pulse-pounding 3D arcade endless highway racing built in Unity. Weave between dense multi-lane traffic, trigger explosive nitro boosts, and build your dream futuristic garage.",
+      "highlights": [
+        "Procedural 4-lane highway with dynamic speed chevrons & hazards",
+        "Vehicle tuning garage, nitro recharge upgrades & unlockable chassis",
+        "Procedural synthwave audio synchronized with engine RPM"
+      ],
+      "tags": [
+        "Unity",
+        "Arcade",
+        "Racing"
+      ],
+      "platforms": [
+        "android",
+        "ios"
+      ],
+      "testflightLive": false,
+      "links": {
+        "play": "https://play.google.com/store/apps/details?id=www.roadsterchallenge.app",
+        "privacy": "/roadster-challenge-privacy/privacy.html",
+        "terms": "/roadster-challenge-privacy/terms.html",
+        "details": "/roadster_challenge/",
+        "testflight": "https://testflight.apple.com/join/F9kNWQ5h"
+      }
+    },
+    {
+      "id": "tillwise",
+      "name": "Tillwise: Receipt Scanner",
+      "category": "Receipts & Expense Reports",
+      "type": "tool",
+      "icon": "/icons/tillwise.png",
+      "description": "Receipt scanner and expense reports for iPhone. Text is read on the device, so receipts stay private.",
+      "highlights": [
+        "On-device receipt reading with editable fields",
+        "Fields the app is unsure about are marked \"Check this\"",
+        "Expense reports and export"
+      ],
+      "tags": [
+        "SwiftUI",
+        "Vision OCR",
+        "On-device"
+      ],
+      "platforms": [
+        "ios"
+      ],
+      "testflightLive": false,
+      "links": {
+        "privacy": "/tillwise/privacy.html",
+        "support": "/tillwise/support.html",
+        "details": "/tillwise/",
+        "testflight": "https://testflight.apple.com/join/E6msPT6w"
+      }
+    },
+    {
+      "id": "mixmere",
+      "name": "Mixmere: Color Pour Puzzle",
+      "category": "Color Pour Puzzle",
+      "type": "game",
+      "icon": "/icons/mixmere.png",
+      "description": "Pour, blend and match the target color. 300 handcrafted puzzles and a new daily mix every day.",
+      "highlights": [
+        "300 handcrafted color puzzles",
+        "Daily Mix shared by all players",
+        "Hints and undos paid with earned drops"
+      ],
+      "tags": [
+        "SwiftUI",
+        "Puzzle",
+        "Daily"
+      ],
+      "platforms": [
+        "ios"
+      ],
+      "testflightLive": false,
+      "links": {
+        "privacy": "/mixmere/privacy.html",
+        "support": "/mixmere/support.html",
+        "details": "/mixmere/",
+        "testflight": "https://testflight.apple.com/join/JHuQfzxX"
+      }
+    },
+    {
+      "id": "wherelens",
+      "name": "Wherelens: Daily Geo Guess",
+      "category": "Daily Geo Guessing Game",
+      "type": "game",
+      "icon": "/icons/wherelens.png",
+      "description": "Look around a real street, drop your pin on the map and see how close you got. Five new places every day, the same for everyone.",
+      "highlights": [
+        "Real street scenes from Apple Maps Look Around",
+        "5 rounds a day, up to 25,000 points",
+        "Same daily places for every player"
+      ],
+      "tags": [
+        "SwiftUI",
+        "MapKit",
+        "Geo Game"
+      ],
+      "platforms": [
+        "ios"
+      ],
+      "testflightLive": false,
+      "links": {
+        "privacy": "/wherelens/privacy.html",
+        "support": "/wherelens/support.html",
+        "details": "/wherelens/",
+        "testflight": "https://testflight.apple.com/join/6rt2x5JU"
+      }
+    },
+    {
+      "id": "blockgrove",
+      "name": "Blockgrove: Garden Blocks",
+      "category": "Block Puzzle & Garden",
+      "type": "game",
+      "icon": "/icons/blockgrove.png",
+      "description": "A calm 8×8 block puzzle in a hand-carved wooden tray. Cleared lines earn leaves that grow your own garden.",
+      "highlights": [
+        "8×8 tray with classic line clears",
+        "Daily Grove and 60 Bloom Quests",
+        "12-plot garden that grows as you play"
+      ],
+      "tags": [
+        "SwiftUI",
+        "Block Puzzle",
+        "Relaxing"
+      ],
+      "platforms": [
+        "ios"
+      ],
+      "testflightLive": false,
+      "links": {
+        "privacy": "/blockgrove/privacy.html",
+        "terms": "/blockgrove/terms.html",
+        "details": "/blockgrove/",
+        "testflight": "https://testflight.apple.com/join/8AhNq3eE"
+      }
+    },
+    {
+      "id": "homespun",
+      "name": "Homespun: Aesthetic Widgets",
+      "category": "Home & Lock Screen Widgets",
+      "type": "tool",
+      "icon": "/icons/homespun.png",
+      "description": "A cozy studio for your iPhone Home Screen and Lock Screen. Design a widget in the app, then place it from the widget gallery.",
+      "highlights": [
+        "Seven kinds of widgets",
+        "Home Screen and Lock Screen designs",
+        "Live preview while you design"
+      ],
+      "tags": [
+        "SwiftUI",
+        "WidgetKit",
+        "Personalization"
+      ],
+      "platforms": [
+        "ios"
+      ],
+      "testflightLive": false,
+      "links": {
+        "privacy": "/homespun/privacy.html",
+        "terms": "/homespun/terms.html",
+        "details": "/homespun/",
+        "testflight": "https://testflight.apple.com/join/YJZNJNUE"
+      }
+    },
+    {
+      "id": "unbolt",
+      "name": "Unbolt: Screw Puzzle",
+      "category": "Screw-Removal Puzzle",
+      "type": "game",
+      "icon": "/icons/unbolt.png",
+      "description": "A tactile screw-removal puzzle on a restorer's workshop wall. Every cleared board restores a classic workshop antique.",
+      "highlights": [
+        "300+ levels of overlapping plates",
+        "20 antiques to restore",
+        "Daily Workbench and X-ray view"
+      ],
+      "tags": [
+        "SwiftUI",
+        "Puzzle",
+        "Haptics"
+      ],
+      "platforms": [
+        "ios"
+      ],
+      "testflightLive": false,
+      "links": {
+        "privacy": "/unbolt/privacy.html",
+        "terms": "/unbolt/terms.html",
+        "details": "/unbolt/",
+        "testflight": "https://testflight.apple.com/join/BrWSK7Fv"
+      }
+    },
+    {
+      "id": "wordloom",
+      "name": "Wordloom: Word Puzzle",
+      "category": "Crossword Word Game",
+      "type": "game",
+      "icon": "/icons/wordloom.png",
+      "description": "A crossword-style word game on a weaver's table. Swipe across the letters to spell words; every solved puzzle weaves a band of a city tapestry.",
+      "highlights": [
+        "180 levels and 12 city tapestries",
+        "Daily Weave",
+        "Word of the Day"
+      ],
+      "tags": [
+        "SwiftUI",
+        "Word Game",
+        "Daily"
+      ],
+      "platforms": [
+        "ios"
+      ],
+      "testflightLive": false,
+      "links": {
+        "privacy": "/wordloom/privacy.html",
+        "terms": "/wordloom/terms.html",
+        "details": "/wordloom/",
+        "testflight": "https://testflight.apple.com/join/kD8pPa4G"
+      }
+    },
+    {
+      "id": "stridemap",
+      "name": "Stridemap: Walking Journeys",
+      "category": "Virtual Walking Journeys",
+      "type": "tool",
+      "icon": "/icons/stridemap.png",
+      "description": "Turn everyday steps into virtual journeys along famous real-world routes. Reach landmarks and collect illustrated postcards.",
+      "highlights": [
+        "12 iconic world routes",
+        "Illustrated postcards and certificates",
+        "Daily walking journal with Apple Health steps"
+      ],
+      "tags": [
+        "SwiftUI",
+        "HealthKit",
+        "Fitness"
+      ],
+      "platforms": [
+        "ios"
+      ],
+      "testflightLive": false,
+      "links": {
+        "privacy": "/stridemap/privacy.html",
+        "terms": "/stridemap/terms.html",
+        "details": "/stridemap/",
+        "testflight": "https://testflight.apple.com/join/TJ94jn9p"
+      }
+    },
+    {
+      "id": "fastwell",
+      "name": "Fastwell - Fasting Tracker",
+      "category": "Intermittent Fasting",
+      "type": "tool",
+      "icon": "/icons/fastwell.png",
+      "description": "A calm intermittent fasting timer with gentle stages, water and weight tracking, and a private journal.",
+      "highlights": [
+        "Fasting timer with eating window",
+        "Plans for every rhythm",
+        "Water, weight and Apple Health"
+      ],
+      "tags": [
+        "SwiftUI",
+        "HealthKit",
+        "Wellness"
+      ],
+      "platforms": [
+        "ios"
+      ],
+      "testflightLive": false,
+      "links": {
+        "privacy": "/fastwell/privacy.html",
+        "terms": "/fastwell/terms.html",
+        "details": "/fastwell/",
+        "testflight": "https://testflight.apple.com/join/BQ5aVTZe"
+      }
+    },
+    {
+      "id": "parca_takip_erp",
+      "name": "Parça Takip ERP",
+      "category": "Manufacturing ERP",
+      "type": "tool",
+      "icon": "",
+      "description": "An ERP for manufacturing companies that runs on your own server: projects, BOMs, drawings, purchasing, stock, work orders, sales, finance and staff.",
+      "highlights": [
+        "Bills of materials, drawings and QR-labelled parts",
+        "Purchasing, stock and work orders in one place",
+        "Self-hosted: desktop, web and Android clients"
+      ],
+      "tags": [
+        "Python",
+        "Self-hosted",
+        "Open source",
+        "GPL v3"
+      ],
+      "platforms": [
+        "web",
+        "windows",
+        "android"
+      ],
+      "testflightLive": false,
+      "links": {
+        "github": "https://github.com/serdevir91/parca-takip-erp"
+      }
+    },
+    {
+      "id": "openscad_ai",
+      "name": "OpenSCAD AI",
+      "category": "3D AI CAD Studio",
+      "type": "tool",
+      "icon": "/icons/openscad_ai.png",
+      "description": "Transform natural language prompts into parametric, 3D-printable OpenSCAD CAD models powered by state-of-the-art artificial intelligence models.",
+      "highlights": [
+        "Text-to-CAD prompt generation",
+        "Instant OpenSCAD code compilation",
+        "Ready for 3D printer STL export"
+      ],
+      "tags": [
+        "Python",
+        "AI / LLM",
+        "3D Printing",
+        "CAD"
+      ],
+      "platforms": [
+        "web",
+        "windows"
+      ],
+      "testflightLive": false,
+      "links": {
+        "github": "https://github.com/serdevir91/openscad-ai",
+        "web": "/openscad-ai/"
+      }
+    },
+    {
+      "id": "stokapp",
+      "name": "Stokapp",
+      "category": "Inventory & Stock Manager",
+      "type": "tool",
+      "icon": "/icons/stokapp.png",
+      "description": "Sleek stock and inventory management web & desktop application featuring real-time barcode scanning, revenue and profit/loss visual analytics, low-stock notifications, and Excel data import/export.",
+      "highlights": [
+        "Real-time inventory tracking & barcode support",
+        "Financial revenue, cost & profit analytics",
+        "Excel / CSV data export and backup"
+      ],
+      "tags": [
+        "React",
+        "Vite",
+        "Tailwind",
+        "Desktop / Web"
+      ],
+      "platforms": [
+        "web",
+        "windows"
+      ],
+      "testflightLive": false,
+      "links": {
+        "github": "https://github.com/serdevir91/Stokapp",
+        "web": "/Stokapp/"
+      }
+    }
+  ],
+  "legalOnly": [
+    {
+      "name": "Chronicle Lens",
+      "icon": "/icons/chronicle_lens.png",
+      "privacy": "/chronicle-lens-legal/privacy.html",
+      "terms": "/chronicle-lens-legal/terms.html"
+    }
+  ]
+}

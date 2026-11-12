@@ -2,2733 +2,886 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Erdevir Labs | Official Developer Portal & App Store</title>
-  <meta name="description" content="Erdevir Labs - Official developer portal, Google Play Android applications, desktop software, and privacy policies." />
-  <meta name="theme-color" content="#070b12" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Erdevir Labs · Apps for Android, iOS and Windows</title>
+  <meta name="description" content="Erdevir Labs builds games and everyday tools for Android, iOS and Windows. 22 apps, privacy-first, data stays on your device." />
+  <meta name="theme-color" content="#0a0d14" />
+  <meta property="og:title" content="Erdevir Labs" />
+  <meta property="og:description" content="Games and everyday tools for Android, iOS and Windows. Privacy-first." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://serdevir91.github.io/" />
   <meta name="tiktok-developers-site-verification" content="74GgtjToAZc3J2InPirp1xvXMSvnMLKj" />
   <meta name="tiktok-developers-site-verification" content="snd9YBP0ZhInoVSOEGLxP7NoK50g622E" />
-
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-
-  <!-- FontAwesome Icons -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%233b82f6'/%3E%3Ctext x='32' y='42' font-family='Arial' font-weight='700' font-size='26' text-anchor='middle' fill='white'%3EEL%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-
+  <script>
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem('labs_theme'); } catch (e) {}
+      if (!t) t = window.matchMedia && matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+      document.documentElement.dataset.theme = t;
+    })();
+  </script>
   <style>
-    :root {
-      --bg-dark: #070b14;
-      --bg-card: rgba(15, 23, 42, 0.75);
-      --bg-card-hover: rgba(26, 38, 66, 0.85);
-      --border-subtle: rgba(255, 255, 255, 0.08);
-      --border-glow: rgba(59, 130, 246, 0.4);
-      --text-main: #f8fafc;
-      --text-muted: #94a3b8;
-      --text-sub: #cbd5e1;
-      
-      --accent-cyan: #06b6d4;
-      --accent-blue: #3b82f6;
-      --accent-indigo: #6366f1;
-      --accent-purple: #8b5cf6;
-      --accent-emerald: #10b981;
-      --accent-amber: #f59e0b;
-      --accent-rose: #f43f5e;
-
-      --radius-sm: 8px;
-      --radius-md: 14px;
-      --radius-lg: 20px;
-      --radius-full: 9999px;
+    :root, [data-theme="dark"] {
+      --bg: #0a0d14;
+      --bg-2: #0f1420;
+      --card: rgba(255, 255, 255, 0.035);
+      --card-solid: #121826;
+      --line: rgba(255, 255, 255, 0.08);
+      --line-strong: rgba(255, 255, 255, 0.16);
+      --text: #eef2f8;
+      --muted: #94a0b4;
+      --accent: #4f8cff;
+      --accent-2: #22d3ee;
+      --accent-soft: rgba(79, 140, 255, 0.14);
+      --play: #34d399;
+      --ms: #60a5fa;
+      --tf: #5ab0ff;
+      --shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.7);
+      color-scheme: dark;
     }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+    [data-theme="light"] {
+      --bg: #f6f7fb;
+      --bg-2: #ffffff;
+      --card: #ffffff;
+      --card-solid: #ffffff;
+      --line: rgba(15, 23, 42, 0.09);
+      --line-strong: rgba(15, 23, 42, 0.18);
+      --text: #0f172a;
+      --muted: #5b6577;
+      --accent: #2563eb;
+      --accent-2: #0891b2;
+      --accent-soft: rgba(37, 99, 235, 0.1);
+      --play: #059669;
+      --ms: #2563eb;
+      --tf: #0a72d6;
+      --shadow: 0 24px 50px -30px rgba(15, 23, 42, 0.35);
+      color-scheme: light;
     }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 80px; overflow-x: clip; }
     body {
-      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-      background-color: var(--bg-dark);
-      color: var(--text-main);
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
       line-height: 1.6;
-      min-height: 100vh;
-      overflow-x: hidden;
-      background-image: 
-        radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.15) 0px, transparent 45%),
-        radial-gradient(at 100% 0%, rgba(139, 92, 246, 0.15) 0px, transparent 45%),
-        radial-gradient(at 50% 50%, rgba(16, 185, 129, 0.06) 0px, transparent 60%),
-        radial-gradient(at 100% 100%, rgba(6, 182, 212, 0.1) 0px, transparent 50%);
-      background-attachment: fixed;
-    }
-
-    .container {
-      max-width: 1240px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    /* Ambient Glow Background */
-    .glow-orb {
-      position: absolute;
-      width: 400px;
-      height: 400px;
-      border-radius: 50%;
-      filter: blur(120px);
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    /* Header */
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(7, 11, 20, 0.85);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border-bottom: 1px solid var(--border-subtle);
-      transition: all 0.3s ease;
-    }
-
-    .nav-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 16px 0;
-    }
-
-    .brand-logo {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      text-decoration: none;
-      color: var(--text-main);
-    }
-
-    .logo-badge-icon {
-      width: 42px;
-      height: 42px;
-      background: linear-gradient(135deg, #2563eb, #7c3aed);
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 20px;
-      color: #fff;
-      box-shadow: 0 4px 18px rgba(37, 99, 235, 0.4);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-    }
-
-    .brand-text {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .brand-name {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 22px;
-      font-weight: 700;
-      letter-spacing: -0.5px;
-      color: #ffffff;
-      background: linear-gradient(135deg, #ffffff 40%, #93c5fd 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .brand-tag {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      color: var(--accent-cyan);
-      font-weight: 700;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-    }
-
-    .nav-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 9px 16px;
-      border-radius: var(--radius-md);
-      font-size: 14px;
-      font-weight: 600;
-      text-decoration: none;
-      color: var(--text-sub);
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid var(--border-subtle);
-      transition: all 0.2s ease;
-    }
-
-    .nav-btn:hover {
-      color: #fff;
-      background: rgba(255, 255, 255, 0.08);
-      border-color: rgba(255, 255, 255, 0.18);
-      transform: translateY(-1px);
-    }
-
-    .nav-btn-primary {
-      background: linear-gradient(135deg, #2563eb, #4f46e5);
-      color: white !important;
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
-    }
-
-    .nav-btn-primary:hover {
-      box-shadow: 0 6px 20px rgba(37, 99, 235, 0.5);
-    }
-
-    /* Mobile Header Controls - Hidden on desktop */
-    .mobile-header-actions {
-      display: none;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .mobile-header-store-btn {
-      width: 38px;
-      height: 38px;
-      border-radius: 10px;
-      background: rgba(16, 185, 129, 0.14);
-      border: 1px solid rgba(16, 185, 129, 0.35);
-      color: #34d399;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 16px;
-      text-decoration: none;
-      transition: all 0.2s ease;
-    }
-
-    .mobile-header-store-btn:hover {
-      background: rgba(16, 185, 129, 0.25);
-      color: #6ee7b7;
-    }
-
-    .mobile-menu-btn {
-      width: 38px;
-      height: 38px;
-      border-radius: 10px;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid var(--border-subtle);
-      color: #fff;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 17px;
-      cursor: pointer;
-      transition: all 0.2s ease;
-    }
-
-    .mobile-menu-btn:hover,
-    .mobile-menu-btn:active {
-      background: rgba(255, 255, 255, 0.12);
-      border-color: rgba(255, 255, 255, 0.25);
-    }
-
-    /* Mobile Drawer */
-    .mobile-drawer {
-      display: none;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      right: 0;
-      background: rgba(7, 11, 20, 0.98);
-      backdrop-filter: blur(25px);
-      -webkit-backdrop-filter: blur(25px);
-      border-bottom: 1px solid var(--border-subtle);
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.85);
-      overflow: hidden;
-      max-height: 0;
-      opacity: 0;
-      pointer-events: none;
-      transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease;
-    }
-
-    .mobile-drawer.open {
-      max-height: 520px;
-      opacity: 1;
-      pointer-events: auto;
-    }
-
-    .mobile-drawer-content {
-      padding: 16px 16px 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .mobile-nav-item {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      padding: 12px 14px;
-      border-radius: 10px;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid rgba(255, 255, 255, 0.05);
-      color: var(--text-main);
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 600;
-      transition: all 0.2s ease;
-    }
-
-    .mobile-nav-item i {
-      font-size: 16px;
-      color: var(--accent-cyan);
-      width: 20px;
-      text-align: center;
-    }
-
-    .mobile-nav-item:hover,
-    .mobile-nav-item:active {
-      background: rgba(59, 130, 246, 0.12);
-      border-color: rgba(59, 130, 246, 0.3);
-      color: #fff;
-    }
-
-    .mobile-nav-cta {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 13px 18px;
-      border-radius: 10px;
-      background: linear-gradient(135deg, #2563eb, #7c3aed);
-      color: white;
-      text-decoration: none;
-      font-size: 14.5px;
-      font-weight: 700;
-      margin-top: 4px;
-      box-shadow: 0 4px 18px rgba(37, 99, 235, 0.4);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-    }
-
-    /* Hero Section */
-    .hero {
-      position: relative;
-      padding: 70px 0 50px;
-      text-align: center;
-    }
-
-    .hero-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 7px 18px;
-      border-radius: var(--radius-full);
-      background: rgba(37, 99, 235, 0.12);
-      border: 1px solid rgba(59, 130, 246, 0.3);
-      color: #60a5fa;
-      font-size: 13px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 24px;
-      box-shadow: 0 0 20px rgba(37, 99, 235, 0.15);
-    }
-
-    .hero-title {
-      font-family: 'Outfit', sans-serif;
-      font-size: 52px;
-      font-weight: 800;
-      line-height: 1.15;
-      margin-bottom: 20px;
-      letter-spacing: -1.5px;
-    }
-
-    .hero-title-gradient {
-      color: #38bdf8;
-      background: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #c084fc 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .hero-description {
-      font-size: 18px;
-      color: var(--text-muted);
-      max-width: 780px;
-      margin: 0 auto 36px;
-      line-height: 1.7;
-    }
-
-    .hero-cta-group {
-      display: flex;
-      justify-content: center;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin-bottom: 50px;
-    }
-
-    .cta-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 14px 28px;
-      border-radius: 14px;
-      font-size: 15px;
-      font-weight: 700;
-      text-decoration: none;
-      transition: all 0.25s ease;
-    }
-
-    .cta-btn-primary {
-      background: linear-gradient(135deg, #2563eb, #7c3aed);
-      color: white;
-      box-shadow: 0 8px 25px rgba(37, 99, 235, 0.35);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-    }
-
-    .cta-btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 32px rgba(37, 99, 235, 0.5);
-    }
-
-    .cta-btn-secondary {
-      background: rgba(255, 255, 255, 0.05);
-      color: var(--text-main);
-      border: 1px solid var(--border-subtle);
-    }
-
-    .cta-btn-secondary:hover {
-      background: rgba(255, 255, 255, 0.1);
-      border-color: rgba(255, 255, 255, 0.2);
-      transform: translateY(-2px);
-    }
-
-    /* Stats Bar */
-    .stats-bar {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
-      background: rgba(15, 23, 42, 0.6);
-      backdrop-filter: blur(16px);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-lg);
-      padding: 24px 20px;
-      margin-bottom: 50px;
-    }
-
-    .stat-item {
-      text-align: center;
-      position: relative;
-    }
-
-    .stat-item:not(:last-child)::after {
-      content: '';
-      position: absolute;
-      right: 0;
-      top: 20%;
-      height: 60%;
-      width: 1px;
-      background: var(--border-subtle);
-    }
-
-    .stat-number {
-      font-family: 'Space Grotesk', sans-serif;
-      font-size: 30px;
-      font-weight: 800;
-      color: #fff;
-      margin-bottom: 4px;
-    }
-
-    .stat-label {
-      font-size: 13px;
-      color: var(--text-muted);
-      font-weight: 500;
-    }
-
-    /* Section Headers */
-    .section-header {
-      margin-bottom: 30px;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      flex-wrap: wrap;
-      gap: 16px;
-    }
-
-    .section-title-wrap h2 {
-      font-family: 'Outfit', sans-serif;
-      font-size: 32px;
-      font-weight: 800;
-      color: #fff;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .section-title-wrap p {
-      color: var(--text-muted);
-      font-size: 15px;
-      margin-top: 6px;
-    }
-
-    /* Search & Filter Bar */
-    .filter-controls {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      margin-bottom: 32px;
-      background: var(--bg-card);
-      backdrop-filter: blur(16px);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-lg);
-      padding: 18px 20px;
-    }
-
-    .search-wrapper {
-      position: relative;
-      width: 100%;
-    }
-
-    .search-icon {
-      position: absolute;
-      left: 16px;
-      top: 50%;
-      transform: translateY(-50%);
-      color: var(--text-muted);
-      font-size: 16px;
-    }
-
-    .search-input {
-      width: 100%;
-      padding: 14px 16px 14px 46px;
-      background: rgba(7, 11, 20, 0.6);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-md);
-      color: #fff;
-      font-size: 15px;
-      font-family: inherit;
-      outline: none;
-      transition: all 0.2s ease;
-    }
-
-    .search-input:focus {
-      border-color: var(--accent-blue);
-      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
-    }
-
-    .category-pills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .cat-pill {
-      padding: 8px 16px;
-      border-radius: var(--radius-full);
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid var(--border-subtle);
-      color: var(--text-muted);
-      font-size: 13.5px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      user-select: none;
-    }
-
-    .cat-pill:hover {
-      background: rgba(255, 255, 255, 0.08);
-      color: #fff;
-    }
-
-    .cat-pill.active {
-      background: linear-gradient(135deg, #2563eb, #4f46e5);
-      color: white;
-      border-color: rgba(255, 255, 255, 0.2);
-      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
-    }
-
-    /* Apps Grid */
-    .apps-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(370px, 1fr));
-      gap: 24px;
-      margin-bottom: 70px;
-    }
-
-    .app-card {
-      background: var(--bg-card);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-lg);
-      padding: 26px;
-      display: flex;
-      flex-direction: column;
-      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .app-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, transparent, var(--border-glow), transparent);
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-
-    .app-card:hover {
-      background: var(--bg-card-hover);
-      border-color: rgba(255, 255, 255, 0.15);
-      transform: translateY(-5px);
-      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4);
-    }
-
-    .app-card:hover::before {
-      opacity: 1;
-    }
-
-    .app-header {
-      display: flex;
-      align-items: flex-start;
-      gap: 16px;
-      margin-bottom: 16px;
-    }
-
-    .app-icon-wrap {
-      width: 64px;
-      height: 64px;
-      border-radius: 16px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 28px;
-      color: #fff;
-      flex-shrink: 0;
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-      overflow: hidden;
-      background: rgba(15, 23, 42, 0.85);
-    }
-
-    .app-icon-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      border-radius: 15px;
-    }
-
-    .app-meta {
-      flex: 1;
-    }
-
-    .app-title {
-      font-family: 'Outfit', sans-serif;
-      font-size: 20px;
-      font-weight: 700;
-      color: #fff;
-      line-height: 1.3;
-      margin-bottom: 4px;
-    }
-
-    .app-category {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--accent-cyan);
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    .app-desc {
-      color: var(--text-sub);
-      font-size: 14.5px;
-      line-height: 1.6;
-      margin-bottom: 18px;
-      flex-grow: 1;
-    }
-
-    .app-highlights {
-      list-style: none;
-      margin-bottom: 18px;
-      padding: 10px 14px;
-      background: rgba(0, 0, 0, 0.25);
-      border-radius: var(--radius-sm);
-      border: 1px solid rgba(255, 255, 255, 0.04);
-    }
-
-    .app-highlights li {
-      font-size: 12.5px;
-      color: var(--text-muted);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 4px;
-    }
-
-    .app-highlights li:last-child { margin-bottom: 0; }
-
-    .app-highlights li i {
-      color: var(--accent-emerald);
-      font-size: 11px;
-    }
-
-    .app-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-bottom: 20px;
-    }
-
-    .app-tag {
-      font-size: 11px;
-      font-weight: 600;
-      padding: 4px 10px;
-      border-radius: var(--radius-full);
-      background: rgba(255, 255, 255, 0.05);
-      color: #94a3b8;
-      border: 1px solid rgba(255, 255, 255, 0.05);
-    }
-
-    .app-actions {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 8px;
-      margin-top: auto;
-      padding-top: 16px;
-      border-top: 1px solid var(--border-subtle);
-    }
-
-    .action-btn {
-      flex: 1 1 calc(50% - 56px);
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 10px 12px;
-      border-radius: 12px;
-      font-size: 13px;
-      font-weight: 700;
-      text-decoration: none;
-      transition: all 0.2s ease;
-      white-space: nowrap;
-      min-width: 0;
-    }
-
-    .btn-playstore {
-      background: rgba(16, 185, 129, 0.12);
-      color: #34d399;
-      border: 1px solid rgba(16, 185, 129, 0.25);
-    }
-
-    .btn-playstore:hover {
-      background: rgba(16, 185, 129, 0.25);
-      color: #6ee7b7;
-      transform: translateY(-1px);
-    }
-
-    .btn-web-action {
-      background: rgba(59, 130, 246, 0.12);
-      color: #60a5fa;
-      border: 1px solid rgba(59, 130, 246, 0.25);
-    }
-
-    .btn-web-action:hover {
-      background: rgba(59, 130, 246, 0.25);
-      color: #93c5fd;
-      transform: translateY(-1px);
-    }
-
-    .btn-msstore {
-      background: rgba(0, 120, 215, 0.14);
-      color: #60a5fa;
-      border: 1px solid rgba(0, 120, 215, 0.35);
-    }
-
-    .btn-msstore:hover {
-      background: rgba(0, 120, 215, 0.28);
-      color: #93c5fd;
-      transform: translateY(-1px);
-    }
-
-    html, body { overflow-x: clip; }
-
-    .btn-testflight {
-      background: rgba(10, 132, 255, 0.14);
-      color: #64b5ff;
-      border: 1px solid rgba(10, 132, 255, 0.35);
-    }
-
-    .btn-testflight.is-soon { opacity: .6; cursor: default; }
-    .btn-testflight.is-soon:hover { transform: none; }
-
-    .btn-testflight:not(.is-soon):hover {
-      background: rgba(10, 132, 255, 0.28);
-      color: #a5d4ff;
-      transform: translateY(-1px);
-    }
-
-    .btn-privacy-action {
-      background: rgba(255, 255, 255, 0.04);
-      color: var(--text-muted);
-      border: 1px solid var(--border-subtle);
-      flex: 0 0 38px;
-      width: 38px;
-      height: 38px;
-      padding: 0;
-      border-radius: 12px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 13.5px;
-    }
-
-    .btn-privacy-action:hover {
-      color: #fff;
-      background: rgba(255, 255, 255, 0.09);
-      border-color: rgba(255, 255, 255, 0.2);
-    }
-
-    /* Privacy Center Section */
-    .privacy-section {
-      background: rgba(15, 23, 42, 0.5);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-lg);
-      padding: 36px;
-      margin-bottom: 70px;
-    }
-
-    .privacy-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 16px;
-      margin-top: 24px;
-    }
-
-    .privacy-card-container {
-      background: rgba(7, 11, 20, 0.75);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-md);
-      padding: 16px 18px;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      transition: all 0.25s ease;
-    }
-
-    .privacy-card-container:hover {
-      border-color: rgba(6, 182, 212, 0.4);
-      background: rgba(15, 23, 42, 0.9);
-      transform: translateY(-2px);
-      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
-    }
-
-    .privacy-card-header {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .privacy-mini-icon {
-      width: 34px;
-      height: 34px;
-      border-radius: 8px;
-      object-fit: cover;
-      flex-shrink: 0;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .privacy-card-title {
-      font-size: 14.5px;
-      font-weight: 700;
-      color: #fff;
-    }
-
-    .privacy-card-links {
-      display: flex;
-      gap: 8px;
-    }
-
-    .privacy-sublink {
-      flex: 1;
-      padding: 7px 10px;
-      border-radius: 8px;
-      background: rgba(255, 255, 255, 0.04);
-      color: var(--text-sub);
-      font-size: 12px;
-      font-weight: 600;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      transition: all 0.2s ease;
-    }
-
-    .privacy-sublink:hover {
-      color: #fff;
-      background: rgba(6, 182, 212, 0.2);
-      border-color: rgba(6, 182, 212, 0.4);
-    }
-
-    /* Tech Stack Section */
-    .tech-stack-wrap {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      justify-content: center;
-      margin-top: 24px;
-    }
-
-    .tech-item {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 10px 18px;
-      background: rgba(255, 255, 255, 0.03);
-      border: 1px solid var(--border-subtle);
-      border-radius: var(--radius-full);
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--text-sub);
-    }
-
-    .tech-item i {
-      font-size: 16px;
-    }
-
-    /* Footer */
-    footer {
-      border-top: 1px solid var(--border-subtle);
-      background: rgba(7, 11, 20, 0.95);
-      padding: 48px 0 32px;
-    }
-
-    .footer-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 24px;
-      margin-bottom: 24px;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    .footer-link {
-      color: var(--text-muted);
-      text-decoration: none;
-      font-size: 14px;
-      transition: color 0.2s;
-    }
-
-    .footer-link:hover {
-      color: var(--accent-cyan);
-    }
-
-    .footer-copy {
-      text-align: center;
-      padding-top: 24px;
-      border-top: 1px solid var(--border-subtle);
-      color: var(--text-muted);
-      font-size: 13px;
-    }
-
-    /* Responsive adjustments */
-    @media (max-width: 768px) {
-      .container {
-        padding: 0 16px;
-      }
-
-      /* Header & Nav - Sleek Single Row */
-      .nav-content {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        padding: 12px 0;
-      }
-
-      .brand-logo {
-        justify-content: flex-start;
-      }
-
-      .logo-badge-icon {
-        width: 38px;
-        height: 38px;
-        font-size: 17px;
-        border-radius: 10px;
-      }
-
-      .brand-name {
-        font-size: 19px;
-      }
-
-      .brand-tag {
-        font-size: 10px;
-      }
-
-      /* Hide horizontal desktop nav */
-      .nav-links {
-        display: none !important;
-      }
-
-      /* Show mobile header controls */
-      .mobile-header-actions {
-        display: flex;
-      }
-
-      .mobile-drawer {
-        display: block;
-      }
-
-      /* Hero Section */
-      .hero {
-        padding: 42px 0 28px;
-      }
-
-      .hero-pill {
-        font-size: 12px;
-        padding: 6px 14px;
-        margin-bottom: 16px;
-      }
-
-      .hero-title {
-        font-size: 34px;
-        letter-spacing: -1px;
-        line-height: 1.2;
-        margin-bottom: 14px;
-      }
-
-      .hero-description {
-        font-size: 15px;
-        line-height: 1.6;
-        margin-bottom: 24px;
-        padding: 0 4px;
-      }
-
-      .hero-cta-group {
-        gap: 10px;
-        margin-bottom: 36px;
-      }
-
-      /* Stats Bar */
-      .stats-bar {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 14px 10px;
-        padding: 18px 14px;
-        margin-bottom: 36px;
-      }
-
-      .stat-item:nth-child(2)::after,
-      .stat-item:nth-child(4)::after {
-        display: none;
-      }
-
-      .stat-number {
-        font-size: 24px;
-      }
-
-      .stat-label {
-        font-size: 11.5px;
-      }
-
-      /* Section Header */
-      .section-header {
-        margin-bottom: 20px;
-      }
-
-      .section-title-wrap h2 {
-        font-size: 24px;
-        gap: 10px;
-      }
-
-      .section-title-wrap p {
-        font-size: 13.5px;
-      }
-
-      /* Filter Controls */
-      .filter-controls {
-        padding: 14px;
-        margin-bottom: 24px;
-        gap: 12px;
-        border-radius: var(--radius-md);
-      }
-
-      .search-input {
-        padding: 11px 14px 11px 40px;
-        font-size: 14px;
-      }
-
-      .search-icon {
-        font-size: 14px;
-        left: 14px;
-      }
-
-      .category-pills {
-        gap: 6px;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        scrollbar-width: none;
-        flex-wrap: nowrap;
-        padding-bottom: 2px;
-      }
-
-      .category-pills::-webkit-scrollbar {
-        display: none;
-      }
-
-      .cat-pill {
-        flex-shrink: 0;
-        padding: 7px 13px;
-        font-size: 12.5px;
-      }
-
-      /* Apps Grid */
-      .apps-grid {
-        grid-template-columns: 1fr;
-        gap: 16px;
-        margin-bottom: 48px;
-      }
-
-      .app-card {
-        padding: 20px 18px;
-        border-radius: var(--radius-md);
-      }
-
-      /* Privacy Center Section */
-      .privacy-section {
-        padding: 22px 16px;
-        margin-bottom: 48px;
-      }
-
-      .privacy-grid {
-        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-        gap: 12px;
-      }
-
-      /* Footer */
-      .footer-content {
-        flex-direction: column;
-        text-align: center;
-        gap: 20px;
-      }
-
-      .footer-links {
-        justify-content: center;
-        gap: 12px 16px;
-      }
-    }
-
-    /* Small Mobile Phones (iPhone SE, Galaxy S, Xiaomi, 320px - 520px) */
-    @media (max-width: 520px) {
-      .container {
-        padding: 0 12px;
-      }
-
-      .hero {
-        padding: 32px 0 20px;
-      }
-
-      .hero-pill {
-        font-size: 11px;
-        padding: 5px 12px;
-        margin-bottom: 12px;
-      }
-
-      .hero-title {
-        font-size: 27px;
-        letter-spacing: -0.5px;
-        line-height: 1.25;
-      }
-
-      .hero-description {
-        font-size: 14px;
-        margin-bottom: 20px;
-      }
-
-      .hero-cta-group {
-        flex-direction: column;
-        width: 100%;
-        gap: 10px;
-        margin-bottom: 28px;
-      }
-
-      .cta-btn {
-        width: 100%;
-        justify-content: center;
-        padding: 12px 18px;
-        font-size: 14px;
-      }
-
-      /* Stats */
-      .stats-bar {
-        padding: 14px 10px;
-        gap: 10px 6px;
-        margin-bottom: 28px;
-      }
-
-      .stat-number {
-        font-size: 21px;
-      }
-
-      .stat-label {
-        font-size: 11px;
-      }
-
-      /* App Card Inner Details */
-      .app-card {
-        padding: 16px 14px;
-      }
-
-      .app-header {
-        gap: 12px;
-        margin-bottom: 12px;
-      }
-
-      .app-icon-wrap {
-        width: 52px;
-        height: 52px;
-        border-radius: 13px;
-      }
-
-      .app-icon-wrap img {
-        border-radius: 12px;
-      }
-
-      .app-title {
-        font-size: 17px;
-      }
-
-      .app-category {
-        font-size: 11px;
-      }
-
-      .app-desc {
-        font-size: 13px;
-        line-height: 1.55;
-        margin-bottom: 12px;
-      }
-
-      .app-highlights {
-        padding: 8px 10px;
-        margin-bottom: 12px;
-      }
-
-      .app-highlights li {
-        font-size: 11.5px;
-      }
-
-      .app-tags {
-        gap: 4px;
-        margin-bottom: 14px;
-      }
-
-      .app-tag {
-        font-size: 10px;
-        padding: 3px 7px;
-      }
-
-      /* Card Action Buttons: Balanced 2-Row Layout */
-      .app-actions {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-        padding-top: 12px;
-      }
-
-      .action-btn {
-        font-size: 12.5px;
-        padding: 10px 8px;
-        border-radius: 10px;
-        min-width: 0;
-      }
-
-      /* Primary Store / Web Links: 50% width each when 2 exist */
-      .action-btn:not(.btn-privacy-action) {
-        flex: 1 1 calc(50% - 4px);
-      }
-
-      /* Full width for cards with only 1 primary action */
-      .action-btn:not(.btn-privacy-action):first-child:nth-last-child(3),
-      .action-btn:not(.btn-privacy-action):first-child:nth-last-child(1) {
-        flex: 1 1 100%;
-        padding: 11px 14px;
-        font-size: 13px;
-      }
-
-      /* Privacy & Terms: 50% width on row 2 with text labels */
-      .btn-privacy-action {
-        flex: 1 1 calc(50% - 4px);
-        width: auto;
-        height: 38px;
-        font-size: 12px;
-        gap: 6px;
-      }
-
-      .btn-privacy-action[title="Privacy Policy"]::after {
-        content: "Privacy";
-        font-size: 12px;
-        font-weight: 600;
-      }
-
-      .btn-privacy-action[title="Terms of Use"]::after {
-        content: "Terms";
-        font-size: 12px;
-        font-weight: 600;
-      }
-
-      .btn-privacy-action[title="GitHub Repository"]::after {
-        content: "GitHub";
-        font-size: 12px;
-        font-weight: 600;
-      }
-
-      /* Privacy Center Section */
-      .privacy-section {
-        padding: 18px 12px;
-      }
-
-      .privacy-grid {
-        grid-template-columns: 1fr;
-        gap: 10px;
-      }
-
-      .privacy-card-container {
-        padding: 12px;
-      }
-
-      .privacy-card-title {
-        font-size: 13.5px;
-      }
-
-      .privacy-sublink {
-        padding: 8px;
-        font-size: 11.5px;
-      }
-
-      .tech-item {
-        padding: 7px 12px;
-        font-size: 12px;
-      }
-
-      .footer-link {
-        font-size: 12px;
-      }
-
-      .footer-copy {
-        font-size: 11.5px;
-      }
+      -webkit-font-smoothing: antialiased;
+      overflow-x: clip;
+    }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; color: inherit; cursor: pointer; background: none; border: 0; }
+    img { display: block; }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 8px; }
+    .wrap { width: min(1200px, 100% - 32px); margin: 0 auto; }
+    .backdrop {
+      position: fixed; inset: 0; z-index: -1; pointer-events: none;
+      background:
+        radial-gradient(800px 500px at 85% -10%, var(--accent-soft), transparent 60%),
+        radial-gradient(600px 400px at 0% 20%, rgba(34, 211, 238, 0.07), transparent 60%);
+    }
+    .backdrop::after {
+      content: ''; position: absolute; inset: 0;
+      background-image: linear-gradient(var(--line) 1px, transparent 1px), linear-gradient(90deg, var(--line) 1px, transparent 1px);
+      background-size: 56px 56px;
+      mask-image: radial-gradient(ellipse at 50% 0%, #000 0%, transparent 70%);
+      -webkit-mask-image: radial-gradient(ellipse at 50% 0%, #000 0%, transparent 70%);
+      opacity: .5;
+    }
+
+    /* header */
+    header { position: sticky; top: 0; z-index: 20; backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); background: color-mix(in srgb, var(--bg) 78%, transparent); border-bottom: 1px solid var(--line); }
+    .head { display: flex; align-items: center; gap: 20px; height: 66px; }
+    .brand { display: flex; align-items: center; gap: 10px; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.1rem; }
+    .mark { width: 34px; height: 34px; border-radius: 10px; display: grid; place-items: center; font-size: .85rem; color: #fff; background: linear-gradient(135deg, var(--accent), var(--accent-2)); }
+    .nav { display: flex; gap: 4px; margin-left: auto; }
+    .nav a { padding: 8px 12px; border-radius: 10px; color: var(--muted); font-size: .92rem; font-weight: 500; }
+    .nav a:hover { color: var(--text); background: var(--card); }
+    .tools { display: flex; gap: 8px; align-items: center; }
+    .icon-btn { width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center; border: 1px solid var(--line); background: var(--card); }
+    .icon-btn:hover { border-color: var(--line-strong); }
+    .theme-light { display: none; }
+    [data-theme="light"] .theme-light { display: inline; }
+    [data-theme="light"] .theme-dark { display: none; }
+    .burger { display: none; }
+
+    /* buttons */
+    .btn { display: inline-flex; align-items: center; gap: .55rem; height: 46px; padding: 0 1.2rem; border-radius: 999px; font-weight: 600; font-size: .95rem; white-space: nowrap; border: 1px solid transparent; transition: transform .2s, border-color .2s, box-shadow .2s; }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary { background: var(--accent); color: #fff; box-shadow: 0 12px 30px -14px var(--accent); }
+    .btn-ghost { background: var(--card); border-color: var(--line-strong); }
+    .btn-ghost:hover { border-color: var(--accent); }
+    .btn-sm { height: 38px; padding: 0 .95rem; font-size: .88rem; }
+
+    /* hero */
+    .hero { padding: 84px 0 40px; text-align: center; }
+    .eyebrow { display: inline-flex; align-items: center; gap: .5rem; padding: .4rem .9rem; border: 1px solid var(--line-strong); border-radius: 999px; background: var(--card); color: var(--muted); font-size: .85rem; }
+    .eyebrow b { color: var(--text); font-weight: 600; }
+    .dot { width: 8px; height: 8px; border-radius: 50%; background: #22c55e; box-shadow: 0 0 0 4px rgba(34, 197, 94, .18); }
+    h1 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(2.4rem, 6.4vw, 4.6rem); line-height: 1.02; letter-spacing: -.035em; margin: 22px auto 0; max-width: 16ch; }
+    h1 span { background: linear-gradient(90deg, var(--accent), var(--accent-2)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .lead { margin: 20px auto 0; max-width: 58ch; color: var(--muted); font-size: clamp(1rem, 2vw, 1.15rem); }
+    .hero-cta { display: flex; justify-content: center; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+    .stats { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 54px; border: 1px solid var(--line); border-radius: 20px; background: var(--card); overflow: hidden; }
+    .stats div { padding: 22px 12px; text-align: center; }
+    .stats div + div { border-left: 1px solid var(--line); }
+    .stats b { display: block; font-family: 'Space Grotesk', sans-serif; font-size: 2rem; line-height: 1.1; }
+    .stats span { color: var(--muted); font-size: .86rem; }
+
+    /* section */
+    section { padding: 70px 0 10px; }
+    .sec-head { display: flex; align-items: end; justify-content: space-between; gap: 20px; flex-wrap: wrap; margin-bottom: 26px; }
+    .kicker { font-family: ui-monospace, 'SF Mono', Menlo, monospace; font-size: .78rem; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); }
+    h2 { font-family: 'Space Grotesk', sans-serif; font-size: clamp(1.8rem, 4vw, 2.6rem); letter-spacing: -.03em; line-height: 1.1; margin-top: 6px; }
+    .sec-lead { color: var(--muted); max-width: 52ch; margin-top: 8px; }
+
+    /* filters */
+    .controls { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin-bottom: 22px; }
+    .search { position: relative; flex: 1 1 260px; max-width: 360px; }
+    .search i { position: absolute; left: 14px; top: 50%; transform: translateY(-50%); color: var(--muted); font-size: .9rem; }
+    .search input { width: 100%; height: 44px; padding: 0 14px 0 40px; border-radius: 12px; border: 1px solid var(--line-strong); background: var(--card); color: var(--text); font: inherit; font-size: .93rem; }
+    .search input:focus { outline: none; border-color: var(--accent); }
+    .pills { display: flex; gap: 6px; flex-wrap: wrap; }
+    .pill { height: 38px; padding: 0 .9rem; border-radius: 999px; border: 1px solid var(--line); background: var(--card); color: var(--muted); font-size: .88rem; font-weight: 500; }
+    .pill span { opacity: .6; margin-left: 2px; font-size: .8rem; }
+    .pill:hover { color: var(--text); border-color: var(--line-strong); }
+    .pill.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+    .pill.active span { opacity: .85; }
+
+    /* app cards */
+    .grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+    .app { display: flex; flex-direction: column; padding: 22px; border: 1px solid var(--line); border-radius: 22px; background: var(--card); transition: border-color .2s, transform .2s, box-shadow .2s; }
+    .app:hover { border-color: var(--line-strong); transform: translateY(-3px); box-shadow: var(--shadow); }
+    .app[hidden] { display: none; }
+    .app-head { display: flex; gap: 14px; align-items: center; }
+    .app-icon { width: 60px; height: 60px; flex: none; border-radius: 16px; object-fit: cover; border: 1px solid var(--line); background: var(--card-solid); }
+    .app-icon-letter { display: grid; place-items: center; color: #fff; font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 1.5rem; background: linear-gradient(135deg, #f97316, #fb923c); border: 0; }
+    .app-title { min-width: 0; }
+    .app h3 { font-family: 'Space Grotesk', sans-serif; font-size: 1.12rem; line-height: 1.25; letter-spacing: -.01em; }
+    .app-cat { color: var(--accent); font-size: .78rem; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; margin-top: 3px; }
+    .plats { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 16px; }
+    .plat { display: inline-flex; align-items: center; gap: .35rem; padding: .2rem .6rem; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); font-size: .78rem; }
+    .app-desc { margin-top: 12px; color: var(--muted); font-size: .93rem; }
+    .app-hl { list-style: none; margin-top: 14px; display: grid; gap: 6px; font-size: .86rem; }
+    .app-hl li { position: relative; padding-left: 20px; }
+    .app-hl li::before { content: ''; position: absolute; left: 2px; top: .55em; width: 8px; height: 8px; border-radius: 3px; background: linear-gradient(135deg, var(--accent), var(--accent-2)); }
+    .app-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; padding-top: 20px; }
+    .btn-store { flex: 1 1 auto; display: inline-flex; align-items: center; justify-content: center; gap: .45rem; height: 40px; padding: 0 .9rem; border-radius: 12px; font-size: .86rem; font-weight: 600; border: 1px solid var(--line-strong); white-space: nowrap; transition: background .2s, border-color .2s; }
+    .btn-store.play { color: var(--play); border-color: color-mix(in srgb, var(--play) 35%, transparent); background: color-mix(in srgb, var(--play) 9%, transparent); }
+    .btn-store.ms { color: var(--ms); border-color: color-mix(in srgb, var(--ms) 35%, transparent); background: color-mix(in srgb, var(--ms) 9%, transparent); }
+    .btn-store.tf { color: var(--tf); border-color: color-mix(in srgb, var(--tf) 35%, transparent); background: color-mix(in srgb, var(--tf) 9%, transparent); }
+    .btn-store.web, .btn-store.gh { color: var(--text); background: var(--card); }
+    a.btn-store:hover { border-color: currentColor; }
+    .btn-store.soon { color: var(--muted); border-style: dashed; cursor: default; }
+    .app-small { margin-top: 12px; color: var(--muted); font-size: .8rem; }
+    .app-small a:hover { color: var(--accent); }
+    .empty { display: none; padding: 40px; text-align: center; color: var(--muted); border: 1px dashed var(--line-strong); border-radius: 20px; }
+
+    /* about */
+    .about { display: grid; grid-template-columns: 1.2fr 1fr; gap: 18px; }
+    .panel { padding: 28px; border: 1px solid var(--line); border-radius: 22px; background: var(--card); }
+    .panel h3 { font-family: 'Space Grotesk', sans-serif; font-size: 1.3rem; margin-bottom: 10px; }
+    .panel p { color: var(--muted); }
+    .panel .btn { margin-top: 20px; }
+    .principles { list-style: none; display: grid; gap: 14px; }
+    .principles li { display: flex; gap: 12px; }
+    .principles i { flex: none; width: 34px; height: 34px; border-radius: 10px; display: grid; place-items: center; color: var(--accent); background: var(--accent-soft); font-size: .9rem; }
+    .principles b { display: block; font-weight: 600; }
+    .principles span { color: var(--muted); font-size: .9rem; }
+
+    /* legal */
+    .legal { list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+    .legal-row { display: flex; align-items: center; gap: 12px; padding: 12px 14px; border: 1px solid var(--line); border-radius: 14px; background: var(--card); }
+    .legal-icon { width: 32px; height: 32px; border-radius: 9px; flex: none; object-fit: cover; }
+    .legal-icon.app-icon-letter { font-size: .95rem; border-radius: 9px; }
+    .legal-name { flex: 1; min-width: 0; font-weight: 600; font-size: .92rem; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .legal-links { display: flex; gap: 12px; font-size: .84rem; color: var(--muted); }
+    .legal-links a:hover { color: var(--accent); }
+    .legal-note { margin-top: 16px; color: var(--muted); font-size: .86rem; }
+    .legal-note a { color: var(--accent); }
+
+    /* contact + footer */
+    .contact { margin: 70px 0 0; padding: 44px; border-radius: 26px; border: 1px solid var(--line-strong); background: linear-gradient(120deg, var(--accent-soft), transparent 60%), var(--card); display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+    .contact h2 { margin: 0; }
+    .contact p { color: var(--muted); margin-top: 8px; }
+    .contact-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+    footer { margin-top: 60px; padding: 26px 0 40px; border-top: 1px solid var(--line); color: var(--muted); font-size: .88rem; }
+    .foot { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    .foot nav { display: flex; gap: 18px; flex-wrap: wrap; }
+    .foot a:hover { color: var(--accent); }
+
+    @media (max-width: 1000px) {
+      .grid, .legal { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .about { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 760px) {
+      .nav { display: none; position: absolute; top: 66px; left: 0; right: 0; flex-direction: column; padding: 10px 16px 16px; background: var(--bg-2); border-bottom: 1px solid var(--line); }
+      .nav.open { display: flex; }
+      .nav a { padding: 12px; }
+      .burger { display: grid; }
+      .tools { margin-left: auto; }
+      .tools .btn { display: none; }
+      .hero { padding-top: 56px; }
+      .stats { grid-template-columns: repeat(2, 1fr); }
+      .stats div:nth-child(3) { border-left: 0; }
+      .stats div:nth-child(n+3) { border-top: 1px solid var(--line); }
+      .grid, .legal { grid-template-columns: 1fr; }
+      .search { max-width: none; }
+      .pills { flex-wrap: nowrap; overflow-x: auto; padding-bottom: 4px; width: 100%; scrollbar-width: none; }
+      .pill { flex: none; }
+      .contact { padding: 28px 22px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .app, .btn { transition: none; }
     }
   </style>
 </head>
 <body>
+  <div class="backdrop" aria-hidden="true"></div>
 
-  <!-- Ambient Glow -->
-  <div class="glow-orb" style="top: 100px; left: -100px; background: rgba(59, 130, 246, 0.2);"></div>
-  <div class="glow-orb" style="top: 400px; right: -100px; background: rgba(139, 92, 246, 0.15);"></div>
-
-  <!-- Header -->
   <header>
-    <div class="container nav-content">
-      <a href="/" class="brand-logo">
-        <div class="logo-badge-icon">
-          <i class="fa-solid fa-layer-group"></i>
-        </div>
-        <div class="brand-text">
-          <span class="brand-name">Erdevir Labs</span>
-          <span class="brand-tag">Developer Studio</span>
-        </div>
-      </a>
-
-      <!-- Desktop Nav Links -->
-      <nav class="nav-links">
-        <a href="#apps" class="nav-btn"><i class="fa-solid fa-mobile-screen-button"></i> Apps</a>
-        <a href="#privacy" class="nav-btn"><i class="fa-solid fa-shield-halved"></i> Privacy Center</a>
-        <a href="/soner-portfolio/" target="_blank" class="nav-btn"><i class="fa-solid fa-user-astronaut"></i> Portfolio</a>
-        <a href="/my-store/" class="nav-btn"><i class="fa-solid fa-store"></i> App Store</a>
-        <a href="https://play.google.com/store/apps/dev?id=6728487283410636967" target="_blank" class="nav-btn nav-btn-primary">
-          <i class="fa-brands fa-google-play"></i> Play Store
-        </a>
+    <div class="wrap head">
+      <a class="brand" href="#top" aria-label="Erdevir Labs home"><span class="mark">EL</span> Erdevir Labs</a>
+      <nav class="nav" id="nav">
+        <a href="#apps">Apps</a>
+        <a href="#about">About</a>
+        <a href="#legal">Privacy</a>
+        <a href="/soner-portfolio/">Portfolio</a>
+        <a href="#contact">Contact</a>
       </nav>
-
-      <!-- Mobile Header Actions (Visible on mobile only) -->
-      <div class="mobile-header-actions">
-        <a href="https://play.google.com/store/apps/dev?id=6728487283410636967" target="_blank" class="mobile-header-store-btn" title="Google Play Store">
-          <i class="fa-brands fa-google-play"></i>
-        </a>
-        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu">
-          <i class="fa-solid fa-bars" id="menuIcon"></i>
+      <div class="tools">
+        <button class="icon-btn" id="themeBtn" aria-label="Switch theme">
+          <i class="fa-solid fa-sun theme-dark"></i><i class="fa-solid fa-moon theme-light"></i>
         </button>
-      </div>
-    </div>
-
-    <!-- Mobile Dropdown Drawer -->
-    <div class="mobile-drawer" id="mobileDrawer">
-      <div class="mobile-drawer-content">
-        <a href="#apps" class="mobile-nav-item">
-          <i class="fa-solid fa-mobile-screen-button"></i>
-          <span>Featured Applications</span>
-        </a>
-        <a href="#privacy" class="mobile-nav-item">
-          <i class="fa-solid fa-shield-halved"></i>
-          <span>Privacy & Compliance Center</span>
-        </a>
-        <a href="/soner-portfolio/" target="_blank" class="mobile-nav-item">
-          <i class="fa-solid fa-user-astronaut"></i>
-          <span>Developer Portfolio</span>
-        </a>
-        <a href="/my-store/" class="mobile-nav-item">
-          <i class="fa-solid fa-store"></i>
-          <span>App Store Catalog</span>
-        </a>
-        <a href="/app-ads.txt" class="mobile-nav-item">
-          <i class="fa-solid fa-file-lines"></i>
-          <span>app-ads.txt Verification</span>
-        </a>
-        <a href="https://play.google.com/store/apps/dev?id=6728487283410636967" target="_blank" class="mobile-nav-cta">
-          <i class="fa-brands fa-google-play"></i> Official Google Play Store
-        </a>
+        <a class="btn btn-primary btn-sm" href="https://play.google.com/store/apps/dev?id=6728487283410636967" target="_blank" rel="noopener"><i class="fa-brands fa-google-play"></i> Google Play</a>
+        <button class="icon-btn burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="nav"><i class="fa-solid fa-bars"></i></button>
       </div>
     </div>
   </header>
 
-  <main class="container">
-
-    <!-- Hero -->
-    <section class="hero">
-      <div class="hero-pill">
-        <i class="fa-solid fa-bolt"></i> Official Software Studio & Developer Hub
+  <main id="top">
+    <div class="wrap hero">
+      <span class="eyebrow"><span class="dot"></span> Independent app studio · <b>22 apps</b></span>
+      <h1>Small, focused apps. <span>Private by design.</span></h1>
+      <p class="lead">Erdevir Labs builds games and everyday tools for Android, iOS and Windows. No accounts, no tracking: your data stays on your device.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#apps"><i class="fa-solid fa-grip"></i> Browse apps</a>
+        <a class="btn btn-ghost" href="/soner-portfolio/"><i class="fa-regular fa-user"></i> Meet the developer</a>
       </div>
-      <h1 class="hero-title">
-        High-Performance Mobile Apps &<br />
-        <span class="hero-title-gradient">Intelligent Software Solutions</span>
-      </h1>
-      <p class="hero-description">
-        Crafting privacy-first, beautifully engineered mobile applications for Android, cross-platform desktop utilities, and AI-powered digital products.
-      </p>
-
-      <div class="hero-cta-group">
-        <a href="#apps" class="cta-btn cta-btn-primary">
-          <i class="fa-solid fa-cubes"></i> Explore All Applications
-        </a>
-        <a href="/soner-portfolio/" target="_blank" class="cta-btn cta-btn-secondary">
-          <i class="fa-solid fa-user-astronaut"></i> Developer Portfolio
-        </a>
-        <a href="#privacy" class="cta-btn cta-btn-secondary">
-          <i class="fa-solid fa-lock"></i> Privacy Policies
-        </a>
-        <a href="/app-ads.txt" class="cta-btn cta-btn-secondary" title="IAB Authorized Digital Sellers for AdMob">
-          <i class="fa-solid fa-certificate"></i> app-ads.txt
-        </a>
+      <div class="stats">
+        <div><b>22</b><span>Apps &amp; tools</span></div>
+        <div><b>10</b><span>On Google Play</span></div>
+        <div><b>5</b><span>On Microsoft Store</span></div>
+        <div><b>19</b><span>Coming to iOS</span></div>
       </div>
+    </div>
 
-      <!-- Stats Bar -->
-      <div class="stats-bar">
-        <div class="stat-item">
-          <div class="stat-number">21+</div>
-          <div class="stat-label">Production Apps & Tools</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number">100%</div>
-          <div class="stat-label">Privacy-First Architecture</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number">Flutter</div>
-          <div class="stat-label">Cross-Platform Tech</div>
-        </div>
-        <div class="stat-item">
-          <div class="stat-number">Certified</div>
-          <div class="stat-label">Google Play & AdMob</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Applications Section -->
     <section id="apps">
-      <div class="section-header">
-        <div class="section-title-wrap">
-          <h2><i class="fa-solid fa-grid-2"></i> Featured Applications</h2>
-          <p>Explore our lineup of mobile apps, desktop utilities, and web software.</p>
+      <div class="wrap">
+        <div class="sec-head">
+          <div>
+            <p class="kicker">01 · Apps</p>
+            <h2>Everything we make</h2>
+            <p class="sec-lead">Games, productivity and health apps, plus open-source tools for engineers.</p>
+          </div>
         </div>
-      </div>
-
-      <!-- Filter Controls -->
-      <div class="filter-controls">
-        <div class="search-wrapper">
-          <i class="fa-solid fa-magnifying-glass search-icon"></i>
-          <input type="text" id="appSearchInput" class="search-input" placeholder="Search by app name, feature, or technology..." />
+        <div class="controls">
+          <label class="search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input id="q" type="search" placeholder="Search apps" aria-label="Search apps" />
+          </label>
+          <div class="pills" role="group" aria-label="Filter apps"><button class="pill active" data-key="all" aria-pressed="true">All <span>22</span></button><button class="pill" data-key="game" aria-pressed="false">Games <span>9</span></button><button class="pill" data-key="tool" aria-pressed="false">Tools <span>13</span></button><button class="pill" data-key="android" aria-pressed="false">Android <span>11</span></button><button class="pill" data-key="ios" aria-pressed="false">iOS <span>19</span></button><button class="pill" data-key="windows" aria-pressed="false">Windows <span>8</span></button><button class="pill" data-key="web" aria-pressed="false">Web <span>3</span></button></div>
         </div>
-        <div class="category-pills" id="categoryFilterContainer">
-          <div class="cat-pill active" data-filter="all">All Apps (21)</div>
-          <div class="cat-pill" data-filter="ios">🍏 iOS</div>
-          <div class="cat-pill" data-filter="mobile">📱 Android Mobile</div>
-          <div class="cat-pill" data-filter="desktop">💻 Windows & Desktop</div>
-          <div class="cat-pill" data-filter="utilities">🛠️ Utilities & Education</div>
-          <div class="cat-pill" data-filter="games">🎮 Games</div>
+        <div class="grid" id="grid">
+      <article class="app" data-filter="tool android ios" data-search="workout tracker fitness &amp; 1rm progression comprehensive gym and fitness training log app with custom routines, live set recording, volume analytics, 1rm progression charts, and sleek obsidian amoled dark mode. flutter fitness analytics amoled dark custom routines, exercise sets &amp; rest timer advanced volume &amp; muscle group progression heatmaps pure local storage, offline backup &amp; dynamic island overlay">
+        <div class="app-head">
+          <img class="app-icon" src="/icons/workout_tracker.png" alt="" width="60" height="60" loading="lazy" />
+          <div class="app-title">
+            <h3>Workout Tracker</h3>
+            <p class="app-cat">Fitness &amp; 1RM Progression</p>
+          </div>
         </div>
-      </div>
-
-      <!-- Apps Grid -->
-      <div class="apps-grid" id="appsGrid">
-
-        <!-- 1. My Language Tracker -->
-        <article class="app-card" data-category="ios mobile utilities">
-          <div class="app-header">
-            <div class="app-icon-wrap">
-              <img src="/icons/my_language_tracker.png" alt="My Language Tracker" />
-            </div>
-            <div class="app-meta">
-              <h3 class="app-title">My Language Tracker</h3>
-              <div class="app-category"><i class="fa-solid fa-graduation-cap"></i> Vocabulary & Habit Mastery</div>
-            </div>
+        <div class="plats"><span class="plat" title="Android"><i class="fa-brands fa-android"></i> Android</span><span class="plat" title="iOS"><i class="fa-brands fa-apple"></i> iOS</span></div>
+        <p class="app-desc">Comprehensive gym and fitness training log app with custom routines, live set recording, volume analytics, 1RM progression charts, and sleek Obsidian AMOLED dark mode.</p>
+        <ul class="app-hl"><li>Custom routines, exercise sets &amp; rest timer</li><li>Advanced volume &amp; muscle group progression heatmaps</li><li>Pure local storage, offline backup &amp; Dynamic Island overlay</li></ul>
+        <div class="app-actions">
+          <a class="btn-store play" href="https://play.google.com/store/apps/details?id=com.workouttracker.workout_tracker" target="_blank" rel="noopener"><i class="fa-brands fa-google-play"></i> Google Play</a>
+<span class="btn-store soon" title="The iOS version is in review. A public beta link will appear here."><i class="fa-brands fa-apple"></i> iOS · soon</span>
+        </div>
+        <p class="app-small"><a href="/workout-tracker/">Details</a> · <a href="/workout-tracker-privacy/privacy.html">Privacy</a> · <a href="/workout-tracker-privacy/terms.html">Terms</a></p>
+      </article>
+      <article class="app" data-filter="tool android ios" data-search="my language tracker vocabulary &amp; habit mastery master english vocabulary through spaced repetition (srs), 50-word adaptive placement testing, studio oxford audio pronunciations, and duolingo-style habit streak calendar. flutter oxford 5000 cefr srs algorithm 100% offline 4,820+ oxford 3000 &amp; 5000 cefr-graded word pool (a1-c1) 50-word adaptive placement test with instant scoring spaced repetition (srs) memory engine &amp; studio audio">
+        <div class="app-head">
+          <img class="app-icon" src="/icons/my_language_tracker.png" alt="" width="60" height="60" loading="lazy" />
+          <div class="app-title">
+            <h3>My Language Tracker</h3>
+            <p class="app-cat">Vocabulary &amp; Habit Mastery</p>
           </div>
-          <p class="app-desc">
-            Master English vocabulary through spaced repetition (SRS), 50-word adaptive placement testing, studio Oxford audio pronunciations, and Duolingo-style habit streak calendar.
-          </p>
-          <ul class="app-highlights">
-            <li><i class="fa-solid fa-check"></i> 4,820+ Oxford 3000 & 5000 CEFR-graded word pool (A1-C1)</li>
-            <li><i class="fa-solid fa-check"></i> 50-word adaptive placement test with instant scoring</li>
-            <li><i class="fa-solid fa-check"></i> Spaced Repetition (SRS) memory engine & studio audio</li>
-          </ul>
-          <div class="app-tags">
-            <span class="app-tag">Flutter</span>
-            <span class="app-tag">Android</span>
-            <span class="app-tag">iOS soon</span>
-            <span class="app-tag">Oxford 5000</span>
-            <span class="app-tag">CEFR</span>
-            <span class="app-tag">SRS Algorithm</span>
-            <span class="app-tag">100% Offline</span>
+        </div>
+        <div class="plats"><span class="plat" title="Android"><i class="fa-brands fa-android"></i> Android</span><span class="plat" title="iOS"><i class="fa-brands fa-apple"></i> iOS</span></div>
+        <p class="app-desc">Master English vocabulary through spaced repetition (SRS), 50-word adaptive placement testing, studio Oxford audio pronunciations, and Duolingo-style habit streak calendar.</p>
+        <ul class="app-hl"><li>4,820+ Oxford 3000 &amp; 5000 CEFR-graded word pool (A1-C1)</li><li>50-word adaptive placement test with instant scoring</li><li>Spaced Repetition (SRS) memory engine &amp; studio audio</li></ul>
+        <div class="app-actions">
+          <a class="btn-store play" href="https://play.google.com/store/apps/details?id=www.mylanguagetracker.app" target="_blank" rel="noopener"><i class="fa-brands fa-google-play"></i> Google Play</a>
+<span class="btn-store soon" title="The iOS version is in review. A public beta link will appear here."><i class="fa-brands fa-apple"></i> iOS · soon</span>
+        </div>
+        <p class="app-small"><a href="/my_language_tracker/">Details</a> · <a href="/my-language-tracker-privacy/privacy.html">Privacy</a> · <a href="/my-language-tracker-privacy/terms.html">Terms</a></p>
+      </article>
+      <article class="app" data-filter="game android ios windows" data-search="core defender: rogue survivor roguelike defense rpg defend the ancient energy core against relentless alien insectoid swarms. choose dynamic hero perks, synthesize legendary turrets, and conquer endless cosmic waves. godot roguelike tower defense google play games services v2 leaderboards &amp; 30 achievements dynamic hero synergies, turret synthesis &amp; scrap bounties high-performance godot engine with smooth 60 fps">
+        <div class="app-head">
+          <img class="app-icon" src="/icons/core_defender.png" alt="" width="60" height="60" loading="lazy" />
+          <div class="app-title">
+            <h3>Core Defender: Rogue Survivor</h3>
+            <p class="app-cat">Roguelike Defense RPG</p>
           </div>
-          <div class="app-actions">
-            <a href="https://play.google.com/store/apps/details?id=www.mylanguagetracker.app" target="_blank" class="action-btn btn-playstore">
-              <i class="fa-brands fa-google-play"></i> Play Store
-            </a>
-            <span class="action-btn btn-testflight is-soon" title="Public TestFlight beta opens soon">
-              <i class="fa-brands fa-apple"></i> iOS soon
-            </span>
-            <a href="/my-language-tracker-privacy/privacy.html" class="action-btn btn-privacy-action" title="Privacy Policy">
-              <i class="fa-solid fa-shield-halved"></i>
-            </a>
-            <a href="/my-language-tracker-privacy/terms.html" class="action-btn btn-privacy-action" title="Terms of Use">
-              <i class="fa-solid fa-file-contract"></i>
-            </a>
+        </div>
+        <div class="plats"><span class="plat" title="Android"><i class="fa-brands fa-android"></i> Android</span><span class="plat" title="iOS"><i class="fa-brands fa-apple"></i> iOS</span><span class="plat" title="Windows"><i class="fa-brands fa-windows"></i> Windows</span></div>
+        <p class="app-desc">Defend the Ancient Energy Core against relentless alien insectoid swarms. Choose dynamic hero perks, synthesize legendary turrets, and conquer endless cosmic waves.</p>
+        <ul class="app-hl"><li>Google Play Games Services v2 leaderboards &amp; 30 achievements</li><li>Dynamic hero synergies, turret synthesis &amp; scrap bounties</li><li>High-performance Godot engine with smooth 60 FPS</li></ul>
+        <div class="app-actions">
+          <a class="btn-store play" href="https://play.google.com/store/apps/details?id=www.coredefender.app" target="_blank" rel="noopener"><i class="fa-brands fa-google-play"></i> Google Play</a>
+<a class="btn-store ms" href="https://apps.microsoft.com/detail/9NNHWLW1WMQL" target="_blank" rel="noopener"><i class="fa-brands fa-microsoft"></i> Microsoft Store</a>
+<span class="btn-store soon" title="The iOS version is in review. A public beta link will appear here."><i class="fa-brands fa-apple"></i> iOS · soon</span>
+        </div>
+        <p class="app-small"><a href="/core_defender/">Details</a> · <a href="/core-defender-privacy/privacy.html">Privacy</a> · <a href="/core-defender-privacy/terms.html">Terms</a></p>
+      </article>
+      <article class="app" data-filter="tool android ios windows" data-search="autoshare cross-platform local transfer ultra-fast local wi-fi file sharing tool between android and windows devices featuring udp auto-discovery, pin pairing, zero data quota consumption, and queue management. flutter networking zero mobile internet quota consumption high-speed local peer-to-peer wi-fi network (80+ mb/s) windows microsoft store native app &amp; android companion">
+        <div class="app-head">
+          <img class="app-icon" src="/icons/autoshare.png" alt="" width="60" height="60" loading="lazy" />
+          <div class="app-title">
+            <h3>AutoShare</h3>
+            <p class="app-cat">Cross-Platform Local Transfer</p>
           </div>
-        </article>
-
-        <!-- 2. Core Defender: Rogue Survivor -->
-        <article class="app-card" data-category="ios mobile desktop games">
-          <div class="app-header">
-            <div class="app-icon-wrap">
-              <img src="/icons/core_defender.png" alt="Core Defender: Rogue Survivor" />
-            </div>
-            <div class="app-meta">
-              <h3 class="app-title">Core Defender: Rogue Survivor</h3>
-              <div class="app-category"><i class="fa-solid fa-shield-halved"></i> Roguelike Defense RPG</div>
-            </div>
+        </div>
+        <div class="plats"><span class="plat" title="Android"><i class="fa-brands fa-android"></i> Android</span><span class="plat" title="iOS"><i class="fa-brands fa-apple"></i> iOS</span><span class="plat" title="Windows"><i class="fa-brands fa-windows"></i> Windows</span></div>
+        <p class="app-desc">Ultra-fast local Wi-Fi file sharing tool between Android and Windows devices featuring UDP auto-discovery, PIN pairing, zero data quota consumption, and queue management.</p>
+        <ul class="app-hl"><li>Zero mobile internet quota consumption</li><li>High-speed local peer-to-peer Wi-Fi network (80+ MB/s)</li><li>Windows Microsoft Store native app &amp; Android companion</li></ul>
+        <div class="app-actions">
+          <a class="btn-store play" href="https://play.google.com/store/apps/details?id=com.autoshare.app" target="_blank" rel="noopener"><i class="fa-brands fa-google-play"></i> Google Play</a>
+<a class="btn-store ms" href="https://apps.microsoft.com/detail/9PGM24F50VR8" target="_blank" rel="noopener"><i class="fa-brands fa-microsoft"></i> Microsoft Store</a>
+<span class="btn-store soon" title="The iOS version is in review. A public beta link will appear here."><i class="fa-brands fa-apple"></i> iOS · soon</span>
+        </div>
+        <p class="app-small"><a href="/autoshare/">Details</a> · <a href="/autoshare-privacy-policy/privacy.html">Privacy</a> · <a href="/autoshare-privacy-policy/terms.html">Terms</a></p>
+      </article>
+      <article class="app" data-filter="tool android ios windows" data-search="markdown keeper notes &amp; infinite concept map next-generation markdown note-taking and visual concept mapping app with google drive cloud sync, checklists, voice/image attachments, and hierarchical mind mapping. flutter markdown concept map dual view: keep masonry grid &amp; infinite concept map automatic google drive personal cloud synchronization single &amp; bulk markdown (.md / zip) import &amp; export">
+        <div class="app-head">
+          <img class="app-icon" src="/icons/markdown_keeper.png" alt="" width="60" height="60" loading="lazy" />
+          <div class="app-title">
+            <h3>Markdown Keeper</h3>
+            <p class="app-cat">Notes &amp; Infinite Concept Map</p>
           </div>
-          <p class="app-desc">
-            Defend the Ancient Energy Core against relentless alien insectoid swarms. Choose dynamic hero perks, synthesize legendary turrets, and conquer endless cosmic waves.
-          </p>
-          <ul class="app-highlights">
-            <li><i class="fa-solid fa-check"></i> Google Play Games Services v2 leaderboards & 30 achievements</li>
-            <li><i class="fa-solid fa-check"></i> Dynamic hero synergies, turret synthesis & scrap bounties</li>
-            <li><i class="fa-solid fa-check"></i> High-performance Godot 4.3 engine with smooth 60 FPS</li>
-          </ul>
-          <div class="app-tags">
-            <span class="app-tag">Godot 4.3</span>
-            <span class="app-tag">Android</span>
-            <span class="app-tag">iOS soon</span>
-            <span class="app-tag">Windows</span>
-            <span class="app-tag">Roguelike</span>
-            <span class="app-tag">Tower Defense</span>
-            <span class="app-tag">MS Store</span>
+        </div>
+        <div class="plats"><span class="plat" title="Android"><i class="fa-brands fa-android"></i> Android</span><span class="plat" title="iOS"><i class="fa-brands fa-apple"></i> iOS</span><span class="plat" title="Windows"><i class="fa-brands fa-windows"></i> Windows</span></div>
+        <p class="app-desc">Next-generation Markdown note-taking and visual concept mapping app with Google Drive cloud sync, checklists, voice/image attachments, and hierarchical mind mapping.</p>
+        <ul class="app-hl"><li>Dual view: Keep Masonry Grid &amp; Infinite Concept Map</li><li>Automatic Google Drive personal cloud synchronization</li><li>Single &amp; Bulk Markdown (.md / ZIP) Import &amp; Export</li></ul>
+        <div class="app-actions">
+          <a class="btn-store play" href="https://play.google.com/store/apps/details?id=www.markdownkeeper.app" target="_blank" rel="noopener"><i class="fa-brands fa-google-play"></i> Google Play</a>
+<a class="btn-store ms" href="https://apps.microsoft.com/detail/9P03P665MMTC" target="_blank" rel="noopener"><i class="fa-brands fa-microsoft"></i> Microsoft Store</a>
+<span class="btn-store soon" title="The iOS version is in review. A public beta link will appear here."><i class="fa-brands fa-apple"></i> iOS · soon</span>
+        </div>
+        <p class="app-small"><a href="/markdown_keeper/">Details</a> · <a href="/markdown-keeper-privacy/privacy.html">Privacy</a> · <a href="/markdown-keeper-privacy/terms.html">Terms</a></p>
+      </article>
+      <article class="app" data-filter="tool android ios windows" data-search="supzip: file manager &amp; unzip archive &amp; file explorer fast, lightweight file manager and multi-format archive extractor. unpack zip, rar, 7z, tar, gz in seconds; create password-protected encrypted archives with multi-core acceleration. flutter zip &amp; rar extract zip, rar, 7z, tar, gz, and bz2 archives encrypted password protection &amp; multi-core compression storage visualizer &amp; clean material you amoled dark ui">
+        <div class="app-head">
+          <img class="app-icon" src="/icons/supzip.png" alt="" width="60" height="60" loading="lazy" />
+          <div class="app-title">
+            <h3>SupZip: File Manager &amp; Unzip</h3>
+            <p class="app-cat">Archive &amp; File Explorer</p>
           </div>
-          <div class="app-actions">
-            <a href="https://play.google.com/store/apps/details?id=www.coredefender.app" target="_blank" class="action-btn btn-playstore">
-              <i class="fa-brands fa-google-play"></i> Play Store
-            </a>
-            <a href="https://apps.microsoft.com/detail/9NNHWLW1WMQL" target="_blank" class="action-btn btn-msstore">
-              <i class="fa-brands fa-microsoft"></i> MS Store
-            </a>
-            <span class="action-btn btn-testflight is-soon" title="Public TestFlight beta opens soon">
-              <i class="fa-brands fa-apple"></i> iOS soon
-            </span>
-            <a href="/core-defender-privacy/privacy.html" class="action-btn btn-privacy-action" title="Privacy Policy">
-              <i class="fa-solid fa-shield-halved"></i>
-            </a>
-            <a href="/core-defender-privacy/terms.html" class="action-btn btn-privacy-action" title="Terms of Use">
-              <i class="fa-solid fa-file-contract"></i>
-            </a>
+        </div>
+        <div class="plats"><span class="plat" title="Android"><i class="fa-brands fa-android"></i> Android</span><span class="plat" title="iOS"><i class="fa-brands fa-apple"></i> iOS</span><span class="plat" title="Windows"><i class="fa-brands fa-windows"></i> Windows</span></div>
+        <p class="app-desc">Fast, lightweight file manager and multi-format archive extractor. Unpack ZIP, RAR, 7Z, TAR, GZ in seconds; create password-protected encrypted archives with multi-core acceleration.</p>
+        <ul class="app-hl"><li>Extract ZIP, RAR, 7Z, TAR, GZ, and BZ2 archives</li><li>Encrypted password protection &amp; multi-core compression</li><li>Storage visualizer &amp; clean Material You Amoled dark UI</li></ul>
+        <div class="app-actions">
+          <a class="btn-store play" href="https://play.google.com/store/apps/details?id=www.subzip.app" target="_blank" rel="noopener"><i class="fa-brands fa-google-play"></i> Google Play</a>
+<a class="btn-store ms" href="https://apps.microsoft.com/detail/9MV22F9W72FC" target="_blank" rel="noopener"><i class="fa-brands fa-microsoft"></i> Microsoft Store</a>
+<span class="btn-store soon" title="The iOS version is in review. A public beta link will appear here."><i class="fa-brands fa-apple"></i> iOS · soon</span>
+        </div>
+        <p class="app-small"><a href="/supzip/">Details</a> · <a href="/subzip-privacy-policy/privacy.html">Privacy</a> · <a href="/subzip-privacy-policy/terms.html">Terms</a></p>
+      </article>
+      <article class="app" data-filter="game android ios windows" data-search="snakey rogue: pixel snake rpg 2d roguelike arcade crawler classic snake meets roguelike dungeon crawler! slither through 15 unique dungeons, stack synergies with rare/epic perk cards, collect apples, and fight deadly bosses. flutter flame engine pixel art 15 handcrafted dungeon maps with portal gates &amp; traps upgrade cards (fireball, ghost phase, magnet) 4 playable snake heroes with distinct stats &amp; permanent shop">
+        <div class="app-head">
+          <img class="app-icon" src="/icons/sneaky_rogue.png" alt="" width="60" height="60" loading="lazy" />
+          <div class="app-title">
+            <h3>Snakey Rogue: Pixel Snake RPG</h3>
+            <p class="app-cat">2D Roguelike Arcade Crawler</p>
           </div>
-        </article>
-
-        <!-- 3. Markdown Keeper -->
-        <article class="app-card" data-category="ios mobile desktop utilities">
-          <div class="app-header">
-            <div class="app-icon-wrap">
-              <img src="/icons/markdown_keeper.png" alt="Markdown Keeper" />
-            </div>
-            <div class="app-meta">
-              <h3 class="app-title">Markdown Keeper</h3>
-              <div class="app-category"><i class="fa-solid fa-diagram-project"></i> Notes & Infinite Concept Map</div>
-            </div>
+        </div>
+        <div class="plats"><span class="plat" title="Android"><i class="fa-brands fa-android"></i> Android</span><span class="plat" title="iOS"><i class="fa-brands fa-apple"></i> iOS</span><span class="plat" title="Windows"><i class="fa-brands fa-windows"></i> Windows</span></div>
+        <p class="app-desc">Classic snake meets roguelike dungeon crawler! Slither through 15 unique dungeons, stack synergies with Rare/Epic perk cards, collect apples, and fight deadly bosses.</p>
+        <ul class="app-hl"><li>15 Handcrafted dungeon maps with portal gates &amp; traps</li><li>Upgrade cards (Fireball, Ghost Phase, Magnet)</li><li>4 playable snake heroes with distinct stats &amp; permanent shop</li></ul>
+        <div class="app-actions">
+          <a class="btn-store play" href="https://play.google.com/store/apps/details?id=com.sneakyrogue.app" target="_blank" rel="noopener"><i class="fa-brands fa-google-play"></i> Google Play</a>
+<a class="btn-store ms" href="https://apps.microsoft.com/detail/9PJTFGMG98WF" target="_blank" rel="noopener"><i class="fa-brands fa-microsoft"></i> Microsoft Store</a>
+<span class="btn-store soon" title="The iOS version is in review. A public beta link will appear here."><i class="fa-brands fa-apple"></i> iOS · soon</span>
+        </div>
+        <p class="app-small"><a href="/sneaky_rogue/">Details</a> · <a href="/sneaky-rogue-privacy/privacy.html">Privacy</a> · <a href="/sneaky-rogue-privacy/terms.html">Terms</a></p>
+      </article>
+      <article class="app" data-filter="game android ios" data-search="flappy rogue roguelite arcade runner fast-paced arcade game combining classic flappy physics with rogue-lite ability upgrades, dynamic obstacle generation, and unlockable character skins. flutter flame engine arcade high-score addictive rogue-lite powerups &amp; character progression dynamic high-score ranking &amp; google play leaderboards smooth 60 fps offline arcade action">
+        <div class="app-head">
+          <img class="app-icon" src="/icons/flappy_rogue.png" alt="" width="60" height="60" loading="lazy" />
+          <div class="app-title">
+            <h3>Flappy Rogue</h3>
+            <p class="app-cat">Roguelite Arcade Runner</p>
           </div>
-          <p class="app-desc">
-            Next-generation Markdown note-taking and visual concept mapping app with Google Drive cloud sync, checklists, voice/image attachments, and hierarchical mind mapping.
-          </p>
-          <ul class="app-highlights">
-            <li><i class="fa-solid fa-check"></i> Dual view: Keep Masonry Grid & Infinite Concept Map</li>
-            <li><i class="fa-solid fa-check"></i> Automatic Google Drive personal cloud synchronization</li>
-            <li><i class="fa-solid fa-check"></i> Single & Bulk Markdown (.md / ZIP) Import & Export</li>
-          </ul>
-          <div class="app-tags">
-            <span class="app-tag">Flutter</span>
-            <span class="app-tag">Android</span>
-            <span class="app-tag">iOS soon</span>
-            <span class="app-tag">Windows</span>
-            <span class="app-tag">Markdown</span>
-            <span class="app-tag">Concept Map</span>
-            <span class="app-tag">MS Store</span>
+        </div>
+        <div class="plats"><span class="plat" title="Android"><i class="fa-brands fa-android"></i> Android</span><span class="plat" title="iOS"><i class="fa-brands fa-apple"></i> iOS</span></div>
+        <p class="app-desc">Fast-paced arcade game combining classic flappy physics with rogue-lite ability upgrades, dynamic obstacle generation, and unlockable character skins.</p>
+        <ul class="app-hl"><li>Addictive rogue-lite powerups &amp; character progression</li><li>Dynamic high-score ranking &amp; Google Play Leaderboards</li><li>Smooth 60 FPS offline arcade action</li></ul>
+        <div class="app-actions">
+          <a class="btn-store play" href="https://play.google.com/store/apps/details?id=www.flappyrogue.app" target="_blank" rel="noopener"><i class="fa-brands fa-google-play"></i> Google Play</a>
+<span class="btn-store soon" title="The iOS version is in review. A public beta link will appear here."><i class="fa-brands fa-apple"></i> iOS · soon</span>
+        </div>
+        <p class="app-small"><a href="/flappy_rogue/">Details</a> · <a href="/flappy-rogue-privacy/privacy.html">Privacy</a> · <a href="/flappy-rogue-privacy/terms.html">Terms</a></p>
+      </article>
+      <article class="app" data-filter="tool android ios" data-search="ezan vakti: prayer times qibla islamic worship assistant accurate gps-based prayer times, live high-precision qibla compass, holy quran with multilingual translations, digital tasbih with haptic feedback, and monthly spiritual goals. flutter prayer times quran qibla high-precision gps prayer calculations &amp; background adhan live sensor-driven qibla finder compass &amp; holy days calendar 100% on-device offline processing &amp; zero tracking">
+        <div class="app-head">
+          <img class="app-icon" src="/icons/ezan_vakti.png" alt="" width="60" height="60" loading="lazy" />
+          <div class="app-title">
+            <h3>Ezan Vakti: Prayer Times Qibla</h3>
+            <p class="app-cat">Islamic Worship Assistant</p>
           </div>
-          <div class="app-actions">
-            <a href="https://play.google.com/store/apps/details?id=www.markdownkeeper.app" target="_blank" class="action-btn btn-playstore">
-              <i class="fa-brands fa-google-play"></i> Play Store
-            </a>
-            <a href="https://apps.microsoft.com/detail/9P03P665MMTC" target="_blank" class="action-btn btn-msstore">
-              <i class="fa-brands fa-microsoft"></i> MS Store
-            </a>
-            <span class="action-btn btn-testflight is-soon" title="Public TestFlight beta opens soon">
-              <i class="fa-brands fa-apple"></i> iOS soon
-            </span>
-            <a href="/markdown-keeper-privacy/privacy.html" class="action-btn btn-privacy-action" title="Privacy Policy">
-              <i class="fa-solid fa-shield-halved"></i>
-            </a>
-            <a href="/markdown-keeper-privacy/terms.html" class="action-btn btn-privacy-action" title="Terms of Use">
-              <i class="fa-solid fa-file-contract"></i>
-            </a>
+        </div>
+        <div class="plats"><span class="plat" title="Android"><i class="fa-brands fa-android"></i> Android</span><span class="plat" title="iOS"><i class="fa-brands fa-apple"></i> iOS</span></div>
+        <p class="app-desc">Accurate GPS-based prayer times, live high-precision Qibla compass, Holy Quran with multilingual translations, digital tasbih with haptic feedback, and monthly spiritual goals.</p>
+        <ul class="app-hl"><li>High-precision GPS prayer calculations &amp; background adhan</li><li>Live sensor-driven Qibla finder compass &amp; Holy Days calendar</li><li>100% on-device offline processing &amp; zero tracking</li></ul>
+        <div class="app-actions">
+          <a class="btn-store play" href="https://play.google.com/store/apps/details?id=com.erdevirlabs.athan_premium" target="_blank" rel="noopener"><i class="fa-brands fa-google-play"></i> Google Play</a>
+<span class="btn-store soon" title="The iOS version is in review. A public beta link will appear here."><i class="fa-brands fa-apple"></i> iOS · soon</span>
+        </div>
+        <p class="app-small"><a href="/ezan_vakti_premium/">Details</a> · <a href="/ezan-vakti-privacy/privacy.html">Privacy</a> · <a href="/ezan-vakti-privacy/terms.html">Terms</a></p>
+      </article>
+      <article class="app" data-filter="game android ios" data-search="roadster challenge high-speed cyber racing pulse-pounding 3d arcade endless highway racing built in unity. weave between dense multi-lane traffic, trigger explosive nitro boosts, and build your dream futuristic garage. unity arcade racing procedural 4-lane highway with dynamic speed chevrons &amp; hazards vehicle tuning garage, nitro recharge upgrades &amp; unlockable chassis procedural synthwave audio synchronized with engine rpm">
+        <div class="app-head">
+          <img class="app-icon" src="/icons/roadster_challenge.png" alt="" width="60" height="60" loading="lazy" />
+          <div class="app-title">
+            <h3>Roadster Challenge</h3>
+            <p class="app-cat">High-Speed Cyber Racing</p>
           </div>
-        </article>
-
-        <!-- 4. AutoShare -->
-        <article class="app-card" data-category="ios mobile desktop utilities">
-          <div class="app-header">
-            <div class="app-icon-wrap">
-              <img src="/icons/autoshare.png" alt="AutoShare" />
-            </div>
-            <div class="app-meta">
-              <h3 class="app-title">AutoShare</h3>
-              <div class="app-category"><i class="fa-solid fa-wifi"></i> Cross-Platform Local Transfer</div>
-            </div>
+        </div>
+        <div class="plats"><span class="plat" title="Android"><i class="fa-brands fa-android"></i> Android</span><span class="plat" title="iOS"><i class="fa-brands fa-apple"></i> iOS</span></div>
+        <p class="app-desc">Pulse-pounding 3D arcade endless highway racing built in Unity. Weave between dense multi-lane traffic, trigger explosive nitro boosts, and build your dream futuristic garage.</p>
+        <ul class="app-hl"><li>Procedural 4-lane highway with dynamic speed chevrons &amp; hazards</li><li>Vehicle tuning garage, nitro recharge upgrades &amp; unlockable chassis</li><li>Procedural synthwave audio synchronized with engine RPM</li></ul>
+        <div class="app-actions">
+          <a class="btn-store play" href="https://play.google.com/store/apps/details?id=www.roadsterchallenge.app" target="_blank" rel="noopener"><i class="fa-brands fa-google-play"></i> Google Play</a>
+<span class="btn-store soon" title="The iOS version is in review. A public beta link will appear here."><i class="fa-brands fa-apple"></i> iOS · soon</span>
+        </div>
+        <p class="app-small"><a href="/roadster_challenge/">Details</a> · <a href="/roadster-challenge-privacy/privacy.html">Privacy</a> · <a href="/roadster-challenge-privacy/terms.html">Terms</a></p>
+      </article>
+      <article class="app" data-filter="tool ios" data-search="tillwise: receipt scanner receipts &amp; expense reports receipt scanner and expense reports for iphone. text is read on the device, so receipts stay private. swiftui vision ocr on-device on-device receipt reading with editable fields fields the app is unsure about are marked &quot;check this&quot; expense reports and export">
+        <div class="app-head">
+          <img class="app-icon" src="/icons/tillwise.png" alt="" width="60" height="60" loading="lazy" />
+          <div class="app-title">
+            <h3>Tillwise: Receipt Scanner</h3>
+            <p class="app-cat">Receipts &amp; Expense Reports</p>
           </div>
-          <p class="app-desc">
-            Ultra-fast local Wi-Fi file sharing tool between Android and Windows devices featuring UDP auto-discovery, PIN pairing, zero data quota consumption, and queue management.
-          </p>
-          <ul class="app-highlights">
-            <li><i class="fa-solid fa-check"></i> Zero mobile internet quota consumption</li>
-            <li><i class="fa-solid fa-check"></i> High-speed local peer-to-peer Wi-Fi network (80+ MB/s)</li>
-            <li><i class="fa-solid fa-check"></i> Windows Microsoft Store native app & Android companion</li>
-          </ul>
-          <div class="app-tags">
-            <span class="app-tag">Flutter</span>
-            <span class="app-tag">Android</span>
-            <span class="app-tag">iOS soon</span>
-            <span class="app-tag">Windows</span>
-            <span class="app-tag">Networking</span>
-            <span class="app-tag">MS Store</span>
+        </div>
+        <div class="plats"><span class="plat" title="iOS"><i class="fa-brands fa-apple"></i> iOS</span></div>
+        <p class="app-desc">Receipt scanner and expense reports for iPhone. Text is read on the device, so receipts stay private.</p>
+        <ul class="app-hl"><li>On-device receipt reading with editable fields</li><li>Fields the app is unsure about are marked &quot;Check this&quot;</li><li>Expense reports and export</li></ul>
+        <div class="app-actions">
+          <span class="btn-store soon" title="The iOS version is in review. A public beta link will appear here."><i class="fa-brands fa-apple"></i> iOS · soon</span>
+        </div>
+        <p class="app-small"><a href="/tillwise/">Details</a> · <a href="/tillwise/privacy.html">Privacy</a> · <a href="/tillwise/support.html">Support</a></p>
+      </article>
+      <article class="app" data-filter="game ios" data-search="mixmere: color pour puzzle color pour puzzle pour, blend and match the target color. 300 handcrafted puzzles and a new daily mix every day. swiftui puzzle daily 300 handcrafted color puzzles daily mix shared by all players hints and undos paid with earned drops">
+        <div class="app-head">
+          <img class="app-icon" src="/icons/mixmere.png" alt="" width="60" height="60" loading="lazy" />
+          <div class="app-title">
+            <h3>Mixmere: Color Pour Puzzle</h3>
+            <p class="app-cat">Color Pour Puzzle</p>
           </div>
-          <div class="app-actions">
-            <a href="https://play.google.com/store/apps/details?id=com.autoshare.app" target="_blank" class="action-btn btn-playstore">
-              <i class="fa-brands fa-google-play"></i> Play Store
-            </a>
-            <a href="https://apps.microsoft.com/detail/9PGM24F50VR8" target="_blank" class="action-btn btn-msstore">
-              <i class="fa-brands fa-microsoft"></i> MS Store
-            </a>
-            <span class="action-btn btn-testflight is-soon" title="Public TestFlight beta opens soon">
-              <i class="fa-brands fa-apple"></i> iOS soon
-            </span>
-            <a href="/autoshare-privacy-policy/privacy.html" class="action-btn btn-privacy-action" title="Privacy Policy">
-              <i class="fa-solid fa-shield-halved"></i>
-            </a>
-            <a href="/autoshare-privacy-policy/terms.html" class="action-btn btn-privacy-action" title="Terms of Use">
-              <i class="fa-solid fa-file-contract"></i>
-            </a>
+        </div>
+        <div class="plats"><span class="plat" title="iOS"><i class="fa-brands fa-apple"></i> iOS</span></div>
+        <p class="app-desc">Pour, blend and match the target color. 300 handcrafted puzzles and a new daily mix every day.</p>
+        <ul class="app-hl"><li>300 handcrafted color puzzles</li><li>Daily Mix shared by all players</li><li>Hints and undos paid with earned drops</li></ul>
+        <div class="app-actions">
+          <span class="btn-store soon" title="The iOS version is in review. A public beta link will appear here."><i class="fa-brands fa-apple"></i> iOS · soon</span>
+        </div>
+        <p class="app-small"><a href="/mixmere/">Details</a> · <a href="/mixmere/privacy.html">Privacy</a> · <a href="/mixmere/support.html">Support</a></p>
+      </article>
+      <article class="app" data-filter="game ios" data-search="wherelens: daily geo guess daily geo guessing game look around a real street, drop your pin on the map and see how close you got. five new places every day, the same for everyone. swiftui mapkit geo game real street scenes from apple maps look around 5 rounds a day, up to 25,000 points same daily places for every player">
+        <div class="app-head">
+          <img class="app-icon" src="/icons/wherelens.png" alt="" width="60" height="60" loading="lazy" />
+          <div class="app-title">
+            <h3>Wherelens: Daily Geo Guess</h3>
+            <p class="app-cat">Daily Geo Guessing Game</p>
           </div>
-        </article>
-
-        <!-- 5. Snakey Rogue: Pixel Snake RPG -->
-        <article class="app-card" data-category="ios mobile desktop games">
-          <div class="app-header">
-            <div class="app-icon-wrap">
-              <img src="/icons/sneaky_rogue.png" alt="Snakey Rogue" />
-            </div>
-            <div class="app-meta">
-              <h3 class="app-title">Snakey Rogue: Pixel Snake RPG</h3>
-              <div class="app-category"><i class="fa-solid fa-staff-snake"></i> 2D Roguelike Arcade Crawler</div>
-            </div>
+        </div>
+        <div class="plats"><span class="plat" title="iOS"><i class="fa-brands fa-apple"></i> iOS</span></div>
+        <p class="app-desc">Look around a real street, drop your pin on the map and see how close you got. Five new places every day, the same for everyone.</p>
+        <ul class="app-hl"><li>Real street scenes from Apple Maps Look Around</li><li>5 rounds a day, up to 25,000 points</li><li>Same daily places for every player</li></ul>
+        <div class="app-actions">
+          <span class="btn-store soon" title="The iOS version is in review. A public beta link will appear here."><i class="fa-brands fa-apple"></i> iOS · soon</span>
+        </div>
+        <p class="app-small"><a href="/wherelens/">Details</a> · <a href="/wherelens/privacy.html">Privacy</a> · <a href="/wherelens/support.html">Support</a></p>
+      </article>
+      <article class="app" data-filter="game ios" data-search="blockgrove: garden blocks block puzzle &amp; garden a calm 8×8 block puzzle in a hand-carved wooden tray. cleared lines earn leaves that grow your own garden. swiftui block puzzle relaxing 8×8 tray with classic line clears daily grove and 60 bloom quests 12-plot garden that grows as you play">
+        <div class="app-head">
+          <img class="app-icon" src="/icons/blockgrove.png" alt="" width="60" height="60" loading="lazy" />
+          <div class="app-title">
+            <h3>Blockgrove: Garden Blocks</h3>
+            <p class="app-cat">Block Puzzle &amp; Garden</p>
           </div>
-          <p class="app-desc">
-            Classic snake meets roguelike dungeon crawler! Slither through 15 unique dungeons, stack synergies with Rare/Epic perk cards, collect apples, and fight deadly bosses.
-          </p>
-          <ul class="app-highlights">
-            <li><i class="fa-solid fa-check"></i> 15 Handcrafted dungeon maps with portal gates & traps</li>
-            <li><i class="fa-solid fa-check"></i> Upgrade cards (Fireball, Ghost Phase, Magnet)</li>
-            <li><i class="fa-solid fa-check"></i> 4 playable snake heroes with distinct stats & permanent shop</li>
-          </ul>
-          <div class="app-tags">
-            <span class="app-tag">Flutter</span>
-            <span class="app-tag">Flame Engine</span>
-            <span class="app-tag">Android</span>
-            <span class="app-tag">iOS soon</span>
-            <span class="app-tag">Windows</span>
-            <span class="app-tag">Pixel Art</span>
-            <span class="app-tag">MS Store</span>
+        </div>
+        <div class="plats"><span class="plat" title="iOS"><i class="fa-brands fa-apple"></i> iOS</span></div>
+        <p class="app-desc">A calm 8×8 block puzzle in a hand-carved wooden tray. Cleared lines earn leaves that grow your own garden.</p>
+        <ul class="app-hl"><li>8×8 tray with classic line clears</li><li>Daily Grove and 60 Bloom Quests</li><li>12-plot garden that grows as you play</li></ul>
+        <div class="app-actions">
+          <span class="btn-store soon" title="The iOS version is in review. A public beta link will appear here."><i class="fa-brands fa-apple"></i> iOS · soon</span>
+        </div>
+        <p class="app-small"><a href="/blockgrove/">Details</a> · <a href="/blockgrove/privacy.html">Privacy</a> · <a href="/blockgrove/terms.html">Terms</a></p>
+      </article>
+      <article class="app" data-filter="tool ios" data-search="homespun: aesthetic widgets home &amp; lock screen widgets a cozy studio for your iphone home screen and lock screen. design a widget in the app, then place it from the widget gallery. swiftui widgetkit personalization seven kinds of widgets home screen and lock screen designs live preview while you design">
+        <div class="app-head">
+          <img class="app-icon" src="/icons/homespun.png" alt="" width="60" height="60" loading="lazy" />
+          <div class="app-title">
+            <h3>Homespun: Aesthetic Widgets</h3>
+            <p class="app-cat">Home &amp; Lock Screen Widgets</p>
           </div>
-          <div class="app-actions">
-            <a href="https://play.google.com/store/apps/details?id=com.sneakyrogue.app" target="_blank" class="action-btn btn-playstore">
-              <i class="fa-brands fa-google-play"></i> Play Store
-            </a>
-            <a href="https://apps.microsoft.com/detail/9PJTFGMG98WF" target="_blank" class="action-btn btn-msstore">
-              <i class="fa-brands fa-microsoft"></i> MS Store
-            </a>
-            <span class="action-btn btn-testflight is-soon" title="Public TestFlight beta opens soon">
-              <i class="fa-brands fa-apple"></i> iOS soon
-            </span>
-            <a href="/sneaky-rogue-privacy/privacy.html" class="action-btn btn-privacy-action" title="Privacy Policy">
-              <i class="fa-solid fa-shield-halved"></i>
-            </a>
-            <a href="/sneaky-rogue-privacy/terms.html" class="action-btn btn-privacy-action" title="Terms of Use">
-              <i class="fa-solid fa-file-contract"></i>
-            </a>
+        </div>
+        <div class="plats"><span class="plat" title="iOS"><i class="fa-brands fa-apple"></i> iOS</span></div>
+        <p class="app-desc">A cozy studio for your iPhone Home Screen and Lock Screen. Design a widget in the app, then place it from the widget gallery.</p>
+        <ul class="app-hl"><li>Seven kinds of widgets</li><li>Home Screen and Lock Screen designs</li><li>Live preview while you design</li></ul>
+        <div class="app-actions">
+          <span class="btn-store soon" title="The iOS version is in review. A public beta link will appear here."><i class="fa-brands fa-apple"></i> iOS · soon</span>
+        </div>
+        <p class="app-small"><a href="/homespun/">Details</a> · <a href="/homespun/privacy.html">Privacy</a> · <a href="/homespun/terms.html">Terms</a></p>
+      </article>
+      <article class="app" data-filter="game ios" data-search="unbolt: screw puzzle screw-removal puzzle a tactile screw-removal puzzle on a restorer&#x27;s workshop wall. every cleared board restores a classic workshop antique. swiftui puzzle haptics 300+ levels of overlapping plates 20 antiques to restore daily workbench and x-ray view">
+        <div class="app-head">
+          <img class="app-icon" src="/icons/unbolt.png" alt="" width="60" height="60" loading="lazy" />
+          <div class="app-title">
+            <h3>Unbolt: Screw Puzzle</h3>
+            <p class="app-cat">Screw-Removal Puzzle</p>
           </div>
-        </article>
-
-        <!-- 6. SupZip: File Manager & Unzip -->
-        <article class="app-card" data-category="ios mobile desktop utilities">
-          <div class="app-header">
-            <div class="app-icon-wrap">
-              <img src="/icons/supzip.png" alt="SupZip" />
-            </div>
-            <div class="app-meta">
-              <h3 class="app-title">SupZip: File Manager & Unzip</h3>
-              <div class="app-category"><i class="fa-solid fa-file-zipper"></i> Archive & File Explorer</div>
-            </div>
+        </div>
+        <div class="plats"><span class="plat" title="iOS"><i class="fa-brands fa-apple"></i> iOS</span></div>
+        <p class="app-desc">A tactile screw-removal puzzle on a restorer&#x27;s workshop wall. Every cleared board restores a classic workshop antique.</p>
+        <ul class="app-hl"><li>300+ levels of overlapping plates</li><li>20 antiques to restore</li><li>Daily Workbench and X-ray view</li></ul>
+        <div class="app-actions">
+          <span class="btn-store soon" title="The iOS version is in review. A public beta link will appear here."><i class="fa-brands fa-apple"></i> iOS · soon</span>
+        </div>
+        <p class="app-small"><a href="/unbolt/">Details</a> · <a href="/unbolt/privacy.html">Privacy</a> · <a href="/unbolt/terms.html">Terms</a></p>
+      </article>
+      <article class="app" data-filter="game ios" data-search="wordloom: word puzzle crossword word game a crossword-style word game on a weaver&#x27;s table. swipe across the letters to spell words; every solved puzzle weaves a band of a city tapestry. swiftui word game daily 180 levels and 12 city tapestries daily weave word of the day">
+        <div class="app-head">
+          <img class="app-icon" src="/icons/wordloom.png" alt="" width="60" height="60" loading="lazy" />
+          <div class="app-title">
+            <h3>Wordloom: Word Puzzle</h3>
+            <p class="app-cat">Crossword Word Game</p>
           </div>
-          <p class="app-desc">
-            Fast, lightweight file manager and multi-format archive extractor. Unpack ZIP, RAR, 7Z, TAR, GZ in seconds; create password-protected encrypted archives with multi-core acceleration.
-          </p>
-          <ul class="app-highlights">
-            <li><i class="fa-solid fa-check"></i> Extract ZIP, RAR, 7Z, TAR, GZ, and BZ2 archives</li>
-            <li><i class="fa-solid fa-check"></i> Encrypted password protection & multi-core compression</li>
-            <li><i class="fa-solid fa-check"></i> Storage visualizer & clean Material You Amoled dark UI</li>
-          </ul>
-          <div class="app-tags">
-            <span class="app-tag">Flutter</span>
-            <span class="app-tag">Android</span>
-            <span class="app-tag">iOS soon</span>
-            <span class="app-tag">Windows</span>
-            <span class="app-tag">ZIP & RAR</span>
-            <span class="app-tag">MS Store</span>
+        </div>
+        <div class="plats"><span class="plat" title="iOS"><i class="fa-brands fa-apple"></i> iOS</span></div>
+        <p class="app-desc">A crossword-style word game on a weaver&#x27;s table. Swipe across the letters to spell words; every solved puzzle weaves a band of a city tapestry.</p>
+        <ul class="app-hl"><li>180 levels and 12 city tapestries</li><li>Daily Weave</li><li>Word of the Day</li></ul>
+        <div class="app-actions">
+          <span class="btn-store soon" title="The iOS version is in review. A public beta link will appear here."><i class="fa-brands fa-apple"></i> iOS · soon</span>
+        </div>
+        <p class="app-small"><a href="/wordloom/">Details</a> · <a href="/wordloom/privacy.html">Privacy</a> · <a href="/wordloom/terms.html">Terms</a></p>
+      </article>
+      <article class="app" data-filter="tool ios" data-search="stridemap: walking journeys virtual walking journeys turn everyday steps into virtual journeys along famous real-world routes. reach landmarks and collect illustrated postcards. swiftui healthkit fitness 12 iconic world routes illustrated postcards and certificates daily walking journal with apple health steps">
+        <div class="app-head">
+          <img class="app-icon" src="/icons/stridemap.png" alt="" width="60" height="60" loading="lazy" />
+          <div class="app-title">
+            <h3>Stridemap: Walking Journeys</h3>
+            <p class="app-cat">Virtual Walking Journeys</p>
           </div>
-          <div class="app-actions">
-            <a href="https://play.google.com/store/apps/details?id=www.subzip.app" target="_blank" class="action-btn btn-playstore">
-              <i class="fa-brands fa-google-play"></i> Play Store
-            </a>
-            <a href="https://apps.microsoft.com/detail/9MV22F9W72FC" target="_blank" class="action-btn btn-msstore">
-              <i class="fa-brands fa-microsoft"></i> MS Store
-            </a>
-            <span class="action-btn btn-testflight is-soon" title="Public TestFlight beta opens soon">
-              <i class="fa-brands fa-apple"></i> iOS soon
-            </span>
-            <a href="/subzip-privacy-policy/privacy.html" class="action-btn btn-privacy-action" title="Privacy Policy">
-              <i class="fa-solid fa-shield-halved"></i>
-            </a>
-            <a href="/subzip-privacy-policy/terms.html" class="action-btn btn-privacy-action" title="Terms of Use">
-              <i class="fa-solid fa-file-contract"></i>
-            </a>
+        </div>
+        <div class="plats"><span class="plat" title="iOS"><i class="fa-brands fa-apple"></i> iOS</span></div>
+        <p class="app-desc">Turn everyday steps into virtual journeys along famous real-world routes. Reach landmarks and collect illustrated postcards.</p>
+        <ul class="app-hl"><li>12 iconic world routes</li><li>Illustrated postcards and certificates</li><li>Daily walking journal with Apple Health steps</li></ul>
+        <div class="app-actions">
+          <span class="btn-store soon" title="The iOS version is in review. A public beta link will appear here."><i class="fa-brands fa-apple"></i> iOS · soon</span>
+        </div>
+        <p class="app-small"><a href="/stridemap/">Details</a> · <a href="/stridemap/privacy.html">Privacy</a> · <a href="/stridemap/terms.html">Terms</a></p>
+      </article>
+      <article class="app" data-filter="tool ios" data-search="fastwell - fasting tracker intermittent fasting a calm intermittent fasting timer with gentle stages, water and weight tracking, and a private journal. swiftui healthkit wellness fasting timer with eating window plans for every rhythm water, weight and apple health">
+        <div class="app-head">
+          <img class="app-icon" src="/icons/fastwell.png" alt="" width="60" height="60" loading="lazy" />
+          <div class="app-title">
+            <h3>Fastwell - Fasting Tracker</h3>
+            <p class="app-cat">Intermittent Fasting</p>
           </div>
-        </article>
-
-        <!-- 7. Workout Tracker -->
-        <article class="app-card" data-category="ios mobile utilities">
-          <div class="app-header">
-            <div class="app-icon-wrap">
-              <img src="/icons/workout_tracker.png" alt="Workout Tracker" />
-            </div>
-            <div class="app-meta">
-              <h3 class="app-title">Workout Tracker</h3>
-              <div class="app-category"><i class="fa-solid fa-dumbbell"></i> Fitness & 1RM Progression</div>
-            </div>
+        </div>
+        <div class="plats"><span class="plat" title="iOS"><i class="fa-brands fa-apple"></i> iOS</span></div>
+        <p class="app-desc">A calm intermittent fasting timer with gentle stages, water and weight tracking, and a private journal.</p>
+        <ul class="app-hl"><li>Fasting timer with eating window</li><li>Plans for every rhythm</li><li>Water, weight and Apple Health</li></ul>
+        <div class="app-actions">
+          <span class="btn-store soon" title="The iOS version is in review. A public beta link will appear here."><i class="fa-brands fa-apple"></i> iOS · soon</span>
+        </div>
+        <p class="app-small"><a href="/fastwell/">Details</a> · <a href="/fastwell/privacy.html">Privacy</a> · <a href="/fastwell/terms.html">Terms</a></p>
+      </article>
+      <article class="app" data-filter="tool web windows android" data-search="parça takip erp manufacturing erp an erp for manufacturing companies that runs on your own server: projects, boms, drawings, purchasing, stock, work orders, sales, finance and staff. python self-hosted open source gpl v3 bills of materials, drawings and qr-labelled parts purchasing, stock and work orders in one place self-hosted: desktop, web and android clients">
+        <div class="app-head">
+          <span class="app-icon app-icon-letter" style="width:60px;height:60px" aria-hidden="true">P</span>
+          <div class="app-title">
+            <h3>Parça Takip ERP</h3>
+            <p class="app-cat">Manufacturing ERP</p>
           </div>
-          <p class="app-desc">
-            Comprehensive gym and fitness training log app with custom routines, live set recording, volume analytics, 1RM progression charts, and sleek Obsidian AMOLED dark mode.
-          </p>
-          <ul class="app-highlights">
-            <li><i class="fa-solid fa-check"></i> Custom routines, exercise sets & rest timer</li>
-            <li><i class="fa-solid fa-check"></i> Advanced volume & muscle group progression heatmaps</li>
-            <li><i class="fa-solid fa-check"></i> Pure local storage, offline backup & Dynamic Island overlay</li>
-          </ul>
-          <div class="app-tags">
-            <span class="app-tag">Flutter</span>
-            <span class="app-tag">Android</span>
-            <span class="app-tag">iOS soon</span>
-            <span class="app-tag">Fitness</span>
-            <span class="app-tag">Analytics</span>
-            <span class="app-tag">AMOLED Dark</span>
+        </div>
+        <div class="plats"><span class="plat" title="Web"><i class="fa-solid fa-globe"></i> Web</span><span class="plat" title="Windows"><i class="fa-brands fa-windows"></i> Windows</span><span class="plat" title="Android"><i class="fa-brands fa-android"></i> Android</span></div>
+        <p class="app-desc">An ERP for manufacturing companies that runs on your own server: projects, BOMs, drawings, purchasing, stock, work orders, sales, finance and staff.</p>
+        <ul class="app-hl"><li>Bills of materials, drawings and QR-labelled parts</li><li>Purchasing, stock and work orders in one place</li><li>Self-hosted: desktop, web and Android clients</li></ul>
+        <div class="app-actions">
+          <a class="btn-store gh" href="https://github.com/serdevir91/parca-takip-erp" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Source</a>
+        </div>
+        
+      </article>
+      <article class="app" data-filter="tool web windows" data-search="openscad ai 3d ai cad studio transform natural language prompts into parametric, 3d-printable openscad cad models powered by state-of-the-art artificial intelligence models. python ai / llm 3d printing cad text-to-cad prompt generation instant openscad code compilation ready for 3d printer stl export">
+        <div class="app-head">
+          <img class="app-icon" src="/icons/openscad_ai.png" alt="" width="60" height="60" loading="lazy" />
+          <div class="app-title">
+            <h3>OpenSCAD AI</h3>
+            <p class="app-cat">3D AI CAD Studio</p>
           </div>
-          <div class="app-actions">
-            <a href="https://play.google.com/store/apps/details?id=com.workouttracker.workout_tracker" target="_blank" class="action-btn btn-playstore">
-              <i class="fa-brands fa-google-play"></i> Play Store
-            </a>
-            <span class="action-btn btn-testflight is-soon" title="Public TestFlight beta opens soon">
-              <i class="fa-brands fa-apple"></i> iOS soon
-            </span>
-            <a href="/workout-tracker-privacy/privacy.html" class="action-btn btn-privacy-action" title="Privacy Policy">
-              <i class="fa-solid fa-shield-halved"></i>
-            </a>
-            <a href="/workout-tracker-privacy/terms.html" class="action-btn btn-privacy-action" title="Terms of Use">
-              <i class="fa-solid fa-file-contract"></i>
-            </a>
+        </div>
+        <div class="plats"><span class="plat" title="Web"><i class="fa-solid fa-globe"></i> Web</span><span class="plat" title="Windows"><i class="fa-brands fa-windows"></i> Windows</span></div>
+        <p class="app-desc">Transform natural language prompts into parametric, 3D-printable OpenSCAD CAD models powered by state-of-the-art artificial intelligence models.</p>
+        <ul class="app-hl"><li>Text-to-CAD prompt generation</li><li>Instant OpenSCAD code compilation</li><li>Ready for 3D printer STL export</li></ul>
+        <div class="app-actions">
+          <a class="btn-store web" href="/openscad-ai/"><i class="fa-solid fa-arrow-up-right-from-square"></i> Open</a>
+<a class="btn-store gh" href="https://github.com/serdevir91/openscad-ai" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Source</a>
+        </div>
+        
+      </article>
+      <article class="app" data-filter="tool web windows" data-search="stokapp inventory &amp; stock manager sleek stock and inventory management web &amp; desktop application featuring real-time barcode scanning, revenue and profit/loss visual analytics, low-stock notifications, and excel data import/export. react vite tailwind desktop / web real-time inventory tracking &amp; barcode support financial revenue, cost &amp; profit analytics excel / csv data export and backup">
+        <div class="app-head">
+          <img class="app-icon" src="/icons/stokapp.png" alt="" width="60" height="60" loading="lazy" />
+          <div class="app-title">
+            <h3>Stokapp</h3>
+            <p class="app-cat">Inventory &amp; Stock Manager</p>
           </div>
-        </article>
-
-        <!-- 8. Flappy Rogue -->
-        <article class="app-card" data-category="ios mobile games">
-          <div class="app-header">
-            <div class="app-icon-wrap">
-              <img src="/icons/flappy_rogue.png" alt="Flappy Rogue" />
-            </div>
-            <div class="app-meta">
-              <h3 class="app-title">Flappy Rogue</h3>
-              <div class="app-category"><i class="fa-solid fa-ghost"></i> Roguelite Arcade Runner</div>
-            </div>
-          </div>
-          <p class="app-desc">
-            Fast-paced arcade game combining classic flappy physics with rogue-lite ability upgrades, dynamic obstacle generation, and unlockable character skins.
-          </p>
-          <ul class="app-highlights">
-            <li><i class="fa-solid fa-check"></i> Addictive rogue-lite powerups & character progression</li>
-            <li><i class="fa-solid fa-check"></i> Dynamic high-score ranking & Google Play Leaderboards</li>
-            <li><i class="fa-solid fa-check"></i> Smooth 60 FPS offline arcade action</li>
-          </ul>
-          <div class="app-tags">
-            <span class="app-tag">Flutter</span>
-            <span class="app-tag">Flame Engine</span>
-            <span class="app-tag">Android</span>
-            <span class="app-tag">iOS soon</span>
-            <span class="app-tag">Arcade</span>
-            <span class="app-tag">High-Score</span>
-          </div>
-          <div class="app-actions">
-            <a href="https://play.google.com/store/apps/details?id=www.flappyrogue.app" target="_blank" class="action-btn btn-playstore">
-              <i class="fa-brands fa-google-play"></i> Play Store
-            </a>
-            <span class="action-btn btn-testflight is-soon" title="Public TestFlight beta opens soon">
-              <i class="fa-brands fa-apple"></i> iOS soon
-            </span>
-            <a href="/flappy-rogue-privacy/privacy.html" class="action-btn btn-privacy-action" title="Privacy Policy">
-              <i class="fa-solid fa-shield-halved"></i>
-            </a>
-            <a href="/flappy-rogue-privacy/terms.html" class="action-btn btn-privacy-action" title="Terms of Use">
-              <i class="fa-solid fa-file-contract"></i>
-            </a>
-          </div>
-        </article>
-
-        <!-- 9. Ezan Vakti: Prayer Times Qibla -->
-        <article class="app-card" data-category="ios mobile utilities">
-          <div class="app-header">
-            <div class="app-icon-wrap">
-              <img src="/icons/ezan_vakti.png" alt="Ezan Vakti: Prayer Times Qibla" />
-            </div>
-            <div class="app-meta">
-              <h3 class="app-title">Ezan Vakti: Prayer Times Qibla</h3>
-              <div class="app-category"><i class="fa-solid fa-kaaba"></i> Islamic Worship Assistant</div>
-            </div>
-          </div>
-          <p class="app-desc">
-            Accurate GPS-based prayer times, live high-precision Qibla compass, Holy Quran with multilingual translations, digital tasbih with haptic feedback, and monthly spiritual goals.
-          </p>
-          <ul class="app-highlights">
-            <li><i class="fa-solid fa-check"></i> High-precision GPS prayer calculations & background adhan</li>
-            <li><i class="fa-solid fa-check"></i> Live sensor-driven Qibla finder compass & Holy Days calendar</li>
-            <li><i class="fa-solid fa-check"></i> 100% on-device offline processing & zero tracking</li>
-          </ul>
-          <div class="app-tags">
-            <span class="app-tag">Flutter</span>
-            <span class="app-tag">Android</span>
-            <span class="app-tag">iOS soon</span>
-            <span class="app-tag">Prayer Times</span>
-            <span class="app-tag">Quran</span>
-            <span class="app-tag">Qibla</span>
-          </div>
-          <div class="app-actions">
-            <a href="https://play.google.com/store/apps/details?id=com.erdevirlabs.athan_premium" target="_blank" class="action-btn btn-playstore">
-              <i class="fa-brands fa-google-play"></i> Play Store
-            </a>
-            <span class="action-btn btn-testflight is-soon" title="Public TestFlight beta opens soon">
-              <i class="fa-brands fa-apple"></i> iOS soon
-            </span>
-            <a href="/ezan-vakti-privacy/privacy.html" class="action-btn btn-privacy-action" title="Privacy Policy">
-              <i class="fa-solid fa-shield-halved"></i>
-            </a>
-            <a href="/ezan-vakti-privacy/terms.html" class="action-btn btn-privacy-action" title="Terms of Use">
-              <i class="fa-solid fa-file-contract"></i>
-            </a>
-          </div>
-        </article>
-
-        <!-- 10. Stokapp -->
-        <article class="app-card" data-category="desktop utilities">
-          <div class="app-header">
-            <div class="app-icon-wrap">
-              <img src="/icons/stokapp.png" alt="Stokapp" />
-            </div>
-            <div class="app-meta">
-              <h3 class="app-title">Stokapp</h3>
-              <div class="app-category"><i class="fa-solid fa-chart-pie"></i> Inventory & Stock Manager</div>
-            </div>
-          </div>
-          <p class="app-desc">
-            Sleek stock and inventory management web & desktop application featuring real-time barcode scanning, revenue and profit/loss visual analytics, low-stock notifications, and Excel data import/export.
-          </p>
-          <ul class="app-highlights">
-            <li><i class="fa-solid fa-check"></i> Real-time inventory tracking & barcode support</li>
-            <li><i class="fa-solid fa-check"></i> Financial revenue, cost & profit analytics</li>
-            <li><i class="fa-solid fa-check"></i> Excel / CSV data export and backup</li>
-          </ul>
-          <div class="app-tags">
-            <span class="app-tag">React</span>
-            <span class="app-tag">Vite</span>
-            <span class="app-tag">Tailwind</span>
-            <span class="app-tag">Desktop / Web</span>
-          </div>
-          <div class="app-actions">
-            <a href="/Stokapp/" target="_blank" class="action-btn btn-web-action">
-              <i class="fa-solid fa-arrow-up-right-from-square"></i> Open Web App
-            </a>
-            <a href="https://github.com/serdevir91/Stokapp" target="_blank" class="action-btn btn-privacy-action" title="GitHub Repository">
-              <i class="fa-brands fa-github"></i>
-            </a>
-          </div>
-        </article>
-
-        <!-- 11. OpenSCAD AI -->
-        <article class="app-card" data-category="desktop utilities">
-          <div class="app-header">
-            <div class="app-icon-wrap">
-              <img src="/icons/openscad_ai.png" alt="OpenSCAD AI" />
-            </div>
-            <div class="app-meta">
-              <h3 class="app-title">OpenSCAD AI</h3>
-              <div class="app-category"><i class="fa-solid fa-wand-magic-sparkles"></i> 3D AI CAD Studio</div>
-            </div>
-          </div>
-          <p class="app-desc">
-            Transform natural language prompts into parametric, 3D-printable OpenSCAD CAD models powered by state-of-the-art artificial intelligence models.
-          </p>
-          <ul class="app-highlights">
-            <li><i class="fa-solid fa-check"></i> Text-to-CAD prompt generation</li>
-            <li><i class="fa-solid fa-check"></i> Instant OpenSCAD code compilation</li>
-            <li><i class="fa-solid fa-check"></i> Ready for 3D printer STL export</li>
-          </ul>
-          <div class="app-tags">
-            <span class="app-tag">Python</span>
-            <span class="app-tag">AI / LLM</span>
-            <span class="app-tag">3D Printing</span>
-            <span class="app-tag">CAD</span>
-          </div>
-          <div class="app-actions">
-            <a href="https://github.com/serdevir91/openscad-ai" target="_blank" class="action-btn btn-web-action">
-              <i class="fa-brands fa-github"></i> Repository
-            </a>
-          </div>
-        </article>
-
-        <!-- 12. Roadster Challenge -->
-        <article class="app-card" data-category="ios mobile desktop games">
-          <div class="app-header">
-            <div class="app-icon-wrap">
-              <img src="/icons/roadster_challenge.png" alt="Roadster Challenge" />
-            </div>
-            <div class="app-meta">
-              <h3 class="app-title">Roadster Challenge</h3>
-              <div class="app-category"><i class="fa-solid fa-gauge-high"></i> High-Speed Cyber Racing</div>
-            </div>
-          </div>
-          <p class="app-desc">
-            Pulse-pounding 3D arcade endless highway racing built in Unity. Weave between dense multi-lane traffic, trigger explosive nitro boosts, and build your dream futuristic garage.
-          </p>
-          <ul class="app-highlights">
-            <li><i class="fa-solid fa-check"></i> Procedural 4-lane highway with dynamic speed chevrons & hazards</li>
-            <li><i class="fa-solid fa-check"></i> Vehicle tuning garage, nitro recharge upgrades & unlockable chassis</li>
-            <li><i class="fa-solid fa-check"></i> Procedural synthwave audio synchronized with engine RPM</li>
-          </ul>
-          <div class="app-tags">
-            <span class="app-tag">Unity</span>
-            <span class="app-tag">Android</span>
-            <span class="app-tag">iOS soon</span>
-            <span class="app-tag">Windows</span>
-            <span class="app-tag">Arcade</span>
-            <span class="app-tag">Racing</span>
-          </div>
-          <div class="app-actions">
-            <a href="https://play.google.com/store/apps/details?id=www.roadsterchallenge.app" target="_blank" class="action-btn btn-playstore">
-              <i class="fa-brands fa-google-play"></i> Play Store
-            </a>
-            <span class="action-btn btn-testflight is-soon" title="Public TestFlight beta opens soon">
-              <i class="fa-brands fa-apple"></i> iOS soon
-            </span>
-            <a href="/roadster-challenge-privacy/privacy.html" class="action-btn btn-privacy-action" title="Privacy Policy">
-              <i class="fa-solid fa-shield-halved"></i>
-            </a>
-            <a href="/roadster-challenge-privacy/terms.html" class="action-btn btn-privacy-action" title="Terms of Use">
-              <i class="fa-solid fa-file-contract"></i>
-            </a>
-          </div>
-        </article>
-        <!-- 13. Tillwise: Receipt Scanner -->
-        <article class="app-card" data-category="ios utilities">
-          <div class="app-header">
-            <div class="app-icon-wrap">
-              <img src="/icons/tillwise.png" alt="Tillwise: Receipt Scanner" />
-            </div>
-            <div class="app-meta">
-              <h3 class="app-title">Tillwise: Receipt Scanner</h3>
-              <div class="app-category"><i class="fa-solid fa-receipt"></i> Receipts & Expense Reports</div>
-            </div>
-          </div>
-          <p class="app-desc">
-            Receipt scanner and expense reports for iPhone. Text is read on the device, so receipts stay private.
-          </p>
-          <ul class="app-highlights">
-            <li><i class="fa-solid fa-check"></i> On-device receipt reading with editable fields</li>
-            <li><i class="fa-solid fa-check"></i> Fields the app is unsure about are marked "Check this"</li>
-            <li><i class="fa-solid fa-check"></i> Expense reports and export</li>
-          </ul>
-          <div class="app-tags">
-            <span class="app-tag">SwiftUI</span>
-            <span class="app-tag">iOS</span>
-            <span class="app-tag">Vision OCR</span>
-            <span class="app-tag">On-device</span>
-          </div>
-          <div class="app-actions">
-            <span class="action-btn btn-testflight is-soon" title="Public TestFlight beta opens soon">
-              <i class="fa-brands fa-apple"></i> iOS soon
-            </span>
-            <a href="/tillwise/" class="action-btn btn-web-action">
-              <i class="fa-solid fa-circle-info"></i> Details
-            </a>
-            <a href="/tillwise/privacy.html" class="action-btn btn-privacy-action" title="Privacy Policy">
-              <i class="fa-solid fa-shield-halved"></i>
-            </a>
-            <a href="/tillwise/support.html" class="action-btn btn-privacy-action" title="Support">
-              <i class="fa-solid fa-life-ring"></i>
-            </a>
-          </div>
-        </article>
-        <!-- 14. Mixmere: Color Pour Puzzle -->
-        <article class="app-card" data-category="ios games">
-          <div class="app-header">
-            <div class="app-icon-wrap">
-              <img src="/icons/mixmere.png" alt="Mixmere: Color Pour Puzzle" />
-            </div>
-            <div class="app-meta">
-              <h3 class="app-title">Mixmere: Color Pour Puzzle</h3>
-              <div class="app-category"><i class="fa-solid fa-droplet"></i> Color Pour Puzzle</div>
-            </div>
-          </div>
-          <p class="app-desc">
-            Pour, blend and match the target color. 300 handcrafted puzzles and a new daily mix every day.
-          </p>
-          <ul class="app-highlights">
-            <li><i class="fa-solid fa-check"></i> 300 handcrafted color puzzles</li>
-            <li><i class="fa-solid fa-check"></i> Daily Mix shared by all players</li>
-            <li><i class="fa-solid fa-check"></i> Hints and undos paid with earned drops</li>
-          </ul>
-          <div class="app-tags">
-            <span class="app-tag">SwiftUI</span>
-            <span class="app-tag">iOS</span>
-            <span class="app-tag">Puzzle</span>
-            <span class="app-tag">Daily</span>
-          </div>
-          <div class="app-actions">
-            <span class="action-btn btn-testflight is-soon" title="Public TestFlight beta opens soon">
-              <i class="fa-brands fa-apple"></i> iOS soon
-            </span>
-            <a href="/mixmere/" class="action-btn btn-web-action">
-              <i class="fa-solid fa-circle-info"></i> Details
-            </a>
-            <a href="/mixmere/privacy.html" class="action-btn btn-privacy-action" title="Privacy Policy">
-              <i class="fa-solid fa-shield-halved"></i>
-            </a>
-            <a href="/mixmere/support.html" class="action-btn btn-privacy-action" title="Support">
-              <i class="fa-solid fa-life-ring"></i>
-            </a>
-          </div>
-        </article>
-        <!-- 15. Wherelens: Daily Geo Guess -->
-        <article class="app-card" data-category="ios games">
-          <div class="app-header">
-            <div class="app-icon-wrap">
-              <img src="/icons/wherelens.png" alt="Wherelens: Daily Geo Guess" />
-            </div>
-            <div class="app-meta">
-              <h3 class="app-title">Wherelens: Daily Geo Guess</h3>
-              <div class="app-category"><i class="fa-solid fa-earth-europe"></i> Daily Geo Guessing Game</div>
-            </div>
-          </div>
-          <p class="app-desc">
-            Look around a real street, drop your pin on the map and see how close you got. Five new places every day, the same for everyone.
-          </p>
-          <ul class="app-highlights">
-            <li><i class="fa-solid fa-check"></i> Real street scenes from Apple Maps Look Around</li>
-            <li><i class="fa-solid fa-check"></i> 5 rounds a day, up to 25,000 points</li>
-            <li><i class="fa-solid fa-check"></i> Same daily places for every player</li>
-          </ul>
-          <div class="app-tags">
-            <span class="app-tag">SwiftUI</span>
-            <span class="app-tag">iOS</span>
-            <span class="app-tag">MapKit</span>
-            <span class="app-tag">Geo Game</span>
-          </div>
-          <div class="app-actions">
-            <span class="action-btn btn-testflight is-soon" title="Public TestFlight beta opens soon">
-              <i class="fa-brands fa-apple"></i> iOS soon
-            </span>
-            <a href="/wherelens/" class="action-btn btn-web-action">
-              <i class="fa-solid fa-circle-info"></i> Details
-            </a>
-            <a href="/wherelens/privacy.html" class="action-btn btn-privacy-action" title="Privacy Policy">
-              <i class="fa-solid fa-shield-halved"></i>
-            </a>
-            <a href="/wherelens/support.html" class="action-btn btn-privacy-action" title="Support">
-              <i class="fa-solid fa-life-ring"></i>
-            </a>
-          </div>
-        </article>
-        <!-- 16. Blockgrove: Garden Blocks -->
-        <article class="app-card" data-category="ios games">
-          <div class="app-header">
-            <div class="app-icon-wrap">
-              <img src="/icons/blockgrove.png" alt="Blockgrove: Garden Blocks" />
-            </div>
-            <div class="app-meta">
-              <h3 class="app-title">Blockgrove: Garden Blocks</h3>
-              <div class="app-category"><i class="fa-solid fa-seedling"></i> Block Puzzle & Garden</div>
-            </div>
-          </div>
-          <p class="app-desc">
-            A calm 8×8 block puzzle in a hand-carved wooden tray. Cleared lines earn leaves that grow your own garden.
-          </p>
-          <ul class="app-highlights">
-            <li><i class="fa-solid fa-check"></i> 8×8 tray with classic line clears</li>
-            <li><i class="fa-solid fa-check"></i> Daily Grove and 60 Bloom Quests</li>
-            <li><i class="fa-solid fa-check"></i> 12-plot garden that grows as you play</li>
-          </ul>
-          <div class="app-tags">
-            <span class="app-tag">SwiftUI</span>
-            <span class="app-tag">iOS</span>
-            <span class="app-tag">Block Puzzle</span>
-            <span class="app-tag">Relaxing</span>
-          </div>
-          <div class="app-actions">
-            <span class="action-btn btn-testflight is-soon" title="Public TestFlight beta opens soon">
-              <i class="fa-brands fa-apple"></i> iOS soon
-            </span>
-            <a href="/blockgrove/" class="action-btn btn-web-action">
-              <i class="fa-solid fa-circle-info"></i> Details
-            </a>
-            <a href="/blockgrove/privacy.html" class="action-btn btn-privacy-action" title="Privacy Policy">
-              <i class="fa-solid fa-shield-halved"></i>
-            </a>
-            <a href="/blockgrove/terms.html" class="action-btn btn-privacy-action" title="Terms of Use">
-              <i class="fa-solid fa-file-contract"></i>
-            </a>
-          </div>
-        </article>
-        <!-- 17. Homespun: Aesthetic Widgets -->
-        <article class="app-card" data-category="ios utilities">
-          <div class="app-header">
-            <div class="app-icon-wrap">
-              <img src="/icons/homespun.png" alt="Homespun: Aesthetic Widgets" />
-            </div>
-            <div class="app-meta">
-              <h3 class="app-title">Homespun: Aesthetic Widgets</h3>
-              <div class="app-category"><i class="fa-solid fa-house-chimney"></i> Home & Lock Screen Widgets</div>
-            </div>
-          </div>
-          <p class="app-desc">
-            A cozy studio for your iPhone Home Screen and Lock Screen. Design a widget in the app, then place it from the widget gallery.
-          </p>
-          <ul class="app-highlights">
-            <li><i class="fa-solid fa-check"></i> Seven kinds of widgets</li>
-            <li><i class="fa-solid fa-check"></i> Home Screen and Lock Screen designs</li>
-            <li><i class="fa-solid fa-check"></i> Live preview while you design</li>
-          </ul>
-          <div class="app-tags">
-            <span class="app-tag">SwiftUI</span>
-            <span class="app-tag">iOS</span>
-            <span class="app-tag">WidgetKit</span>
-            <span class="app-tag">Personalization</span>
-          </div>
-          <div class="app-actions">
-            <span class="action-btn btn-testflight is-soon" title="Public TestFlight beta opens soon">
-              <i class="fa-brands fa-apple"></i> iOS soon
-            </span>
-            <a href="/homespun/" class="action-btn btn-web-action">
-              <i class="fa-solid fa-circle-info"></i> Details
-            </a>
-            <a href="/homespun/privacy.html" class="action-btn btn-privacy-action" title="Privacy Policy">
-              <i class="fa-solid fa-shield-halved"></i>
-            </a>
-            <a href="/homespun/terms.html" class="action-btn btn-privacy-action" title="Terms of Use">
-              <i class="fa-solid fa-file-contract"></i>
-            </a>
-          </div>
-        </article>
-        <!-- 18. Unbolt: Screw Puzzle -->
-        <article class="app-card" data-category="ios games">
-          <div class="app-header">
-            <div class="app-icon-wrap">
-              <img src="/icons/unbolt.png" alt="Unbolt: Screw Puzzle" />
-            </div>
-            <div class="app-meta">
-              <h3 class="app-title">Unbolt: Screw Puzzle</h3>
-              <div class="app-category"><i class="fa-solid fa-screwdriver-wrench"></i> Screw-Removal Puzzle</div>
-            </div>
-          </div>
-          <p class="app-desc">
-            A tactile screw-removal puzzle on a restorer's workshop wall. Every cleared board restores a classic workshop antique.
-          </p>
-          <ul class="app-highlights">
-            <li><i class="fa-solid fa-check"></i> 300+ levels of overlapping plates</li>
-            <li><i class="fa-solid fa-check"></i> 20 antiques to restore</li>
-            <li><i class="fa-solid fa-check"></i> Daily Workbench and X-ray view</li>
-          </ul>
-          <div class="app-tags">
-            <span class="app-tag">SwiftUI</span>
-            <span class="app-tag">iOS</span>
-            <span class="app-tag">Puzzle</span>
-            <span class="app-tag">Haptics</span>
-          </div>
-          <div class="app-actions">
-            <span class="action-btn btn-testflight is-soon" title="Public TestFlight beta opens soon">
-              <i class="fa-brands fa-apple"></i> iOS soon
-            </span>
-            <a href="/unbolt/" class="action-btn btn-web-action">
-              <i class="fa-solid fa-circle-info"></i> Details
-            </a>
-            <a href="/unbolt/privacy.html" class="action-btn btn-privacy-action" title="Privacy Policy">
-              <i class="fa-solid fa-shield-halved"></i>
-            </a>
-            <a href="/unbolt/terms.html" class="action-btn btn-privacy-action" title="Terms of Use">
-              <i class="fa-solid fa-file-contract"></i>
-            </a>
-          </div>
-        </article>
-        <!-- 19. Wordloom: Word Puzzle -->
-        <article class="app-card" data-category="ios games">
-          <div class="app-header">
-            <div class="app-icon-wrap">
-              <img src="/icons/wordloom.png" alt="Wordloom: Word Puzzle" />
-            </div>
-            <div class="app-meta">
-              <h3 class="app-title">Wordloom: Word Puzzle</h3>
-              <div class="app-category"><i class="fa-solid fa-spell-check"></i> Crossword Word Game</div>
-            </div>
-          </div>
-          <p class="app-desc">
-            A crossword-style word game on a weaver's table. Swipe across the letters to spell words; every solved puzzle weaves a band of a city tapestry.
-          </p>
-          <ul class="app-highlights">
-            <li><i class="fa-solid fa-check"></i> 180 levels and 12 city tapestries</li>
-            <li><i class="fa-solid fa-check"></i> Daily Weave</li>
-            <li><i class="fa-solid fa-check"></i> Word of the Day</li>
-          </ul>
-          <div class="app-tags">
-            <span class="app-tag">SwiftUI</span>
-            <span class="app-tag">iOS</span>
-            <span class="app-tag">Word Game</span>
-            <span class="app-tag">Daily</span>
-          </div>
-          <div class="app-actions">
-            <span class="action-btn btn-testflight is-soon" title="Public TestFlight beta opens soon">
-              <i class="fa-brands fa-apple"></i> iOS soon
-            </span>
-            <a href="/wordloom/" class="action-btn btn-web-action">
-              <i class="fa-solid fa-circle-info"></i> Details
-            </a>
-            <a href="/wordloom/privacy.html" class="action-btn btn-privacy-action" title="Privacy Policy">
-              <i class="fa-solid fa-shield-halved"></i>
-            </a>
-            <a href="/wordloom/terms.html" class="action-btn btn-privacy-action" title="Terms of Use">
-              <i class="fa-solid fa-file-contract"></i>
-            </a>
-          </div>
-        </article>
-        <!-- 20. Stridemap: Walking Journeys -->
-        <article class="app-card" data-category="ios utilities">
-          <div class="app-header">
-            <div class="app-icon-wrap">
-              <img src="/icons/stridemap.png" alt="Stridemap: Walking Journeys" />
-            </div>
-            <div class="app-meta">
-              <h3 class="app-title">Stridemap: Walking Journeys</h3>
-              <div class="app-category"><i class="fa-solid fa-person-walking"></i> Virtual Walking Journeys</div>
-            </div>
-          </div>
-          <p class="app-desc">
-            Turn everyday steps into virtual journeys along famous real-world routes. Reach landmarks and collect illustrated postcards.
-          </p>
-          <ul class="app-highlights">
-            <li><i class="fa-solid fa-check"></i> 12 iconic world routes</li>
-            <li><i class="fa-solid fa-check"></i> Illustrated postcards and certificates</li>
-            <li><i class="fa-solid fa-check"></i> Daily walking journal with Apple Health steps</li>
-          </ul>
-          <div class="app-tags">
-            <span class="app-tag">SwiftUI</span>
-            <span class="app-tag">iOS</span>
-            <span class="app-tag">HealthKit</span>
-            <span class="app-tag">Fitness</span>
-          </div>
-          <div class="app-actions">
-            <span class="action-btn btn-testflight is-soon" title="Public TestFlight beta opens soon">
-              <i class="fa-brands fa-apple"></i> iOS soon
-            </span>
-            <a href="/stridemap/" class="action-btn btn-web-action">
-              <i class="fa-solid fa-circle-info"></i> Details
-            </a>
-            <a href="/stridemap/privacy.html" class="action-btn btn-privacy-action" title="Privacy Policy">
-              <i class="fa-solid fa-shield-halved"></i>
-            </a>
-            <a href="/stridemap/terms.html" class="action-btn btn-privacy-action" title="Terms of Use">
-              <i class="fa-solid fa-file-contract"></i>
-            </a>
-          </div>
-        </article>
-        <!-- 21. Fastwell - Fasting Tracker -->
-        <article class="app-card" data-category="ios utilities">
-          <div class="app-header">
-            <div class="app-icon-wrap">
-              <img src="/icons/fastwell.png" alt="Fastwell - Fasting Tracker" />
-            </div>
-            <div class="app-meta">
-              <h3 class="app-title">Fastwell - Fasting Tracker</h3>
-              <div class="app-category"><i class="fa-solid fa-hourglass-half"></i> Intermittent Fasting</div>
-            </div>
-          </div>
-          <p class="app-desc">
-            A calm intermittent fasting timer with gentle stages, water and weight tracking, and a private journal.
-          </p>
-          <ul class="app-highlights">
-            <li><i class="fa-solid fa-check"></i> Fasting timer with eating window</li>
-            <li><i class="fa-solid fa-check"></i> Plans for every rhythm</li>
-            <li><i class="fa-solid fa-check"></i> Water, weight and Apple Health</li>
-          </ul>
-          <div class="app-tags">
-            <span class="app-tag">SwiftUI</span>
-            <span class="app-tag">iOS</span>
-            <span class="app-tag">HealthKit</span>
-            <span class="app-tag">Wellness</span>
-          </div>
-          <div class="app-actions">
-            <span class="action-btn btn-testflight is-soon" title="Public TestFlight beta opens soon">
-              <i class="fa-brands fa-apple"></i> iOS soon
-            </span>
-            <a href="/fastwell/" class="action-btn btn-web-action">
-              <i class="fa-solid fa-circle-info"></i> Details
-            </a>
-            <a href="/fastwell/privacy.html" class="action-btn btn-privacy-action" title="Privacy Policy">
-              <i class="fa-solid fa-shield-halved"></i>
-            </a>
-            <a href="/fastwell/terms.html" class="action-btn btn-privacy-action" title="Terms of Use">
-              <i class="fa-solid fa-file-contract"></i>
-            </a>
-          </div>
-        </article>
+        </div>
+        <div class="plats"><span class="plat" title="Web"><i class="fa-solid fa-globe"></i> Web</span><span class="plat" title="Windows"><i class="fa-brands fa-windows"></i> Windows</span></div>
+        <p class="app-desc">Sleek stock and inventory management web &amp; desktop application featuring real-time barcode scanning, revenue and profit/loss visual analytics, low-stock notifications, and Excel data import/export.</p>
+        <ul class="app-hl"><li>Real-time inventory tracking &amp; barcode support</li><li>Financial revenue, cost &amp; profit analytics</li><li>Excel / CSV data export and backup</li></ul>
+        <div class="app-actions">
+          <a class="btn-store web" href="/Stokapp/"><i class="fa-solid fa-arrow-up-right-from-square"></i> Open</a>
+<a class="btn-store gh" href="https://github.com/serdevir91/Stokapp" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Source</a>
+        </div>
+        
+      </article>
+        </div>
+        <p class="empty" id="empty">No app matches your search.</p>
       </div>
     </section>
 
-    <!-- Privacy Policy Center -->
-    <section class="privacy-section" id="privacy">
-      <div class="section-title-wrap">
-        <h2><i class="fa-solid fa-shield-halved" style="color: var(--accent-cyan);"></i> Privacy Policy & Compliance Center</h2>
-        <p>Erdevir Labs applications are built with a strict privacy-first architecture. User data remains locally on-device and is never harvested.</p>
-      </div>
-
-      <div class="privacy-grid">
-
-        <div class="privacy-card-container">
-          <div class="privacy-card-header">
-            <img src="/icons/my_language_tracker.png" class="privacy-mini-icon" alt="My Language Tracker" />
-            <span class="privacy-card-title">My Language Tracker</span>
-          </div>
-          <div class="privacy-card-links">
-            <a href="/my-language-tracker-privacy/privacy.html" class="privacy-sublink"><i class="fa-solid fa-shield-halved"></i> Privacy</a>
-            <a href="/my-language-tracker-privacy/terms.html" class="privacy-sublink"><i class="fa-solid fa-file-contract"></i> Terms</a>
+    <section id="about">
+      <div class="wrap">
+        <div class="sec-head">
+          <div>
+            <p class="kicker">02 · About</p>
+            <h2>One developer, many apps</h2>
           </div>
         </div>
-
-        <div class="privacy-card-container">
-          <div class="privacy-card-header">
-            <img src="/icons/core_defender.png" class="privacy-mini-icon" alt="Core Defender" />
-            <span class="privacy-card-title">Core Defender</span>
+        <div class="about">
+          <div class="panel">
+            <h3>Hi, I'm Soner Erdevir</h3>
+            <p>I'm a mechanical engineer who also writes software. Erdevir Labs is where I publish the apps I build in my own time: games, everyday tools and software for engineering work. Every app is designed, built and maintained by me.</p>
+            <a class="btn btn-ghost btn-sm" href="/soner-portfolio/">Portfolio &amp; CV <i class="fa-solid fa-arrow-right"></i></a>
           </div>
-          <div class="privacy-card-links">
-            <a href="/core-defender-privacy/privacy.html" class="privacy-sublink"><i class="fa-solid fa-shield-halved"></i> Privacy</a>
-            <a href="/core-defender-privacy/terms.html" class="privacy-sublink"><i class="fa-solid fa-file-contract"></i> Terms</a>
-          </div>
-        </div>
-
-        <div class="privacy-card-container">
-          <div class="privacy-card-header">
-            <img src="/icons/markdown_keeper.png" class="privacy-mini-icon" alt="Markdown Keeper" />
-            <span class="privacy-card-title">Markdown Keeper</span>
-          </div>
-          <div class="privacy-card-links">
-            <a href="/markdown-keeper-privacy/privacy.html" class="privacy-sublink"><i class="fa-solid fa-shield-halved"></i> Privacy</a>
-            <a href="/markdown-keeper-privacy/terms.html" class="privacy-sublink"><i class="fa-solid fa-file-contract"></i> Terms</a>
+          <div class="panel">
+            <ul class="principles">
+              <li><i class="fa-solid fa-lock"></i><div><b>Private by default</b><span>No sign-up. Data stays on the device unless you choose to sync it.</span></div></li>
+              <li><i class="fa-solid fa-plane-slash"></i><div><b>Works offline</b><span>Core features run without an internet connection.</span></div></li>
+              <li><i class="fa-solid fa-scale-balanced"></i><div><b>Fair pricing</b><span>Free to start. Pro features are a clear one-time or optional upgrade, with Restore Purchases.</span></div></li>
+            </ul>
           </div>
         </div>
-
-        <div class="privacy-card-container">
-          <div class="privacy-card-header">
-            <img src="/icons/autoshare.png" class="privacy-mini-icon" alt="AutoShare" />
-            <span class="privacy-card-title">AutoShare</span>
-          </div>
-          <div class="privacy-card-links">
-            <a href="/autoshare-privacy-policy/privacy.html" class="privacy-sublink"><i class="fa-solid fa-shield-halved"></i> Privacy</a>
-            <a href="/autoshare-privacy-policy/terms.html" class="privacy-sublink"><i class="fa-solid fa-file-contract"></i> Terms</a>
-          </div>
-        </div>
-
-        <div class="privacy-card-container">
-          <div class="privacy-card-header">
-            <img src="/icons/sneaky_rogue.png" class="privacy-mini-icon" alt="Snakey Rogue" />
-            <span class="privacy-card-title">Snakey Rogue</span>
-          </div>
-          <div class="privacy-card-links">
-            <a href="/sneaky-rogue-privacy/privacy.html" class="privacy-sublink"><i class="fa-solid fa-shield-halved"></i> Privacy</a>
-            <a href="/sneaky-rogue-privacy/terms.html" class="privacy-sublink"><i class="fa-solid fa-file-contract"></i> Terms</a>
-          </div>
-        </div>
-
-        <div class="privacy-card-container">
-          <div class="privacy-card-header">
-            <img src="/icons/supzip.png" class="privacy-mini-icon" alt="SupZip" />
-            <span class="privacy-card-title">SupZip</span>
-          </div>
-          <div class="privacy-card-links">
-            <a href="/subzip-privacy-policy/privacy.html" class="privacy-sublink"><i class="fa-solid fa-shield-halved"></i> Privacy</a>
-            <a href="/subzip-privacy-policy/terms.html" class="privacy-sublink"><i class="fa-solid fa-file-contract"></i> Terms</a>
-          </div>
-        </div>
-
-        <div class="privacy-card-container">
-          <div class="privacy-card-header">
-            <img src="/icons/workout_tracker.png" class="privacy-mini-icon" alt="Workout Tracker" />
-            <span class="privacy-card-title">Workout Tracker</span>
-          </div>
-          <div class="privacy-card-links">
-            <a href="/workout-tracker-privacy/privacy.html" class="privacy-sublink"><i class="fa-solid fa-shield-halved"></i> Privacy</a>
-            <a href="/workout-tracker-privacy/terms.html" class="privacy-sublink"><i class="fa-solid fa-file-contract"></i> Terms</a>
-          </div>
-        </div>
-
-        <div class="privacy-card-container">
-          <div class="privacy-card-header">
-            <img src="/icons/flappy_rogue.png" class="privacy-mini-icon" alt="Flappy Rogue" />
-            <span class="privacy-card-title">Flappy Rogue</span>
-          </div>
-          <div class="privacy-card-links">
-            <a href="/flappy-rogue-privacy/privacy.html" class="privacy-sublink"><i class="fa-solid fa-shield-halved"></i> Privacy</a>
-            <a href="/flappy-rogue-privacy/terms.html" class="privacy-sublink"><i class="fa-solid fa-file-contract"></i> Terms</a>
-          </div>
-        </div>
-
-        <div class="privacy-card-container">
-          <div class="privacy-card-header">
-            <img src="/icons/ezan_vakti.png" class="privacy-mini-icon" alt="Ezan Vakti" />
-            <span class="privacy-card-title">Ezan Vakti Premium</span>
-          </div>
-          <div class="privacy-card-links">
-            <a href="/ezan-vakti-privacy/privacy.html" class="privacy-sublink"><i class="fa-solid fa-shield-halved"></i> Privacy</a>
-            <a href="/ezan-vakti-privacy/terms.html" class="privacy-sublink"><i class="fa-solid fa-file-contract"></i> Terms</a>
-          </div>
-        </div>
-
-        <div class="privacy-card-container">
-          <div class="privacy-card-header">
-            <img src="/icons/roadster_challenge.png" class="privacy-mini-icon" alt="Roadster Challenge" />
-            <span class="privacy-card-title">Roadster Challenge</span>
-          </div>
-          <div class="privacy-card-links">
-            <a href="/roadster-challenge-privacy/privacy.html" class="privacy-sublink"><i class="fa-solid fa-shield-halved"></i> Privacy</a>
-            <a href="/roadster-challenge-privacy/terms.html" class="privacy-sublink"><i class="fa-solid fa-file-contract"></i> Terms</a>
-          </div>
-        </div>
-
-        <div class="privacy-card-container">
-          <div class="privacy-card-header">
-            <img src="/icons/chronicle_lens.png" class="privacy-mini-icon" alt="Chronicle Lens" />
-            <span class="privacy-card-title">Chronicle Lens</span>
-          </div>
-          <div class="privacy-card-links">
-            <a href="/chronicle-lens-legal/privacy.html" class="privacy-sublink"><i class="fa-solid fa-shield-halved"></i> Privacy</a>
-            <a href="/chronicle-lens-legal/terms.html" class="privacy-sublink"><i class="fa-solid fa-file-contract"></i> Terms</a>
-          </div>
-        </div>
-
-        <div class="privacy-card-container">
-          <div class="privacy-card-header">
-            <img src="/icons/tillwise.png" class="privacy-mini-icon" alt="Tillwise: Receipt Scanner" />
-            <span class="privacy-card-title">Tillwise</span>
-          </div>
-          <div class="privacy-card-links">
-            <a href="/tillwise/privacy.html" class="privacy-sublink"><i class="fa-solid fa-shield-halved"></i> Privacy</a>
-            <a href="/tillwise/support.html" class="privacy-sublink"><i class="fa-solid fa-life-ring"></i> Support</a>
-          </div>
-        </div>
-
-        <div class="privacy-card-container">
-          <div class="privacy-card-header">
-            <img src="/icons/mixmere.png" class="privacy-mini-icon" alt="Mixmere: Color Pour Puzzle" />
-            <span class="privacy-card-title">Mixmere</span>
-          </div>
-          <div class="privacy-card-links">
-            <a href="/mixmere/privacy.html" class="privacy-sublink"><i class="fa-solid fa-shield-halved"></i> Privacy</a>
-            <a href="/mixmere/support.html" class="privacy-sublink"><i class="fa-solid fa-life-ring"></i> Support</a>
-          </div>
-        </div>
-
-        <div class="privacy-card-container">
-          <div class="privacy-card-header">
-            <img src="/icons/wherelens.png" class="privacy-mini-icon" alt="Wherelens: Daily Geo Guess" />
-            <span class="privacy-card-title">Wherelens</span>
-          </div>
-          <div class="privacy-card-links">
-            <a href="/wherelens/privacy.html" class="privacy-sublink"><i class="fa-solid fa-shield-halved"></i> Privacy</a>
-            <a href="/wherelens/support.html" class="privacy-sublink"><i class="fa-solid fa-life-ring"></i> Support</a>
-          </div>
-        </div>
-
-        <div class="privacy-card-container">
-          <div class="privacy-card-header">
-            <img src="/icons/blockgrove.png" class="privacy-mini-icon" alt="Blockgrove: Garden Blocks" />
-            <span class="privacy-card-title">Blockgrove</span>
-          </div>
-          <div class="privacy-card-links">
-            <a href="/blockgrove/privacy.html" class="privacy-sublink"><i class="fa-solid fa-shield-halved"></i> Privacy</a>
-            <a href="/blockgrove/terms.html" class="privacy-sublink"><i class="fa-solid fa-file-contract"></i> Terms</a>
-          </div>
-        </div>
-
-        <div class="privacy-card-container">
-          <div class="privacy-card-header">
-            <img src="/icons/homespun.png" class="privacy-mini-icon" alt="Homespun: Aesthetic Widgets" />
-            <span class="privacy-card-title">Homespun</span>
-          </div>
-          <div class="privacy-card-links">
-            <a href="/homespun/privacy.html" class="privacy-sublink"><i class="fa-solid fa-shield-halved"></i> Privacy</a>
-            <a href="/homespun/terms.html" class="privacy-sublink"><i class="fa-solid fa-file-contract"></i> Terms</a>
-          </div>
-        </div>
-
-        <div class="privacy-card-container">
-          <div class="privacy-card-header">
-            <img src="/icons/unbolt.png" class="privacy-mini-icon" alt="Unbolt: Screw Puzzle" />
-            <span class="privacy-card-title">Unbolt</span>
-          </div>
-          <div class="privacy-card-links">
-            <a href="/unbolt/privacy.html" class="privacy-sublink"><i class="fa-solid fa-shield-halved"></i> Privacy</a>
-            <a href="/unbolt/terms.html" class="privacy-sublink"><i class="fa-solid fa-file-contract"></i> Terms</a>
-          </div>
-        </div>
-
-        <div class="privacy-card-container">
-          <div class="privacy-card-header">
-            <img src="/icons/wordloom.png" class="privacy-mini-icon" alt="Wordloom: Word Puzzle" />
-            <span class="privacy-card-title">Wordloom</span>
-          </div>
-          <div class="privacy-card-links">
-            <a href="/wordloom/privacy.html" class="privacy-sublink"><i class="fa-solid fa-shield-halved"></i> Privacy</a>
-            <a href="/wordloom/terms.html" class="privacy-sublink"><i class="fa-solid fa-file-contract"></i> Terms</a>
-          </div>
-        </div>
-
-        <div class="privacy-card-container">
-          <div class="privacy-card-header">
-            <img src="/icons/stridemap.png" class="privacy-mini-icon" alt="Stridemap: Walking Journeys" />
-            <span class="privacy-card-title">Stridemap</span>
-          </div>
-          <div class="privacy-card-links">
-            <a href="/stridemap/privacy.html" class="privacy-sublink"><i class="fa-solid fa-shield-halved"></i> Privacy</a>
-            <a href="/stridemap/terms.html" class="privacy-sublink"><i class="fa-solid fa-file-contract"></i> Terms</a>
-          </div>
-        </div>
-
-        <div class="privacy-card-container">
-          <div class="privacy-card-header">
-            <img src="/icons/fastwell.png" class="privacy-mini-icon" alt="Fastwell - Fasting Tracker" />
-            <span class="privacy-card-title">Fastwell</span>
-          </div>
-          <div class="privacy-card-links">
-            <a href="/fastwell/privacy.html" class="privacy-sublink"><i class="fa-solid fa-shield-halved"></i> Privacy</a>
-            <a href="/fastwell/terms.html" class="privacy-sublink"><i class="fa-solid fa-file-contract"></i> Terms</a>
-          </div>
-        </div>
-
-        <div class="privacy-card-container" style="border-color: rgba(16, 185, 129, 0.35);">
-          <div class="privacy-card-header">
-            <div class="logo-badge-icon" style="width: 34px; height: 34px; font-size: 15px; border-radius: 8px;">
-              <i class="fa-solid fa-certificate"></i>
-            </div>
-            <span class="privacy-card-title">Google AdMob Compliance</span>
-          </div>
-          <div class="privacy-card-links">
-            <a href="/app-ads.txt" class="privacy-sublink" style="color: #34d399;"><i class="fa-solid fa-file-lines"></i> app-ads.txt</a>
-          </div>
-        </div></div>
-    </section>
-
-    <!-- Technologies -->
-    <section style="text-align: center; margin-bottom: 70px;">
-      <h3 style="font-family: 'Space Grotesk', sans-serif; font-size: 20px; color: #fff; margin-bottom: 8px;">Engineering & Technologies</h3>
-      <p style="color: var(--text-muted); font-size: 14px;">We build modern software utilizing reliable, high-performance tech stacks.</p>
-      
-      <div class="tech-stack-wrap">
-        <div class="tech-item"><i class="fa-brands fa-flutter" style="color: #02569B;"></i> Flutter SDK</div>
-        <div class="tech-item"><i class="fa-brands fa-android" style="color: #3DDC84;"></i> Android Native</div>
-        <div class="tech-item"><i class="fa-brands fa-react" style="color: #61DAFB;"></i> React & Vite</div>
-        <div class="tech-item"><i class="fa-brands fa-python" style="color: #3776AB;"></i> Python AI</div>
-        <div class="tech-item"><i class="fa-brands fa-windows" style="color: #0078D6;"></i> Windows Desktop</div>
-        <div class="tech-item"><i class="fa-brands fa-google" style="color: #4285F4;"></i> Google AdMob</div>
       </div>
     </section>
 
+    <section id="legal">
+      <div class="wrap">
+        <div class="sec-head">
+          <div>
+            <p class="kicker">03 · Legal</p>
+            <h2>Privacy &amp; terms</h2>
+            <p class="sec-lead">Privacy policy and terms of use for each app.</p>
+          </div>
+        </div>
+        <ul class="legal">
+        <li class="legal-row">
+          <img class="legal-icon" src="/icons/workout_tracker.png" alt="" width="32" height="32" loading="lazy" />
+          <span class="legal-name">Workout Tracker</span>
+          <span class="legal-links"><a href="/workout-tracker-privacy/privacy.html">Privacy</a><a href="/workout-tracker-privacy/terms.html">Terms</a></span>
+        </li>
+        <li class="legal-row">
+          <img class="legal-icon" src="/icons/my_language_tracker.png" alt="" width="32" height="32" loading="lazy" />
+          <span class="legal-name">My Language Tracker</span>
+          <span class="legal-links"><a href="/my-language-tracker-privacy/privacy.html">Privacy</a><a href="/my-language-tracker-privacy/terms.html">Terms</a></span>
+        </li>
+        <li class="legal-row">
+          <img class="legal-icon" src="/icons/core_defender.png" alt="" width="32" height="32" loading="lazy" />
+          <span class="legal-name">Core Defender</span>
+          <span class="legal-links"><a href="/core-defender-privacy/privacy.html">Privacy</a><a href="/core-defender-privacy/terms.html">Terms</a></span>
+        </li>
+        <li class="legal-row">
+          <img class="legal-icon" src="/icons/autoshare.png" alt="" width="32" height="32" loading="lazy" />
+          <span class="legal-name">AutoShare</span>
+          <span class="legal-links"><a href="/autoshare-privacy-policy/privacy.html">Privacy</a><a href="/autoshare-privacy-policy/terms.html">Terms</a></span>
+        </li>
+        <li class="legal-row">
+          <img class="legal-icon" src="/icons/markdown_keeper.png" alt="" width="32" height="32" loading="lazy" />
+          <span class="legal-name">Markdown Keeper</span>
+          <span class="legal-links"><a href="/markdown-keeper-privacy/privacy.html">Privacy</a><a href="/markdown-keeper-privacy/terms.html">Terms</a></span>
+        </li>
+        <li class="legal-row">
+          <img class="legal-icon" src="/icons/supzip.png" alt="" width="32" height="32" loading="lazy" />
+          <span class="legal-name">SupZip</span>
+          <span class="legal-links"><a href="/subzip-privacy-policy/privacy.html">Privacy</a><a href="/subzip-privacy-policy/terms.html">Terms</a></span>
+        </li>
+        <li class="legal-row">
+          <img class="legal-icon" src="/icons/sneaky_rogue.png" alt="" width="32" height="32" loading="lazy" />
+          <span class="legal-name">Snakey Rogue</span>
+          <span class="legal-links"><a href="/sneaky-rogue-privacy/privacy.html">Privacy</a><a href="/sneaky-rogue-privacy/terms.html">Terms</a></span>
+        </li>
+        <li class="legal-row">
+          <img class="legal-icon" src="/icons/flappy_rogue.png" alt="" width="32" height="32" loading="lazy" />
+          <span class="legal-name">Flappy Rogue</span>
+          <span class="legal-links"><a href="/flappy-rogue-privacy/privacy.html">Privacy</a><a href="/flappy-rogue-privacy/terms.html">Terms</a></span>
+        </li>
+        <li class="legal-row">
+          <img class="legal-icon" src="/icons/ezan_vakti.png" alt="" width="32" height="32" loading="lazy" />
+          <span class="legal-name">Ezan Vakti</span>
+          <span class="legal-links"><a href="/ezan-vakti-privacy/privacy.html">Privacy</a><a href="/ezan-vakti-privacy/terms.html">Terms</a></span>
+        </li>
+        <li class="legal-row">
+          <img class="legal-icon" src="/icons/roadster_challenge.png" alt="" width="32" height="32" loading="lazy" />
+          <span class="legal-name">Roadster Challenge</span>
+          <span class="legal-links"><a href="/roadster-challenge-privacy/privacy.html">Privacy</a><a href="/roadster-challenge-privacy/terms.html">Terms</a></span>
+        </li>
+        <li class="legal-row">
+          <img class="legal-icon" src="/icons/tillwise.png" alt="" width="32" height="32" loading="lazy" />
+          <span class="legal-name">Tillwise</span>
+          <span class="legal-links"><a href="/tillwise/privacy.html">Privacy</a><a href="/tillwise/support.html">Support</a></span>
+        </li>
+        <li class="legal-row">
+          <img class="legal-icon" src="/icons/mixmere.png" alt="" width="32" height="32" loading="lazy" />
+          <span class="legal-name">Mixmere</span>
+          <span class="legal-links"><a href="/mixmere/privacy.html">Privacy</a><a href="/mixmere/support.html">Support</a></span>
+        </li>
+        <li class="legal-row">
+          <img class="legal-icon" src="/icons/wherelens.png" alt="" width="32" height="32" loading="lazy" />
+          <span class="legal-name">Wherelens</span>
+          <span class="legal-links"><a href="/wherelens/privacy.html">Privacy</a><a href="/wherelens/support.html">Support</a></span>
+        </li>
+        <li class="legal-row">
+          <img class="legal-icon" src="/icons/blockgrove.png" alt="" width="32" height="32" loading="lazy" />
+          <span class="legal-name">Blockgrove</span>
+          <span class="legal-links"><a href="/blockgrove/privacy.html">Privacy</a><a href="/blockgrove/terms.html">Terms</a></span>
+        </li>
+        <li class="legal-row">
+          <img class="legal-icon" src="/icons/homespun.png" alt="" width="32" height="32" loading="lazy" />
+          <span class="legal-name">Homespun</span>
+          <span class="legal-links"><a href="/homespun/privacy.html">Privacy</a><a href="/homespun/terms.html">Terms</a></span>
+        </li>
+        <li class="legal-row">
+          <img class="legal-icon" src="/icons/unbolt.png" alt="" width="32" height="32" loading="lazy" />
+          <span class="legal-name">Unbolt</span>
+          <span class="legal-links"><a href="/unbolt/privacy.html">Privacy</a><a href="/unbolt/terms.html">Terms</a></span>
+        </li>
+        <li class="legal-row">
+          <img class="legal-icon" src="/icons/wordloom.png" alt="" width="32" height="32" loading="lazy" />
+          <span class="legal-name">Wordloom</span>
+          <span class="legal-links"><a href="/wordloom/privacy.html">Privacy</a><a href="/wordloom/terms.html">Terms</a></span>
+        </li>
+        <li class="legal-row">
+          <img class="legal-icon" src="/icons/stridemap.png" alt="" width="32" height="32" loading="lazy" />
+          <span class="legal-name">Stridemap</span>
+          <span class="legal-links"><a href="/stridemap/privacy.html">Privacy</a><a href="/stridemap/terms.html">Terms</a></span>
+        </li>
+        <li class="legal-row">
+          <img class="legal-icon" src="/icons/fastwell.png" alt="" width="32" height="32" loading="lazy" />
+          <span class="legal-name">Fastwell</span>
+          <span class="legal-links"><a href="/fastwell/privacy.html">Privacy</a><a href="/fastwell/terms.html">Terms</a></span>
+        </li>
+        <li class="legal-row">
+          <img class="legal-icon" src="/icons/chronicle_lens.png" alt="" width="32" height="32" loading="lazy" />
+          <span class="legal-name">Chronicle Lens</span>
+          <span class="legal-links"><a href="/chronicle-lens-legal/privacy.html">Privacy</a><a href="/chronicle-lens-legal/terms.html">Terms</a></span>
+        </li>
+        </ul>
+        <p class="legal-note">General <a href="/privacy.html">privacy policy</a> · <a href="/terms.html">terms</a> · <a href="/app-ads.txt">app-ads.txt</a></p>
+      </div>
+    </section>
+
+    <div class="wrap">
+      <div class="contact" id="contact">
+        <div>
+          <h2>Questions or feedback?</h2>
+          <p>Bug reports, feature ideas and support requests are welcome.</p>
+        </div>
+        <div class="contact-actions">
+          <a class="btn btn-primary" href="mailto:serde.dev91@gmail.com"><i class="fa-regular fa-envelope"></i> serde.dev91@gmail.com</a>
+          <a class="btn btn-ghost" href="https://github.com/serdevir91" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> GitHub</a>
+        </div>
+      </div>
+    </div>
   </main>
 
-  <!-- Footer -->
   <footer>
-    <div class="container">
-      <div class="footer-content">
-        <div class="brand-logo">
-          <div class="logo-badge-icon" style="width: 36px; height: 36px; font-size: 16px;">
-            <i class="fa-solid fa-layer-group"></i>
-          </div>
-          <div class="brand-text">
-            <span class="brand-name" style="font-size: 18px;">Erdevir Labs</span>
-            <span class="brand-tag">Software Studio</span>
-          </div>
-        </div>
-
-        <div class="footer-links">
-          <a href="/soner-portfolio/" target="_blank" class="footer-link"><i class="fa-solid fa-user-astronaut"></i> Portfolio</a>
-          <a href="/my-store/" class="footer-link">App Store</a>
-          <a href="#apps" class="footer-link">Applications</a>
-          <a href="#privacy" class="footer-link">Privacy Policies</a>
-          <a href="/app-ads.txt" class="footer-link">app-ads.txt</a>
-          <a href="https://github.com/serdevir91" target="_blank" class="footer-link"><i class="fa-brands fa-github"></i> GitHub</a>
-          <a href="mailto:serde.dev91@gmail.com" class="footer-link"><i class="fa-solid fa-envelope"></i> Contact</a>
-        </div>
-      </div>
-
-      <div class="footer-copy">
-        <p>&copy; 2026 Erdevir Labs. All rights reserved. | Official Developer Portal for Google Play Store applications.</p>
-      </div>
+    <div class="wrap foot">
+      <span>© 2026 Erdevir Labs</span>
+      <nav>
+        <a href="#apps">Apps</a>
+        <a href="#legal">Privacy</a>
+        <a href="/soner-portfolio/">Portfolio</a>
+        <a href="https://play.google.com/store/apps/dev?id=6728487283410636967" target="_blank" rel="noopener">Google Play</a>
+        <a href="https://github.com/serdevir91" target="_blank" rel="noopener">GitHub</a>
+      </nav>
     </div>
   </footer>
 
-  <!-- Search & Filter Script -->
   <script>
-    const searchInput = document.getElementById('appSearchInput');
-    const categoryPills = document.querySelectorAll('.cat-pill');
-    const appCards = document.querySelectorAll('.app-card');
-
-    let activeCategory = 'all';
-
-    function filterApplications() {
-      const query = searchInput.value.toLowerCase().trim();
-
-      appCards.forEach(card => {
-        const categoryMatches = activeCategory === 'all' || card.dataset.category.includes(activeCategory);
-        const cardText = card.textContent.toLowerCase();
-        const searchMatches = !query || cardText.includes(query);
-
-        if (categoryMatches && searchMatches) {
-          card.style.display = 'flex';
-        } else {
-          card.style.display = 'none';
-        }
-      });
-    }
-
-    categoryPills.forEach(pill => {
-      pill.addEventListener('click', () => {
-        categoryPills.forEach(p => p.classList.remove('active'));
-        pill.classList.add('active');
-        activeCategory = pill.dataset.filter;
-        filterApplications();
-      });
-    });
-
-    searchInput.addEventListener('input', filterApplications);
-
-    // Mobile Navigation Drawer Toggle
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const mobileDrawer = document.getElementById('mobileDrawer');
-    const menuIcon = document.getElementById('menuIcon');
-    const mobileNavItems = document.querySelectorAll('.mobile-nav-item, .mobile-nav-cta');
-
-    if (mobileMenuBtn && mobileDrawer) {
-      mobileMenuBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const isOpen = mobileDrawer.classList.toggle('open');
-        if (isOpen) {
-          menuIcon.classList.remove('fa-bars');
-          menuIcon.classList.add('fa-xmark');
-        } else {
-          menuIcon.classList.remove('fa-xmark');
-          menuIcon.classList.add('fa-bars');
-        }
+    (function () {
+      var root = document.documentElement;
+      document.getElementById('themeBtn').addEventListener('click', function () {
+        var t = root.dataset.theme === 'light' ? 'dark' : 'light';
+        root.dataset.theme = t;
+        try { localStorage.setItem('labs_theme', t); } catch (e) {}
       });
 
-      // Close drawer when any navigation link is clicked
-      mobileNavItems.forEach(item => {
-        item.addEventListener('click', () => {
-          mobileDrawer.classList.remove('open');
-          menuIcon.classList.remove('fa-xmark');
-          menuIcon.classList.add('fa-bars');
+      var nav = document.getElementById('nav');
+      var burger = document.getElementById('burger');
+      burger.addEventListener('click', function () {
+        var open = nav.classList.toggle('open');
+        burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+      nav.addEventListener('click', function (e) {
+        if (e.target.closest('a')) { nav.classList.remove('open'); burger.setAttribute('aria-expanded', 'false'); }
+      });
+
+      var key = 'all';
+      var q = document.getElementById('q');
+      var apps = Array.prototype.slice.call(document.querySelectorAll('.app'));
+      var empty = document.getElementById('empty');
+      function apply() {
+        var text = q.value.trim().toLowerCase();
+        var shown = 0;
+        apps.forEach(function (a) {
+          var ok = (key === 'all' || a.dataset.filter.split(' ').indexOf(key) >= 0) &&
+                   (!text || a.dataset.search.indexOf(text) >= 0);
+          a.hidden = !ok;
+          if (ok) shown++;
+        });
+        empty.style.display = shown ? 'none' : 'block';
+      }
+      document.querySelectorAll('.pill').forEach(function (p) {
+        p.addEventListener('click', function () {
+          document.querySelectorAll('.pill').forEach(function (x) { x.classList.remove('active'); x.setAttribute('aria-pressed', 'false'); });
+          p.classList.add('active'); p.setAttribute('aria-pressed', 'true');
+          key = p.dataset.key;
+          apply();
         });
       });
-
-      // Close drawer when tapping outside
-      document.addEventListener('click', (e) => {
-        if (!mobileDrawer.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
-          mobileDrawer.classList.remove('open');
-          menuIcon.classList.remove('fa-xmark');
-          menuIcon.classList.add('fa-bars');
-        }
-      });
-    }
+      q.addEventListener('input', apply);
+    })();
   </script>
 </body>
 </html>
