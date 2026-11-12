@@ -772,7 +772,10 @@
       border: 1px solid rgba(10, 132, 255, 0.35);
     }
 
-    .btn-testflight:hover {
+    .btn-testflight.is-soon { opacity: .6; cursor: default; }
+    .btn-testflight.is-soon:hover { transform: none; }
+
+    .btn-testflight:not(.is-soon):hover {
       background: rgba(10, 132, 255, 0.28);
       color: #a5d4ff;
       transform: translateY(-1px);
@@ -1475,7 +1478,7 @@
         </div>
         <div class="category-pills" id="categoryFilterContainer">
           <div class="cat-pill active" data-filter="all">All Apps (21)</div>
-          <div class="cat-pill" data-filter="ios">🍏 iOS & TestFlight</div>
+          <div class="cat-pill" data-filter="ios">🍏 iOS</div>
           <div class="cat-pill" data-filter="mobile">📱 Android Mobile</div>
           <div class="cat-pill" data-filter="desktop">💻 Windows & Desktop</div>
           <div class="cat-pill" data-filter="utilities">🛠️ Utilities & Education</div>
@@ -1508,7 +1511,7 @@
           <div class="app-tags">
             <span class="app-tag">Flutter</span>
             <span class="app-tag">Android</span>
-            <span class="app-tag">iOS Beta</span>
+            <span class="app-tag">iOS soon</span>
             <span class="app-tag">Oxford 5000</span>
             <span class="app-tag">CEFR</span>
             <span class="app-tag">SRS Algorithm</span>
@@ -1518,9 +1521,9 @@
             <a href="https://play.google.com/store/apps/details?id=www.mylanguagetracker.app" target="_blank" class="action-btn btn-playstore">
               <i class="fa-brands fa-google-play"></i> Play Store
             </a>
-            <a href="https://testflight.apple.com/join/R7KVbU4S" target="_blank" rel="noopener" class="action-btn btn-testflight" title="Join the iOS beta on TestFlight">
-              <i class="fa-brands fa-apple"></i> TestFlight
-            </a>
+            <span class="action-btn btn-testflight is-soon" title="Public TestFlight beta opens soon">
+              <i class="fa-brands fa-apple"></i> iOS soon
+            </span>
             <a href="/my-language-tracker-privacy/privacy.html" class="action-btn btn-privacy-action" title="Privacy Policy">
               <i class="fa-solid fa-shield-halved"></i>
             </a>
@@ -1552,7 +1555,7 @@
           <div class="app-tags">
             <span class="app-tag">Godot 4.3</span>
             <span class="app-tag">Android</span>
-            <span class="app-tag">iOS Beta</span>
+            <span class="app-tag">iOS soon</span>
             <span class="app-tag">Windows</span>
             <span class="app-tag">Roguelike</span>
             <span class="app-tag">Tower Defense</span>
@@ -1565,9 +1568,9 @@
             <a href="https://apps.microsoft.com/detail/9NNHWLW1WMQL" target="_blank" class="action-btn btn-msstore">
               <i class="fa-brands fa-microsoft"></i> MS Store
             </a>
-            <a href="https://testflight.apple.com/join/CCYhvd91" target="_blank" rel="noopener" class="action-btn btn-testflight" title="Join the iOS beta on TestFlight">
-              <i class="fa-brands fa-apple"></i> TestFlight
-            </a>
+            <span class="action-btn btn-testflight is-soon" title="Public TestFlight beta opens soon">
+              <i class="fa-brands fa-apple"></i> iOS soon
+            </span>
             <a href="/core-defender-privacy/privacy.html" class="action-btn btn-privacy-action" title="Privacy Policy">
               <i class="fa-solid fa-shield-halved"></i>
             </a>
@@ -1599,7 +1602,7 @@
           <div class="app-tags">
             <span class="app-tag">Flutter</span>
             <span class="app-tag">Android</span>
-            <span class="app-tag">iOS Beta</span>
+            <span class="app-tag">iOS soon</span>
             <span class="app-tag">Windows</span>
             <span class="app-tag">Markdown</span>
             <span class="app-tag">Concept Map</span>
@@ -1612,9 +1615,9 @@
             <a href="https://apps.microsoft.com/detail/9P03P665MMTC" target="_blank" class="action-btn btn-msstore">
               <i class="fa-brands fa-microsoft"></i> MS Store
             </a>
-            <a href="https://testflight.apple.com/join/36ZY1gA2" target="_blank" rel="noopener" class="action-btn btn-testflight" title="Join the iOS beta on TestFlight">
-              <i class="fa-brands fa-apple"></i> TestFlight
-            </a>
+            <span class="action-btn btn-testflight is-soon" title="Public TestFlight beta opens soon">
+              <i class="fa-brands fa-apple"></i> iOS soon
+            </span>
             <a href="/markdown-keeper-privacy/privacy.html" class="action-btn btn-privacy-action" title="Privacy Policy">
               <i class="fa-solid fa-shield-halved"></i>
             </a>
@@ -1646,7 +1649,7 @@
           <div class="app-tags">
             <span class="app-tag">Flutter</span>
             <span class="app-tag">Android</span>
-            <span class="app-tag">iOS Beta</span>
+            <span class="app-tag">iOS soon</span>
             <span class="app-tag">Windows</span>
             <span class="app-tag">Networking</span>
             <span class="app-tag">MS Store</span>
@@ -1658,9 +1661,9 @@
             <a href="https://apps.microsoft.com/detail/9PGM24F50VR8" target="_blank" class="action-btn btn-msstore">
               <i class="fa-brands fa-microsoft"></i> MS Store
             </a>
-            <a href="https://testflight.apple.com/join/67VcQRs6" target="_blank" rel="noopener" class="action-btn btn-testflight" title="Join the iOS beta on TestFlight">
-              <i class="fa-brands fa-apple"></i> TestFlight
-            </a>
+            <span class="action-btn btn-testflight is-soon" title="Public TestFlight beta opens soon">
+              <i class="fa-brands fa-apple"></i> iOS soon
+            </span>
             <a href="/autoshare-privacy-policy/privacy.html" class="action-btn btn-privacy-action" title="Privacy Policy">
               <i class="fa-solid fa-shield-halved"></i>
             </a>
@@ -1693,7 +1696,7 @@
             <span class="app-tag">Flutter</span>
             <span class="app-tag">Flame Engine</span>
             <span class="app-tag">Android</span>
-            <span class="app-tag">iOS Beta</span>
+            <span class="app-tag">iOS soon</span>
             <span class="app-tag">Windows</span>
             <span class="app-tag">Pixel Art</span>
             <span class="app-tag">MS Store</span>
@@ -1705,9 +1708,9 @@
             <a href="https://apps.microsoft.com/detail/9PJTFGMG98WF" target="_blank" class="action-btn btn-msstore">
               <i class="fa-brands fa-microsoft"></i> MS Store
             </a>
-            <a href="https://testflight.apple.com/join/V6PjGEan" target="_blank" rel="noopener" class="action-btn btn-testflight" title="Join the iOS beta on TestFlight">
-              <i class="fa-brands fa-apple"></i> TestFlight
-            </a>
+            <span class="action-btn btn-testflight is-soon" title="Public TestFlight beta opens soon">
+              <i class="fa-brands fa-apple"></i> iOS soon
+            </span>
             <a href="/sneaky-rogue-privacy/privacy.html" class="action-btn btn-privacy-action" title="Privacy Policy">
               <i class="fa-solid fa-shield-halved"></i>
             </a>
@@ -1739,7 +1742,7 @@
           <div class="app-tags">
             <span class="app-tag">Flutter</span>
             <span class="app-tag">Android</span>
-            <span class="app-tag">iOS Beta</span>
+            <span class="app-tag">iOS soon</span>
             <span class="app-tag">Windows</span>
             <span class="app-tag">ZIP & RAR</span>
             <span class="app-tag">MS Store</span>
@@ -1751,9 +1754,9 @@
             <a href="https://apps.microsoft.com/detail/9MV22F9W72FC" target="_blank" class="action-btn btn-msstore">
               <i class="fa-brands fa-microsoft"></i> MS Store
             </a>
-            <a href="https://testflight.apple.com/join/MBpbdFRx" target="_blank" rel="noopener" class="action-btn btn-testflight" title="Join the iOS beta on TestFlight">
-              <i class="fa-brands fa-apple"></i> TestFlight
-            </a>
+            <span class="action-btn btn-testflight is-soon" title="Public TestFlight beta opens soon">
+              <i class="fa-brands fa-apple"></i> iOS soon
+            </span>
             <a href="/subzip-privacy-policy/privacy.html" class="action-btn btn-privacy-action" title="Privacy Policy">
               <i class="fa-solid fa-shield-halved"></i>
             </a>
@@ -1785,7 +1788,7 @@
           <div class="app-tags">
             <span class="app-tag">Flutter</span>
             <span class="app-tag">Android</span>
-            <span class="app-tag">iOS Beta</span>
+            <span class="app-tag">iOS soon</span>
             <span class="app-tag">Fitness</span>
             <span class="app-tag">Analytics</span>
             <span class="app-tag">AMOLED Dark</span>
@@ -1794,9 +1797,9 @@
             <a href="https://play.google.com/store/apps/details?id=com.workouttracker.workout_tracker" target="_blank" class="action-btn btn-playstore">
               <i class="fa-brands fa-google-play"></i> Play Store
             </a>
-            <a href="https://testflight.apple.com/join/rsKexDPJ" target="_blank" rel="noopener" class="action-btn btn-testflight" title="Join the iOS beta on TestFlight">
-              <i class="fa-brands fa-apple"></i> TestFlight
-            </a>
+            <span class="action-btn btn-testflight is-soon" title="Public TestFlight beta opens soon">
+              <i class="fa-brands fa-apple"></i> iOS soon
+            </span>
             <a href="/workout-tracker-privacy/privacy.html" class="action-btn btn-privacy-action" title="Privacy Policy">
               <i class="fa-solid fa-shield-halved"></i>
             </a>
@@ -1829,7 +1832,7 @@
             <span class="app-tag">Flutter</span>
             <span class="app-tag">Flame Engine</span>
             <span class="app-tag">Android</span>
-            <span class="app-tag">iOS Beta</span>
+            <span class="app-tag">iOS soon</span>
             <span class="app-tag">Arcade</span>
             <span class="app-tag">High-Score</span>
           </div>
@@ -1837,9 +1840,9 @@
             <a href="https://play.google.com/store/apps/details?id=www.flappyrogue.app" target="_blank" class="action-btn btn-playstore">
               <i class="fa-brands fa-google-play"></i> Play Store
             </a>
-            <a href="https://testflight.apple.com/join/XX4dKJS3" target="_blank" rel="noopener" class="action-btn btn-testflight" title="Join the iOS beta on TestFlight">
-              <i class="fa-brands fa-apple"></i> TestFlight
-            </a>
+            <span class="action-btn btn-testflight is-soon" title="Public TestFlight beta opens soon">
+              <i class="fa-brands fa-apple"></i> iOS soon
+            </span>
             <a href="/flappy-rogue-privacy/privacy.html" class="action-btn btn-privacy-action" title="Privacy Policy">
               <i class="fa-solid fa-shield-halved"></i>
             </a>
@@ -1871,7 +1874,7 @@
           <div class="app-tags">
             <span class="app-tag">Flutter</span>
             <span class="app-tag">Android</span>
-            <span class="app-tag">iOS Beta</span>
+            <span class="app-tag">iOS soon</span>
             <span class="app-tag">Prayer Times</span>
             <span class="app-tag">Quran</span>
             <span class="app-tag">Qibla</span>
@@ -1880,9 +1883,9 @@
             <a href="https://play.google.com/store/apps/details?id=com.erdevirlabs.athan_premium" target="_blank" class="action-btn btn-playstore">
               <i class="fa-brands fa-google-play"></i> Play Store
             </a>
-            <a href="https://testflight.apple.com/join/eG3Aw1ZG" target="_blank" rel="noopener" class="action-btn btn-testflight" title="Join the iOS beta on TestFlight">
-              <i class="fa-brands fa-apple"></i> TestFlight
-            </a>
+            <span class="action-btn btn-testflight is-soon" title="Public TestFlight beta opens soon">
+              <i class="fa-brands fa-apple"></i> iOS soon
+            </span>
             <a href="/ezan-vakti-privacy/privacy.html" class="action-btn btn-privacy-action" title="Privacy Policy">
               <i class="fa-solid fa-shield-halved"></i>
             </a>
@@ -1981,7 +1984,7 @@
           <div class="app-tags">
             <span class="app-tag">Unity</span>
             <span class="app-tag">Android</span>
-            <span class="app-tag">iOS Beta</span>
+            <span class="app-tag">iOS soon</span>
             <span class="app-tag">Windows</span>
             <span class="app-tag">Arcade</span>
             <span class="app-tag">Racing</span>
@@ -1990,9 +1993,9 @@
             <a href="https://play.google.com/store/apps/details?id=www.roadsterchallenge.app" target="_blank" class="action-btn btn-playstore">
               <i class="fa-brands fa-google-play"></i> Play Store
             </a>
-            <a href="https://testflight.apple.com/join/F9kNWQ5h" target="_blank" rel="noopener" class="action-btn btn-testflight" title="Join the iOS beta on TestFlight">
-              <i class="fa-brands fa-apple"></i> TestFlight
-            </a>
+            <span class="action-btn btn-testflight is-soon" title="Public TestFlight beta opens soon">
+              <i class="fa-brands fa-apple"></i> iOS soon
+            </span>
             <a href="/roadster-challenge-privacy/privacy.html" class="action-btn btn-privacy-action" title="Privacy Policy">
               <i class="fa-solid fa-shield-halved"></i>
             </a>
@@ -2027,9 +2030,9 @@
             <span class="app-tag">On-device</span>
           </div>
           <div class="app-actions">
-            <a href="https://testflight.apple.com/join/E6msPT6w" target="_blank" rel="noopener" class="action-btn btn-testflight" title="Join the iOS beta on TestFlight">
-              <i class="fa-brands fa-apple"></i> TestFlight
-            </a>
+            <span class="action-btn btn-testflight is-soon" title="Public TestFlight beta opens soon">
+              <i class="fa-brands fa-apple"></i> iOS soon
+            </span>
             <a href="/tillwise/" class="action-btn btn-web-action">
               <i class="fa-solid fa-circle-info"></i> Details
             </a>
@@ -2067,9 +2070,9 @@
             <span class="app-tag">Daily</span>
           </div>
           <div class="app-actions">
-            <a href="https://testflight.apple.com/join/JHuQfzxX" target="_blank" rel="noopener" class="action-btn btn-testflight" title="Join the iOS beta on TestFlight">
-              <i class="fa-brands fa-apple"></i> TestFlight
-            </a>
+            <span class="action-btn btn-testflight is-soon" title="Public TestFlight beta opens soon">
+              <i class="fa-brands fa-apple"></i> iOS soon
+            </span>
             <a href="/mixmere/" class="action-btn btn-web-action">
               <i class="fa-solid fa-circle-info"></i> Details
             </a>
@@ -2107,9 +2110,9 @@
             <span class="app-tag">Geo Game</span>
           </div>
           <div class="app-actions">
-            <a href="https://testflight.apple.com/join/6rt2x5JU" target="_blank" rel="noopener" class="action-btn btn-testflight" title="Join the iOS beta on TestFlight">
-              <i class="fa-brands fa-apple"></i> TestFlight
-            </a>
+            <span class="action-btn btn-testflight is-soon" title="Public TestFlight beta opens soon">
+              <i class="fa-brands fa-apple"></i> iOS soon
+            </span>
             <a href="/wherelens/" class="action-btn btn-web-action">
               <i class="fa-solid fa-circle-info"></i> Details
             </a>
@@ -2147,9 +2150,9 @@
             <span class="app-tag">Relaxing</span>
           </div>
           <div class="app-actions">
-            <a href="https://testflight.apple.com/join/8AhNq3eE" target="_blank" rel="noopener" class="action-btn btn-testflight" title="Join the iOS beta on TestFlight">
-              <i class="fa-brands fa-apple"></i> TestFlight
-            </a>
+            <span class="action-btn btn-testflight is-soon" title="Public TestFlight beta opens soon">
+              <i class="fa-brands fa-apple"></i> iOS soon
+            </span>
             <a href="/blockgrove/" class="action-btn btn-web-action">
               <i class="fa-solid fa-circle-info"></i> Details
             </a>
@@ -2187,9 +2190,9 @@
             <span class="app-tag">Personalization</span>
           </div>
           <div class="app-actions">
-            <a href="https://testflight.apple.com/join/YJZNJNUE" target="_blank" rel="noopener" class="action-btn btn-testflight" title="Join the iOS beta on TestFlight">
-              <i class="fa-brands fa-apple"></i> TestFlight
-            </a>
+            <span class="action-btn btn-testflight is-soon" title="Public TestFlight beta opens soon">
+              <i class="fa-brands fa-apple"></i> iOS soon
+            </span>
             <a href="/homespun/" class="action-btn btn-web-action">
               <i class="fa-solid fa-circle-info"></i> Details
             </a>
@@ -2227,9 +2230,9 @@
             <span class="app-tag">Haptics</span>
           </div>
           <div class="app-actions">
-            <a href="https://testflight.apple.com/join/BrWSK7Fv" target="_blank" rel="noopener" class="action-btn btn-testflight" title="Join the iOS beta on TestFlight">
-              <i class="fa-brands fa-apple"></i> TestFlight
-            </a>
+            <span class="action-btn btn-testflight is-soon" title="Public TestFlight beta opens soon">
+              <i class="fa-brands fa-apple"></i> iOS soon
+            </span>
             <a href="/unbolt/" class="action-btn btn-web-action">
               <i class="fa-solid fa-circle-info"></i> Details
             </a>
@@ -2267,9 +2270,9 @@
             <span class="app-tag">Daily</span>
           </div>
           <div class="app-actions">
-            <a href="https://testflight.apple.com/join/kD8pPa4G" target="_blank" rel="noopener" class="action-btn btn-testflight" title="Join the iOS beta on TestFlight">
-              <i class="fa-brands fa-apple"></i> TestFlight
-            </a>
+            <span class="action-btn btn-testflight is-soon" title="Public TestFlight beta opens soon">
+              <i class="fa-brands fa-apple"></i> iOS soon
+            </span>
             <a href="/wordloom/" class="action-btn btn-web-action">
               <i class="fa-solid fa-circle-info"></i> Details
             </a>
@@ -2307,9 +2310,9 @@
             <span class="app-tag">Fitness</span>
           </div>
           <div class="app-actions">
-            <a href="https://testflight.apple.com/join/TJ94jn9p" target="_blank" rel="noopener" class="action-btn btn-testflight" title="Join the iOS beta on TestFlight">
-              <i class="fa-brands fa-apple"></i> TestFlight
-            </a>
+            <span class="action-btn btn-testflight is-soon" title="Public TestFlight beta opens soon">
+              <i class="fa-brands fa-apple"></i> iOS soon
+            </span>
             <a href="/stridemap/" class="action-btn btn-web-action">
               <i class="fa-solid fa-circle-info"></i> Details
             </a>
@@ -2347,9 +2350,9 @@
             <span class="app-tag">Wellness</span>
           </div>
           <div class="app-actions">
-            <a href="https://testflight.apple.com/join/BQ5aVTZe" target="_blank" rel="noopener" class="action-btn btn-testflight" title="Join the iOS beta on TestFlight">
-              <i class="fa-brands fa-apple"></i> TestFlight
-            </a>
+            <span class="action-btn btn-testflight is-soon" title="Public TestFlight beta opens soon">
+              <i class="fa-brands fa-apple"></i> iOS soon
+            </span>
             <a href="/fastwell/" class="action-btn btn-web-action">
               <i class="fa-solid fa-circle-info"></i> Details
             </a>
